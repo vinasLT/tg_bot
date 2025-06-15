@@ -1,0 +1,83 @@
+# Russian translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-06-15 17:27+0200\n"
+"PO-Revision-Date: 2025-06-15 15:12+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ru\n"
+"Language-Team: ru <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: handlers/commands/start.py:18
+msgid ""
+"Hello! We not only help you save up to 50% when purchasing a vehicle from"
+" the USA,\n"
+"but we also ensure that the process is completely safe, transparent, and "
+"without any hidden details! \n"
+"Join our rapidly growing group where youll be the first to see the "
+"hottest offers: \n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" "
+"target=\"_blank\">click here to join</a>."
+msgstr ""
+"Здравствуйте! Мы не только помогаем сэкономить до 50% при покупке автомобиля из США,\n"
+"но также обеспечиваем полную безопасность, прозрачность и отсутствие скрытых условий!\n"
+"Присоединяйтесь к нашей быстро растущей группе, где вы первыми увидите лучшие предложения: \n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" target=\"_blank\">нажмите здесь, чтобы присоединиться</a>."
+
+msgid "Hi, you admin, you can access admin panel"
+msgstr "Привет, ты админ, у тебя есть доступ к админ-панели"
+
+msgid "⏳ Loading..."
+msgstr "⏳ Загрузка..."
+
+msgid "Enter lot ID or VIN:"
+msgstr "Введите номер лота или VIN:"
+
+msgid "Choose auction:"
+msgstr "Выберите аукцион:"
+
+msgid "Cancel ❌"
+msgstr "Отмена ❌"
+
+msgid "Get report 🦊"
+msgstr "Получить отчёт 🦊"
+
+msgid "Transport cost calc. 💵"
+msgstr "Расчёт доставки 💵"
+
+msgid "Check lot 🚗"
+msgstr "Проверить лот 🚗"
+
+msgid "Find My 🔍"
+msgstr "Найти моё 🔍"
+
+msgid "Help ✋"
+msgstr "Помощь ✋"
+
+msgid "Language 🌎"
+msgstr "Язык 🌎"
+
+msgid "Select an action"
+msgstr "Выберите действие"
+
+
+#~ msgid "Check lot 🚗"
+#~ msgstr ""
+
+#~ msgid "Find My"
+#~ msgstr ""
+
+#~ msgid "Enter lot ID:"
+#~ msgstr ""
+

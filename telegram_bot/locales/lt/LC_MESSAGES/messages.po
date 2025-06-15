@@ -1,0 +1,83 @@
+# Lithuanian translations for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-06-15 17:27+0200\n"
+"PO-Revision-Date: 2025-06-15 15:13+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: lt\n"
+"Language-Team: lt <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: handlers/commands/start.py:18
+msgid ""
+"Hello! We not only help you save up to 50% when purchasing a vehicle from"
+" the USA,\n"
+"but we also ensure that the process is completely safe, transparent, and "
+"without any hidden details! \n"
+"Join our rapidly growing group where youll be the first to see the "
+"hottest offers: \n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" "
+"target=\"_blank\">click here to join</a>."
+msgstr ""
+"Sveiki! Mes ne tik padedame sutaupyti iki 50% perkant transporto priemonę iš JAV,\n"
+"bet taip pat užtikriname visiškai saugų, skaidrų pirkimo procesą be jokių paslėptų sąlygų!\n"
+"Prisijunkite prie sparčiai augančios grupės, kur pirmieji matysite karščiausius pasiūlymus:\n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" target=\"_blank\">spauskite čia, kad prisijungtumėte</a>."
+
+msgid "Hi, you admin, you can access admin panel"
+msgstr "Sveikas, tu esi administratorius, turi prieigą prie administratoriaus skydelio"
+
+msgid "⏳ Loading..."
+msgstr "⏳ Įkeliama..."
+
+msgid "Enter lot ID or VIN:"
+msgstr "Įveskite partijos ID arba VIN kodą:"
+
+msgid "Choose auction:"
+msgstr "Pasirinkite aukcioną:"
+
+msgid "Cancel ❌"
+msgstr "Atšaukti ❌"
+
+msgid "Get report 🦊"
+msgstr "Gauti ataskaitą 🦊"
+
+msgid "Transport cost calc. 💵"
+msgstr "Transportavimo kainos skaičiavimas 💵"
+
+msgid "Check lot 🚗"
+msgstr "Patikrinti partiją 🚗"
+
+msgid "Find My 🔍"
+msgstr "Rasti mano 🔍"
+
+msgid "Help ✋"
+msgstr "Pagalba ✋"
+
+msgid "Language 🌎"
+msgstr "Kalba 🌎"
+
+msgid "Select an action"
+msgstr "Pasirinkite veiksmą"
+
+
+#~ msgid "Check lot 🚗"
+#~ msgstr ""
+
+#~ msgid "Find My"
+#~ msgstr ""
+
+#~ msgid "Enter lot ID:"
+#~ msgstr ""
+

@@ -1,0 +1,79 @@
+# Translations template for PROJECT.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-06-15 17:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: handlers/commands/start.py:18
+msgid ""
+"Hello! We not only help you save up to 50% when purchasing a vehicle from"
+" the USA,\n"
+"but we also ensure that the process is completely safe, transparent, and "
+"without any hidden details! \n"
+"Join our rapidly growing group where youll be the first to see the "
+"hottest offers: \n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" "
+"target=\"_blank\">click here to join</a>."
+msgstr ""
+
+#: handlers/commands/start.py:25
+msgid "Hi, you admin, you can access admin panel"
+msgstr ""
+
+#: handlers/keyboard/inline/choose_auction.py:18
+msgid "⏳ Loading..."
+msgstr ""
+
+#: handlers/keyboard/murkup/start.py:16
+msgid "Enter lot ID or VIN:"
+msgstr ""
+
+#: handlers/keyboard/murkup/start.py:22
+msgid "Choose auction:"
+msgstr ""
+
+#: keyboards/inline/cancel.py:5
+msgid "Cancel ❌"
+msgstr ""
+
+#: keyboards/murkup/start.py:8
+msgid "Get report 🦊"
+msgstr ""
+
+#: keyboards/murkup/start.py:9
+msgid "Transport cost calc. 💵"
+msgstr ""
+
+#: keyboards/murkup/start.py:12
+msgid "Check lot 🚗"
+msgstr ""
+
+#: keyboards/murkup/start.py:13
+msgid "Find My 🔍"
+msgstr ""
+
+#: keyboards/murkup/start.py:16
+msgid "Help ✋"
+msgstr ""
+
+#: keyboards/murkup/start.py:17
+msgid "Language 🌎"
+msgstr ""
+
+#: keyboards/murkup/start.py:21
+msgid "Select an action"
+msgstr ""
+
