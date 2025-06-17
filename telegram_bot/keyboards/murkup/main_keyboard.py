@@ -5,16 +5,16 @@ def start_keyboard():
     return ReplyKeyboardMarkup(
         keyboard=[
             [
-                KeyboardButton(text=_('Get report 🦊')),
-                KeyboardButton(text=_('Transport cost calc. 💵'))
+                KeyboardButton(text=_('GET REPORT 🦊')),
+                KeyboardButton(text=_('TRANSPORT COST CALC. 💸'))
             ],
             [
-                KeyboardButton(text=_("Check lot 🚗")),
-                KeyboardButton(text=_("Find My 🔍"))
+                KeyboardButton(text=_("CHECK LOT 🕵‍♂")),
+                KeyboardButton(text=_("FIND FOR ME 🕵‍♂"))
             ],
             [
-                KeyboardButton(text=_("Help ✋")),
-                KeyboardButton(text=_("Language 🌎"))
+                KeyboardButton(text=_("HELP ✋")),
+                KeyboardButton(text=_("LANGUAGE 🌍"))
             ],
         ],
         resize_keyboard=True,

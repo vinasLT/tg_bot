@@ -17,7 +17,6 @@ class UserCreate(UserBase):
 class UserUpdate(BaseModel):
     username: Optional[str] = None
     language: Optional[str] = None
-    is_admin: Optional[bool] = None
 
 
 class UserRead(UserBase):

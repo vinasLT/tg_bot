@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-15 17:27+0200\n"
+"POT-Creation-Date: 2025-06-16 19:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: handlers/commands/start.py:18
+#: auction_api/utils.py:10
+#, python-brace-format
+msgid ""
+"☑ {vehicle_name}\n"
+"☑ Lot ID: {lot_id}\n"
+"☑ VIN: {vin}\n"
+"{insurance_emoji} Insurance: {insurance}\n"
+"☑ Title: {title}\n"
+"\n"
+"🔥 Current bid: ${current_bid}\n"
+"🔥 Auction Status: {status}\n"
+"🔥 Auction Date: {auction_date}\n"
+msgstr ""
+
+#: telegram_bot/handlers/commands/start.py:18
 msgid ""
 "Hello! We not only help you save up to 50% when purchasing a vehicle from"
 " the USA,\n"
@@ -29,51 +43,47 @@ msgid ""
 "target=\"_blank\">click here to join</a>."
 msgstr ""
 
-#: handlers/commands/start.py:25
+#: telegram_bot/handlers/commands/start.py:25
 msgid "Hi, you admin, you can access admin panel"
 msgstr ""
 
-#: handlers/keyboard/inline/choose_auction.py:18
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:18
+msgid "🚘 Enter lot ID or VIN:"
+msgstr ""
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:26
 msgid "⏳ Loading..."
 msgstr ""
 
-#: handlers/keyboard/murkup/start.py:16
-msgid "Enter lot ID or VIN:"
-msgstr ""
-
-#: handlers/keyboard/murkup/start.py:22
-msgid "Choose auction:"
-msgstr ""
-
-#: keyboards/inline/cancel.py:5
+#: telegram_bot/keyboards/inline/cancel.py:5
 msgid "Cancel ❌"
 msgstr ""
 
-#: keyboards/murkup/start.py:8
+#: telegram_bot/keyboards/murkup/main_keyboard.py:8
 msgid "Get report 🦊"
 msgstr ""
 
-#: keyboards/murkup/start.py:9
+#: telegram_bot/keyboards/murkup/main_keyboard.py:9
 msgid "Transport cost calc. 💵"
 msgstr ""
 
-#: keyboards/murkup/start.py:12
+#: telegram_bot/keyboards/murkup/main_keyboard.py:12
 msgid "Check lot 🚗"
 msgstr ""
 
-#: keyboards/murkup/start.py:13
+#: telegram_bot/keyboards/murkup/main_keyboard.py:13
 msgid "Find My 🔍"
 msgstr ""
 
-#: keyboards/murkup/start.py:16
+#: telegram_bot/keyboards/murkup/main_keyboard.py:16
 msgid "Help ✋"
 msgstr ""
 
-#: keyboards/murkup/start.py:17
+#: telegram_bot/keyboards/murkup/main_keyboard.py:17
 msgid "Language 🌎"
 msgstr ""
 
-#: keyboards/murkup/start.py:21
+#: telegram_bot/keyboards/murkup/main_keyboard.py:21
 msgid "Select an action"
 msgstr ""
 

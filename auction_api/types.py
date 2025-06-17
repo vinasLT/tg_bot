@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Literal, Type, Optional, List, Union
 
-from pydantic import BaseModel, HttpUrl, Field
+from pydantic import BaseModel, HttpUrl, Field, PositiveInt
 
 
 class EndpointSchema(BaseModel):
@@ -16,13 +16,13 @@ class BasicLot(BaseModel):
     lot_id: int
     site: int
     base_site: str
-    salvage_id: Optional[str]
+    salvage_id: Optional[int]
     odometer: Optional[int]
     price_new: Optional[int]
     price_future: Optional[int]
     reserve_price: Optional[int]
-    current_bid: Optional[int]
-    auction_date: Optional[datetime]
+    current_bid: Optional[int] = Field(0)
+    auction_date: Optional[datetime] = Field(None)
     cost_priced: Optional[int]
     cost_repair: Optional[int]
     year: Optional[int]
@@ -64,10 +64,10 @@ class BasicLot(BaseModel):
     is_offsite: bool
     location_offsite: Optional[str]
     link: HttpUrl
-    body_type: Optional[str]
+    body_type: Optional[str] = Field(None)
     seller_type: Optional[str]
     vehicle_score: Optional[str]
-    form_get_type: str = Field(default='active')
+    form_get_type: str = Field(default='history')
 
 
 class SaleHistoryItem(BaseModel):
@@ -83,13 +83,23 @@ class SaleHistoryItem(BaseModel):
     buyer_country: Optional[str]
     vehicle_type: Optional[str]
 
-
 class BasicHistoryLot(BasicLot):
     sale_history: Optional[List[SaleHistoryItem]]
     sale_date: Optional[datetime]
     sale_status: Optional[str]
     purchase_price: Optional[int]
 
+class LotByIDIn(BaseModel):
+    lot_id: PositiveInt
+    site: Optional[Union[int, str]]
+
+class LotByVINIn(BaseModel):
+    vin: str
+    site: Optional[Union[int, str]]
+
+class CurrentBidOut(BaseModel):
+    pre_bid: PositiveInt
+
 class VINorLotIDIn(BaseModel):
     vin_or_lot: str
-    site: Union[int, str]
+    site: Optional[Union[int, str]] = Field(default=None)

@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 import httpx
 
-from auction_api.types import EndpointSchema, BasicLot, BasicHistoryLot, VINorLotIDIn
+from auction_api.types import EndpointSchema, BasicLot, BasicHistoryLot, VINorLotIDIn, LotByVINIn
 from config import API_SERVICE_URL
 
 
@@ -30,6 +30,7 @@ class AuctionAPIBase:
             response = await self._make_request("POST", url, json=payload)
         else:
             raise ValueError(f"Unsupported method: {schema.method}")
+        print(response)
         response.raise_for_status()
 
         response_data = response.json()
@@ -50,6 +51,12 @@ class AuctionApiClient(AuctionAPIBase):
         out_schema_default=BasicLot,
         out_schema_history=BasicHistoryLot,
         is_list=True,
+    )
+    GET_SALE_HISTORY_BY_VIN = EndpointSchema(
+        validation_schema=LotByVINIn,
+        endpoint='cars/history/vin',
+        method='GET',
+        out_schema_default=BasicHistoryLot,
     )
 
     def __init__(self):

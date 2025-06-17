@@ -4,7 +4,7 @@ from aiogram.types import Message
 
 from database.crud.user import UserService
 from database.schemas.user import UserUpdate, UserCreate
-from telegram_bot.keyboards.murkup.start import start_keyboard
+from telegram_bot.keyboards.murkup.main_keyboard import start_keyboard
 
 from aiogram.utils.i18n import gettext as _
 start = Router()
@@ -15,10 +15,13 @@ async def start_handler(message: Message):
     async with UserService() as db:
         user = await db.get_by_telegram_id(telegram_id)
 
-        start_message = _('Hello! We not only help you save up to 50% when purchasing a vehicle from the USA,\n'
-                                     'but we also ensure that the process is completely safe, transparent, and without any hidden details! \n'
-                                     'Join our rapidly growing group where youll be the first to see the hottest offers: \n'
-                                     '<a href="https://www.facebook.com/groups/417661698833379/" target="_blank">click here to join</a>.')
+        start_message = _(
+            "<b>👋 Hello!</b>\n\n"
+            "🚗 We help you <b>save up to 50%</b> when purchasing a vehicle from the USA.\n"
+            "🛡️ The entire process is <b>safe, transparent</b> and free from hidden details.\n\n"
+            "🔥 <b>Join our fast-growing community</b> to be the first to see the hottest offers:\n"
+            '<a href="https://www.facebook.com/groups/417661698833379/" target="_blank">👉 Click here to join the group</a>'
+        )
         if user:
             await db.update(user.id, UserUpdate(language='en'))
             if user.is_admin:
