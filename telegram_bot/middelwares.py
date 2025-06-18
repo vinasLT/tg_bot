@@ -10,14 +10,27 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 i18n = I18n(path=BASE_DIR / "locales", default_locale="en", domain="messages")
 
 class MyI18nMiddleware(I18nMiddleware):
-    async def get_locale(self, event: TelegramObject, data: Dict[str, Any]) -> str:
+    async def get_locale(
+        self,
+        event: TelegramObject,
+        data: Dict[str, Any]
+    ) -> str:
+        tg_user = None
         if isinstance(event, Message):
-            user_id = event.from_user.id
+            tg_user = event.from_user
         elif isinstance(event, CallbackQuery):
-            user_id = event.from_user.id
-        else:
-            return self.i18n.default_locale  # fallback если откуда-то ещё
+            tg_user = event.from_user
+
+        if not tg_user:
+            return self.i18n.default_locale
 
         async with UserService() as db:
-            user = await db.get_by_telegram_id(user_id)
-            return user.language or self.i18n.default_locale
+            db_user = await db.get_by_telegram_id(tg_user.id)
+
+        if db_user and getattr(db_user, "language", None):
+            return db_user.language
+
+        if getattr(tg_user, "language_code", None):
+            return tg_user.language_code
+
+        return self.i18n.default_locale
