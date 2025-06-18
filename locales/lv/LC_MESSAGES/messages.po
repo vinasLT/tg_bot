@@ -1,17 +1,19 @@
-# Translations template for PROJECT.
+# Latvian translations for PROJECT.
 # Copyright (C) 2025 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-06-18 18:32+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2025-06-18 18:32+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: lv\n"
+"Language-Team: lv <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 :"
+" 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,59 +22,38 @@ msgstr ""
 #: auction_api/serializers.py:16 auction_api/serializers.py:56
 #, python-brace-format
 msgid "<b>☑ {vehicle_name}</b>"
-msgstr ""
+msgstr "<b>☑ {vehicle_name}</b>"
 
-#: auction_api/serializers.py:17 auction_api/serializers.py:57
-#, python-brace-format
 msgid "<b>☑ Lot ID:</b> <code>{lot_id}</code>"
-msgstr ""
+msgstr "<b>☑ Lotes ID:</b> <code>{lot_id}</code>"
 
-#: auction_api/serializers.py:18 auction_api/serializers.py:58
-#, python-brace-format
 msgid "<b>☑ VIN:</b> <code>{vin}</code>"
-msgstr ""
+msgstr "<b>☑ VIN:</b> <code>{vin}</code>"
 
-#: auction_api/serializers.py:19 auction_api/serializers.py:59
-#, python-brace-format
 msgid "<b>☑ Auction:</b> {auction_name}"
-msgstr ""
+msgstr "<b>☑ Izsole:</b> {auction_name}"
 
-#: auction_api/serializers.py:22
-#, python-brace-format
 msgid "<b>☑ Insurance:</b> {insurance}"
-msgstr ""
+msgstr "<b>☑ Apdrošināšana:</b> {insurance}"
 
-#: auction_api/serializers.py:25
-#, python-brace-format
 msgid "<b>☑ Title:</b> {title}"
-msgstr ""
+msgstr "<b>☑ Tituls:</b> {title}"
 
-#: auction_api/serializers.py:27
-#, python-brace-format
 msgid "<b>🔥 Current bid:</b> <b>${current_bid}</b>"
-msgstr ""
+msgstr "<b>🔥 Pašreizējais piedāvājums:</b> <b>${current_bid}</b>"
 
-#: auction_api/serializers.py:34
-#, python-brace-format
 msgid "<b>🔥 BuyNow price:</b> <b>${buy_now}</b>"
-msgstr ""
+msgstr "<b>🔥 Pērc tagad cena:</b> <b>${buy_now}</b>"
 
-#: auction_api/serializers.py:40
-#, python-brace-format
 msgid "<b>🔥 Auction Status:</b> <b>{status}</b>"
-msgstr ""
+msgstr "<b>🔥 Izsoles statuss:</b> <b>{status}</b>"
 
-#: auction_api/serializers.py:43
-#, python-brace-format
 msgid "<b>🔥 Auction Date:</b> <i>{auction_date}</i>"
-msgstr ""
+msgstr "<b>🔥 Izsoles datums:</b> <i>{auction_date}</i>"
 
-#: auction_api/serializers.py:71
 msgid "<b>❌ No history available</b>"
-msgstr ""
+msgstr "<b>❌ Nav pieejama vēsture</b>"
 
-#: auction_api/serializers.py:74
-#, python-brace-format
 msgid ""
 "<b>🔹 History #{num}</b>\n"
 "☑ <b>Lot ID:</b> <code>{lot_id}</code>\n"
@@ -81,9 +62,13 @@ msgid ""
 "☑ <b>Price:</b> ${price}\n"
 "☑ <b>Status:</b> <b>{status}</b>\n"
 msgstr ""
+"<b>🔹 Vēsture #{num}</b>\n"
+"☑ <b>Lotes ID:</b> <code>{lot_id}</code>\n"
+"☑ <b>Izsole:</b> {auction}\n"
+"☑ <b>Datums:</b> {date}\n"
+"☑ <b>Cena:</b> ${price}\n"
+"☑ <b>Statuss:</b> <b>{status}</b>\n"
 
-#: auction_api/serializers.py:97
-#, python-brace-format
 msgid ""
 "🛒 Seller Type: {seller_type}\n"
 "🚗 Cylinders: {cylinders}\n"
@@ -95,8 +80,16 @@ msgid ""
 "🔧 Transmission: {transmission}\n"
 "🌍 Country: {country}"
 msgstr ""
+"🛒 Pārdevēja tips: {seller_type}\n"
+"🚗 Cilindri: {cylinders}\n"
+"🔑 Atslēgas: {keys}\n"
+"📏 Odometrs: {odometer}\n"
+"⚙️ Dzinējs: {engine} {engine_size}L\n"
+"⛽ Degviela: {fuel}\n"
+"🚙 Piedziņa: {drive}\n"
+"🔧 Transmisija: {transmission}\n"
+"🌍 Valsts: {country}"
 
-#: telegram_bot/handlers/commands/start.py:19
 msgid ""
 "<b>👋 Hello!</b>\n"
 "\n"
@@ -110,115 +103,98 @@ msgid ""
 "<a href=\"https://www.facebook.com/groups/417661698833379/\" "
 "target=\"_blank\">👉 Click here to join the group</a>"
 msgstr ""
+"<b>👋 Sveiki!</b>\n"
+"\n"
+"🚗 Mēs palīdzam jums <b>ietaupīt līdz pat 50%</b> iegādājoties transportlīdzekli no ASV.\n"
+"🛡️ Viss process ir <b>drošs, caurspīdīgs</b> un bez slēptām detaļām.\n"
+"\n"
+"🔥 <b>Pievienojieties mūsu strauji augošajai kopienai</b>, lai pirmie redzētu karstākos piedāvājumus:\n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" target=\"_blank\">👉 Noklikšķiniet šeit, lai pievienotos grupai</a>"
 
-#: telegram_bot/handlers/commands/start.py:28
 msgid "Hi, you admin, you can access admin panel"
-msgstr ""
+msgstr "Sveiks, tu esi administrators, tev ir piekļuve administratora panelim"
 
-#: telegram_bot/handlers/keyboard/inline/additional_lot_data.py:21
 msgid "❌ Something went wrong, try again later"
-msgstr ""
+msgstr "❌ Kaut kas nogāja greizi, mēģiniet vēlreiz vēlāk"
 
-#: telegram_bot/handlers/keyboard/inline/additional_lot_data.py:40
 msgid "🔍 No more images available."
-msgstr ""
+msgstr "🔍 Vairs nav pieejamu attēlu"
 
-#: telegram_bot/handlers/keyboard/inline/choose_language.py:22
 msgid "✅ Language successfully changed"
-msgstr ""
+msgstr "✅ Valoda veiksmīgi nomainīta"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:27
 msgid "🚘 Enter lot ID or VIN:"
-msgstr ""
+msgstr "🚘 Ievadiet lotes ID vai VIN:"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:35
 msgid "⏳ Loading..."
-msgstr ""
+msgstr "⏳ Ielādējas..."
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:37
 msgid "❌ We cant find your lot, try again"
-msgstr ""
+msgstr "❌ Nevaram atrast jūsu loti, mēģiniet vēlreiz"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:46
 msgid ""
 "<b>We received 2 lots according to your data, choose below what you "
 "need</b>\n"
 "\n"
 msgstr ""
+"<b>Balstoties uz jūsu datiem, mēs atradām 2 lotes, izvēlieties nepieciešamo</b>\n"
+"\n"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:79
 msgid "🌎 Choose language"
-msgstr ""
+msgstr "🌎 Izvēlieties valodu"
 
-#: telegram_bot/keyboards/inline/additional_lot_data.py:11
 msgid "📊 Sales statistics"
-msgstr ""
+msgstr "📊 Pārdošanas statistika"
 
-#: telegram_bot/keyboards/inline/additional_lot_data.py:14
 msgid "ℹ️ About the car"
-msgstr ""
+msgstr "ℹ️ Par automašīnu"
 
-#: telegram_bot/keyboards/inline/additional_lot_data.py:17
 msgid "🖼 More Photos"
-msgstr ""
+msgstr "🖼 Vairāk fotoattēlu"
 
-#: telegram_bot/keyboards/inline/additional_lot_data.py:20
 msgid "🔗 Open auction"
-msgstr ""
+msgstr "🔗 Atvērt izsoli"
 
-#: telegram_bot/keyboards/inline/cancel.py:5
 msgid "Cancel ❌"
-msgstr ""
+msgstr "Atcelt ❌"
 
-#: telegram_bot/keyboards/inline/choose_language.py:8
 msgid "English 🇺🇸"
-msgstr ""
+msgstr "Angļu 🇺🇸"
 
-#: telegram_bot/keyboards/inline/choose_language.py:9
 msgid "Lithuanian 🇱🇹"
-msgstr ""
+msgstr "Lietuviešu 🇱🇹"
 
-#: telegram_bot/keyboards/inline/choose_language.py:10
 msgid "Estonian 🇪🇪"
-msgstr ""
+msgstr "Igauņu 🇪🇪"
 
-#: telegram_bot/keyboards/inline/choose_language.py:11
 msgid "Polish 🇵🇱"
-msgstr ""
+msgstr "Poļu 🇵🇱"
 
-#: telegram_bot/keyboards/inline/choose_language.py:12
 msgid "Latvian 🇱🇻"
-msgstr ""
+msgstr "Latviešu 🇱🇻"
 
-#: telegram_bot/keyboards/inline/choose_language.py:13
 msgid "Russian 🇷🇺"
-msgstr ""
+msgstr "Krievu 🇷🇺"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:8
 msgid "GET REPORT 🦊"
-msgstr ""
+msgstr "SAŅEMT ZIŅOJUMU 🦊"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:9
 msgid "TRANSPORT COST CALC. 💸"
-msgstr ""
+msgstr "TRANSPORTA IZMAKSU APRĒĶINS 💸"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:12
 msgid "CHECK LOT 🕵‍♂"
-msgstr ""
+msgstr "PĀRBAUDIET LOTI 🕵‍♂"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:13
 msgid "FIND FOR ME 🕵‍♂"
-msgstr ""
+msgstr "ATRODIET MAN 🕵‍♂"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:16
 msgid "HELP ✋"
-msgstr ""
+msgstr "PALĪDZĪBA ✋"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:17
 msgid "LANGUAGE 🌍"
-msgstr ""
+msgstr "VALODA 🌍"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:21
 msgid "Select an action"
-msgstr ""
+msgstr "Izvēlieties darbību"
+
 

@@ -75,8 +75,8 @@ class SaleHistoryItem(BaseModel):
     site: int
     base_site: str
     vin: str
-    sale_status: str
-    sale_date: datetime
+    sale_status: Optional[str] = None
+    sale_date: Optional[datetime] = None
     purchase_price: Optional[int]
     is_buynow: bool
     buyer_state: Optional[str]
@@ -84,10 +84,10 @@ class SaleHistoryItem(BaseModel):
     vehicle_type: Optional[str]
 
 class BasicHistoryLot(BasicLot):
-    sale_history: Optional[List[SaleHistoryItem]]
-    sale_date: Optional[datetime]
-    sale_status: Optional[str]
-    purchase_price: Optional[int]
+    sale_history: Optional[List[SaleHistoryItem]] = None
+    sale_date: Optional[datetime] = None
+    sale_status: Optional[str] = None
+    purchase_price: Optional[int] = None
 
 class LotByIDIn(BaseModel):
     lot_id: PositiveInt
@@ -103,3 +103,6 @@ class CurrentBidOut(BaseModel):
 class VINorLotIDIn(BaseModel):
     vin_or_lot: str
     site: Optional[Union[int, str]] = Field(default=None)
+
+class ChooseLot(LotByIDIn):
+    site: Union[int, str]

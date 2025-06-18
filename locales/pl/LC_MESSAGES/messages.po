@@ -1,4 +1,4 @@
-# Lithuanian translations for PROJECT.
+# Polish translations for PROJECT.
 # Copyright (C) 2025 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
@@ -8,11 +8,11 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2025-06-18 18:32+0200\n"
-"PO-Revision-Date: 2025-06-15 15:13+0200\n"
+"PO-Revision-Date: 2025-06-18 18:32+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: lt\n"
-"Language-Team: lt <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"Language: pl\n"
+"Language-Team: pl <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && "
 "(n%100<10 || n%100>=20) ? 1 : 2);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -25,34 +25,34 @@ msgid "<b>☑ {vehicle_name}</b>"
 msgstr "<b>☑ {vehicle_name}</b>"
 
 msgid "<b>☑ Lot ID:</b> <code>{lot_id}</code>"
-msgstr "<b>☑ Loto ID:</b> <code>{lot_id}</code>"
+msgstr "<b>☑ ID Licytacji:</b> <code>{lot_id}</code>"
 
 msgid "<b>☑ VIN:</b> <code>{vin}</code>"
 msgstr "<b>☑ VIN:</b> <code>{vin}</code>"
 
 msgid "<b>☑ Auction:</b> {auction_name}"
-msgstr "<b>☑ Aukcionas:</b> {auction_name}"
+msgstr "<b>☑ Aukcja:</b> {auction_name}"
 
 msgid "<b>☑ Insurance:</b> {insurance}"
-msgstr "<b>☑ Draudimas:</b> {insurance}"
+msgstr "<b>☑ Ubezpieczenie:</b> {insurance}"
 
 msgid "<b>☑ Title:</b> {title}"
-msgstr "<b>☑ Dokumentas:</b> {title}"
+msgstr "<b>☑ Tytuł:</b> {title}"
 
 msgid "<b>🔥 Current bid:</b> <b>${current_bid}</b>"
-msgstr "<b>🔥 Dabartinis pasiūlymas:</b> <b>${current_bid}</b>"
+msgstr "<b>🔥 Obecna oferta:</b> <b>${current_bid}</b>"
 
 msgid "<b>🔥 BuyNow price:</b> <b>${buy_now}</b>"
-msgstr "<b>🔥 Pirk dabar kaina:</b> <b>${buy_now}</b>"
+msgstr "<b>🔥 Cena Kup Teraz:</b> <b>${buy_now}</b>"
 
 msgid "<b>🔥 Auction Status:</b> <b>{status}</b>"
-msgstr "<b>🔥 Aukciono būsena:</b> <b>{status}</b>"
+msgstr "<b>🔥 Status Aukcji:</b> <b>{status}</b>"
 
 msgid "<b>🔥 Auction Date:</b> <i>{auction_date}</i>"
-msgstr "<b>🔥 Aukciono data:</b> <i>{auction_date}</i>"
+msgstr "<b>🔥 Data Aukcji:</b> <i>{auction_date}</i>"
 
 msgid "<b>❌ No history available</b>"
-msgstr "<b>❌ Nėra istorijos</b>"
+msgstr "<b>❌ Brak dostępnej historii</b>"
 
 msgid ""
 "<b>🔹 History #{num}</b>\n"
@@ -62,12 +62,12 @@ msgid ""
 "☑ <b>Price:</b> ${price}\n"
 "☑ <b>Status:</b> <b>{status}</b>\n"
 msgstr ""
-"<b>🔹 Istorija #{num}</b>\n"
-"☑ <b>Loto ID:</b> <code>{lot_id}</code>\n"
-"☑ <b>Aukcionas:</b> {auction}\n"
+"<b>🔹 Historia #{num}</b>\n"
+"☑ <b>ID Licytacji:</b> <code>{lot_id}</code>\n"
+"☑ <b>Aukcja:</b> {auction}\n"
 "☑ <b>Data:</b> {date}\n"
-"☑ <b>Kaina:</b> ${price}\n"
-"☑ <b>Būsena:</b> <b>{status}</b>\n"
+"☑ <b>Cena:</b> ${price}\n"
+"☑ <b>Status:</b> <b>{status}</b>\n"
 
 msgid ""
 "🛒 Seller Type: {seller_type}\n"
@@ -80,15 +80,15 @@ msgid ""
 "🔧 Transmission: {transmission}\n"
 "🌍 Country: {country}"
 msgstr ""
-"🛒 Pardavėjo tipas: {seller_type}\n"
-"🚗 Cilindrų skaičius: {cylinders}\n"
-"🔑 Raktai: {keys}\n"
-"📏 Rida: {odometer}\n"
-"⚙️ Variklis: {engine} {engine_size}L\n"
-"⛽ Kuras: {fuel}\n"
-"🚙 Varantieji ratai: {drive}\n"
-"🔧 Pavarų dėžė: {transmission}\n"
-"🌍 Šalis: {country}"
+"🛒 Typ sprzedawcy: {seller_type}\n"
+"🚗 Cylindry: {cylinders}\n"
+"🔑 Kluczyki: {keys}\n"
+"📏 Licznik kilometrów: {odometer}\n"
+"⚙️ Silnik: {engine} {engine_size}L\n"
+"⛽ Paliwo: {fuel}\n"
+"🚙 Napęd: {drive}\n"
+"🔧 Skrzynia biegów: {transmission}\n"
+"🌍 Kraj: {country}"
 
 msgid ""
 "<b>👋 Hello!</b>\n"
@@ -103,98 +103,93 @@ msgid ""
 "<a href=\"https://www.facebook.com/groups/417661698833379/\" "
 "target=\"_blank\">👉 Click here to join the group</a>"
 msgstr ""
-"<b>👋 Sveiki!</b>\n"
+"<b>👋 Witaj!</b>\n"
 "\n"
-"🚗 Padėsime jums <b>sutaupyti iki 50%</b> perkant transporto priemonę iš JAV.\n"
-"🛡️ Visas procesas yra <b>saugus, skaidrus</b> ir be paslėptų detalių.\n"
+"🚗 Pomagamy Ci <b>zaoszczędzić nawet do 50%</b> przy zakupie pojazdu z USA.\n"
+"🛡️ Cały proces jest <b>bezpieczny, przejrzysty</b> i wolny od ukrytych kosztów.\n"
 "\n"
-"🔥 <b>Prisijunkite prie sparčiai augančios bendruomenės</b>, kad pirmieji pamatytumėte karščiausius pasiūlymus:\n"
-"<a href=\"https://www.facebook.com/groups/417661698833379/\" target=\"_blank\">👉 Spauskite čia, kad prisijungtumėte</a>"
+"🔥 <b>Dołącz do naszej szybko rosnącej społeczności</b>, aby jako pierwszy zobaczyć najlepsze oferty:\n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" target=\"_blank\">👉 Kliknij tutaj, aby dołączyć do grupy</a>"
 
 msgid "Hi, you admin, you can access admin panel"
-msgstr "Sveikas, tu esi administratorius, gali naudotis administratoriaus skydeliu"
+msgstr "Cześć, jesteś administratorem — masz dostęp do panelu administracyjnego"
 
 msgid "❌ Something went wrong, try again later"
-msgstr "❌ Kažkas nepavyko, bandykite vėliau"
+msgstr "❌ Coś poszło nie tak, spróbuj ponownie później"
 
 msgid "🔍 No more images available."
-msgstr "🔍 Daugiau nuotraukų nėra"
+msgstr "🔍 Brak dodatkowych zdjęć"
 
 msgid "✅ Language successfully changed"
-msgstr "✅ Kalba sėkmingai pakeista"
+msgstr "✅ Język został pomyślnie zmieniony"
 
 msgid "🚘 Enter lot ID or VIN:"
-msgstr "🚘 Įveskite partijos ID arba VIN kodą:"
+msgstr "🚘 Wprowadź ID licytacji lub VIN:"
 
 msgid "⏳ Loading..."
-msgstr "⏳ Įkeliama..."
+msgstr "⏳ Ładowanie..."
 
 msgid "❌ We cant find your lot, try again"
-msgstr "❌ Nepavyko rasti jūsų partijos, bandykite dar kartą"
+msgstr "❌ Nie znaleźliśmy licytacji, spróbuj ponownie"
 
-msgid ""
-"<b>We received 2 lots according to your data, choose below what you "
-"need</b>\n"
-"\n"
-msgstr ""
-"<b>Pagal jūsų duomenis gavome 2 partijas, pasirinkite reikiamą žemiau</b>\n"
-"\n"
+msgid "<b>We received 2 lots according to your data, choose below what you need</b>\n\n"
+msgstr "<b>Znaleźliśmy 2 licytacje według Twoich danych — wybierz jedną z poniższych</b>\n\n"
 
 msgid "🌎 Choose language"
-msgstr "🌎 Pasirinkite kalbą"
+msgstr "🌎 Wybierz język"
 
 msgid "📊 Sales statistics"
-msgstr "📊 Pardavimų statistika"
+msgstr "📊 Statystyki sprzedaży"
 
 msgid "ℹ️ About the car"
-msgstr "ℹ️ Apie automobilį"
+msgstr "ℹ️ O samochodzie"
 
 msgid "🖼 More Photos"
-msgstr "🖼 Daugiau nuotraukų"
+msgstr "🖼 Więcej zdjęć"
 
 msgid "🔗 Open auction"
-msgstr "🔗 Atidaryti aukcioną"
+msgstr "🔗 Otwórz aukcję"
 
 msgid "Cancel ❌"
-msgstr "Atšaukti ❌"
+msgstr "Anuluj ❌"
 
 msgid "English 🇺🇸"
-msgstr "Anglų 🇺🇸"
+msgstr "Angielski 🇺🇸"
 
 msgid "Lithuanian 🇱🇹"
-msgstr "Lietuvių 🇱🇹"
+msgstr "Litewski 🇱🇹"
 
 msgid "Estonian 🇪🇪"
-msgstr "Estų 🇪🇪"
+msgstr "Estoński 🇪🇪"
 
 msgid "Polish 🇵🇱"
-msgstr "Lenkų 🇵🇱"
+msgstr "Polski 🇵🇱"
 
 msgid "Latvian 🇱🇻"
-msgstr "Latvių 🇱🇻"
+msgstr "Łotewski 🇱🇻"
 
 msgid "Russian 🇷🇺"
-msgstr "Rusų 🇷🇺"
+msgstr "Rosyjski 🇷🇺"
 
 msgid "GET REPORT 🦊"
-msgstr "GAUTI ATASKAITĄ 🦊"
+msgstr "POBIERZ RAPORT 🦊"
 
 msgid "TRANSPORT COST CALC. 💸"
-msgstr "TRANSPORTO KAINOS SKAIČIUOKLĖ 💸"
+msgstr "OBLICZ KOSZT TRANSPORTU 💸"
 
 msgid "CHECK LOT 🕵‍♂"
-msgstr "PATIKRINTI PARTIJĄ 🕵‍♂"
+msgstr "SPRAWDŹ LICYTACJĘ 🕵‍♂"
 
 msgid "FIND FOR ME 🕵‍♂"
-msgstr "RASK MAN 🕵‍♂"
+msgstr "ZNAJDŹ DLA MNIE 🕵‍♂"
 
 msgid "HELP ✋"
-msgstr "PAGALBA ✋"
+msgstr "POMOC ✋"
 
 msgid "LANGUAGE 🌍"
-msgstr "KALBA 🌍"
+msgstr "JĘZYK 🌍"
 
 msgid "Select an action"
-msgstr "Pasirinkite veiksmą"
+msgstr "Wybierz akcję"
 
 

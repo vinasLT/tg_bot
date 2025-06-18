@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-16 19:09+0200\n"
+"POT-Creation-Date: 2025-06-18 18:32+0200\n"
 "PO-Revision-Date: 2025-06-15 15:12+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -19,92 +19,171 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: auction_api/utils.py:10
-#, python-brace-format
+msgid "<b>☑ {vehicle_name}</b>"
+msgstr "<b>☑ {vehicle_name}</b>"
+
+msgid "<b>☑ Lot ID:</b> <code>{lot_id}</code>"
+msgstr "<b>☑ Лот ID:</b> <code>{lot_id}</code>"
+
+msgid "<b>☑ VIN:</b> <code>{vin}</code>"
+msgstr "<b>☑ VIN:</b> <code>{vin}</code>"
+
+msgid "<b>☑ Auction:</b> {auction_name}"
+msgstr "<b>☑ Аукцион:</b> {auction_name}"
+
+msgid "<b>☑ Insurance:</b> {insurance}"
+msgstr "<b>☑ Страховка:</b> {insurance}"
+
+msgid "<b>☑ Title:</b> {title}"
+msgstr "<b>☑ Тайтл:</b> {title}"
+
+msgid "<b>🔥 Current bid:</b> <b>${current_bid}</b>"
+msgstr "<b>🔥 Текущая ставка:</b> <b>${current_bid}</b>"
+
+msgid "<b>🔥 BuyNow price:</b> <b>${buy_now}</b>"
+msgstr "<b>🔥 Цена «Купить сейчас»:</b> <b>${buy_now}</b>"
+
+msgid "<b>🔥 Auction Status:</b> <b>{status}</b>"
+msgstr "<b>🔥 Статус аукциона:</b> <b>{status}</b>"
+
+msgid "<b>🔥 Auction Date:</b> <i>{auction_date}</i>"
+msgstr "<b>🔥 Дата аукциона:</b> <i>{auction_date}</i>"
+
+msgid "<b>❌ No history available</b>"
+msgstr "<b>❌ История отсутствует</b>"
+
 msgid ""
-"☑ {vehicle_name}\n"
-"☑ Lot ID: {lot_id}\n"
-"☑ VIN: {vin}\n"
-"{insurance_emoji} Insurance: {insurance}\n"
-"☑ Title: {title}\n"
-"\n"
-"🔥 Current bid: ${current_bid}\n"
-"🔥 Auction Status: {status}\n"
-"🔥 Auction Date: {auction_date}\n"
+"<b>🔹 History #{num}</b>\n"
+"☑ <b>Lot ID:</b> <code>{lot_id}</code>\n"
+"☑ <b>Auction:</b> {auction}\n"
+"☑ <b>Date:</b> {date}\n"
+"☑ <b>Price:</b> ${price}\n"
+"☑ <b>Status:</b> <b>{status}</b>\n"
 msgstr ""
-"☑ {vehicle_name}\n"
-"☑ Лот ID: {lot_id}\n"
-"☑ VIN: {vin}\n"
-"{insurance_emoji} Страховка: {insurance}\n"
-"☑ Тайтл: {title}\n"
-"\n"
-"🔥 Текущая ставка: ${current_bid}\n"
-"🔥 Статус аукциона: {status}\n"
-"🔥 Дата аукциона: {auction_date}\n"
+"<b>🔹 История #{num}</b>\n"
+"☑ <b>Лот ID:</b> <code>{lot_id}</code>\n"
+"☑ <b>Аукцион:</b> {auction}\n"
+"☑ <b>Дата:</b> {date}\n"
+"☑ <b>Цена:</b> ${price}\n"
+"☑ <b>Статус:</b> <b>{status}</b>\n"
 
-
-#: telegram_bot/handlers/commands/start.py:18
 msgid ""
-"Hello! We not only help you save up to 50% when purchasing a vehicle from"
-" the USA,\n"
-"but we also ensure that the process is completely safe, transparent, and "
-"without any hidden details! \n"
-"Join our rapidly growing group where youll be the first to see the "
-"hottest offers: \n"
-"<a href=\"https://www.facebook.com/groups/417661698833379/\" "
-"target=\"_blank\">click here to join</a>."
+"🛒 Seller Type: {seller_type}\n"
+"🚗 Cylinders: {cylinders}\n"
+"🔑 Keys: {keys}\n"
+"📏 Odometer: {odometer}\n"
+"⚙️ Engine: {engine} {engine_size}L\n"
+"⛽ Fuel: {fuel}\n"
+"🚙 Drive: {drive}\n"
+"🔧 Transmission: {transmission}\n"
+"🌍 Country: {country}"
 msgstr ""
-"Здравствуйте! Мы не только помогаем сэкономить до 50% при покупке "
-"автомобиля из США,\n"
-"но также обеспечиваем полную безопасность, прозрачность и отсутствие "
-"скрытых условий!\n"
-"Присоединяйтесь к нашей быстро растущей группе, где вы первыми увидите "
-"лучшие предложения: \n"
-"<a href=\"https://www.facebook.com/groups/417661698833379/\" "
-"target=\"_blank\">нажмите здесь, чтобы присоединиться</a>."
+"🛒 Тип продавца: {seller_type}\n"
+"🚗 Цилиндры: {cylinders}\n"
+"🔑 Ключи: {keys}\n"
+"📏 Пробег: {odometer}\n"
+"⚙️ Двигатель: {engine} {engine_size}L\n"
+"⛽ Топливо: {fuel}\n"
+"🚙 Привод: {drive}\n"
+"🔧 Коробка передач: {transmission}\n"
+"🌍 Страна: {country}"
 
-#: telegram_bot/handlers/commands/start.py:25
+msgid ""
+"<b>👋 Hello!</b>\n"
+"\n"
+"🚗 We help you <b>save up to 50%</b> when purchasing a vehicle from the USA.\n"
+"🛡️ The entire process is <b>safe, transparent</b> and free from hidden details.\n"
+"\n"
+"🔥 <b>Join our fast-growing community</b> to be the first to see the hottest offers:\n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" target=\"_blank\">👉 Click here to join the group</a>"
+msgstr ""
+"<b>👋 Привет!</b>\n"
+"\n"
+"🚗 Мы помогаем <b>сэкономить до 50%</b> при покупке автомобиля из США.\n"
+"🛡️ Весь процесс <b>безопасный, прозрачный</b> и без скрытых условий.\n"
+"\n"
+"🔥 <b>Присоединяйся к нашему быстрорастущему сообществу</b>, чтобы первым узнавать о самых горячих предложениях:\n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" target=\"_blank\">👉 Нажми сюда, чтобы вступить в группу</a>"
+
 msgid "Hi, you admin, you can access admin panel"
-msgstr "Привет, ты админ, у тебя есть доступ к админ-панели"
+msgstr "Привет, ты администратор, у тебя есть доступ к панели администратора"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:18
-#, fuzzy
+msgid "❌ Something went wrong, try again later"
+msgstr "❌ Что-то пошло не так, попробуй позже"
+
+msgid "🔍 No more images available."
+msgstr "🔍 Больше изображений нет"
+
+msgid "✅ Language successfully changed"
+msgstr "✅ Язык успешно изменён"
+
 msgid "🚘 Enter lot ID or VIN:"
-msgstr "Введите номер лота или VIN:"
+msgstr "🚘 Введите номер лота или VIN:"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:26
 msgid "⏳ Loading..."
 msgstr "⏳ Загрузка..."
 
-#: telegram_bot/keyboards/inline/cancel.py:5
+msgid "❌ We cant find your lot, try again"
+msgstr "❌ Не удалось найти ваш лот, попробуйте ещё раз"
+
+msgid "<b>We received 2 lots according to your data, choose below what you need</b>\n\n"
+msgstr "<b>Мы нашли 2 лота по вашему запросу, выберите нужный ниже</b>\n\n"
+
+msgid "🌎 Choose language"
+msgstr "🌎 Выберите язык"
+
+msgid "📊 Sales statistics"
+msgstr "📊 Статистика продаж"
+
+msgid "ℹ️ About the car"
+msgstr "ℹ️ Об автомобиле"
+
+msgid "🖼 More Photos"
+msgstr "🖼 Больше фото"
+
+msgid "🔗 Open auction"
+msgstr "🔗 Открыть аукцион"
+
 msgid "Cancel ❌"
 msgstr "Отмена ❌"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:8
-msgid "Get report 🦊"
-msgstr "Получить отчёт 🦊"
+msgid "English 🇺🇸"
+msgstr "Английский 🇺🇸"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:9
-msgid "Transport cost calc. 💵"
-msgstr "Расчёт доставки 💵"
+msgid "Lithuanian 🇱🇹"
+msgstr "Литовский 🇱🇹"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:12
-msgid "Check lot 🚗"
-msgstr "Проверить лот 🚗"
+msgid "Estonian 🇪🇪"
+msgstr "Эстонский 🇪🇪"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:13
-msgid "Find My 🔍"
-msgstr "Найти моё 🔍"
+msgid "Polish 🇵🇱"
+msgstr "Польский 🇵🇱"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:16
-msgid "Help ✋"
-msgstr "Помощь ✋"
+msgid "Latvian 🇱🇻"
+msgstr "Латышский 🇱🇻"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:17
-msgid "Language 🌎"
-msgstr "Язык 🌎"
+msgid "Russian 🇷🇺"
+msgstr "Русский 🇷🇺"
 
-#: telegram_bot/keyboards/murkup/main_keyboard.py:21
+msgid "GET REPORT 🦊"
+msgstr "ПОЛУЧИТЬ ОТЧЁТ 🦊"
+
+msgid "TRANSPORT COST CALC. 💸"
+msgstr "РАСЧЁТ ДОСТАВКИ 💸"
+
+msgid "CHECK LOT 🕵‍♂"
+msgstr "ПРОВЕРИТЬ ЛОТ 🕵‍♂"
+
+msgid "FIND FOR ME 🕵‍♂"
+msgstr "НАЙТИ ДЛЯ МЕНЯ 🕵‍♂"
+
+msgid "HELP ✋"
+msgstr "ПОМОЩЬ ✋"
+
+msgid "LANGUAGE 🌍"
+msgstr "ЯЗЫК 🌍"
+
 msgid "Select an action"
 msgstr "Выберите действие"
+
 

@@ -1,15 +1,17 @@
 from abc import abstractmethod
-from typing import List, Type
+from typing import Generic, TypeVar, List
 
 from pydantic import BaseModel
 
 import httpx
 
-from auction_api.types import EndpointSchema, BasicLot, BasicHistoryLot, VINorLotIDIn, LotByVINIn
+from auction_api.types import EndpointSchema, BasicLot, BasicHistoryLot, VINorLotIDIn, LotByVINIn, LotByIDIn
 from config import API_SERVICE_URL
 
 
-class AuctionAPIBase:
+R = TypeVar('R', bound=BaseModel)
+
+class AuctionAPIBase(Generic[R]):
     SERVER_URL = API_SERVICE_URL
     def __init__(self):
         self.session = httpx.AsyncClient(timeout=10.0)
@@ -20,7 +22,7 @@ class AuctionAPIBase:
     async def _make_request(self, method: str, url: str, **kwargs) -> httpx.Response:
         return await self.session.request(method, url, **kwargs)
 
-    async def request_with_schema(self, schema: EndpointSchema, data: BaseModel) -> Type[BaseModel] | Type[List[BaseModel]]:
+    async def request_with_schema(self, schema: EndpointSchema, data: BaseModel) -> List[R]:
         payload = data.model_dump(exclude_none=True)
         url = self._build_url(schema.endpoint)
 
@@ -30,20 +32,18 @@ class AuctionAPIBase:
             response = await self._make_request("POST", url, json=payload)
         else:
             raise ValueError(f"Unsupported method: {schema.method}")
-        print(response)
         response.raise_for_status()
 
         response_data = response.json()
-        print(response_data)
 
         return self.process_response(response_data, schema)
 
     @abstractmethod
-    def process_response(self, response_data: dict | list, schema: EndpointSchema) -> Type[BaseModel] | Type[List[BaseModel]]:
+    def process_response(self, response_data: dict | list, schema: EndpointSchema) -> List[R]:
         ...
 
 
-class AuctionApiClient(AuctionAPIBase):
+class AuctionApiClient(AuctionAPIBase[BasicLot]):
     GET_LOT_BY_VIN_OR_ID = EndpointSchema(
         validation_schema=VINorLotIDIn,
         endpoint='cars/',
@@ -54,7 +54,13 @@ class AuctionApiClient(AuctionAPIBase):
     )
     GET_SALE_HISTORY_BY_VIN = EndpointSchema(
         validation_schema=LotByVINIn,
-        endpoint='cars/history/vin',
+        endpoint='cars/history/vin/',
+        method='GET',
+        out_schema_default=BasicHistoryLot,
+    )
+    GET_SALE_HISTORY_BY_ID = EndpointSchema(
+        validation_schema=LotByIDIn,
+        endpoint='cars/history/lot-id/',
         method='GET',
         out_schema_default=BasicHistoryLot,
     )

@@ -1,76 +1,55 @@
-from typing import Union, List, Type
-
 from aiogram import Router, F
-from aiogram.types import CallbackQuery, InputMediaPhoto
-from httpx import HTTPStatusError
+from aiogram.types import CallbackQuery, Message, InputMediaPhoto
 
 from auction_api.auction_api import AuctionApiClient
-from auction_api.types import LotByVINIn, VINorLotIDIn
-from auction_api.utils import get_api_client, serialize_history, get_some_num_of_images
+from auction_api.serializers import serialize_about_car, serialize_history
+from auction_api.types import EndpointSchema
+
+from auction_api.utils import fetch_lot, get_some_num_of_images
 from aiogram.utils.i18n import gettext as _
 
+from telegram_bot.utils.callback_query import parse_callback_data
 
 lot_additional_data_router = Router()
 
-@lot_additional_data_router.callback_query(F.data.startswith('sales_statistics_'))
-async def sales_statistics(query: CallbackQuery):
-    data = query.data.split('_')
-    auction_name = data[-1]
-    vin = data[-2]
-    api = get_api_client()
-    try:
-        response = await api.request_with_schema(AuctionApiClient.GET_SALE_HISTORY_BY_VIN, LotByVINIn(vin=vin, site=auction_name))
-        print(response)
-    except HTTPStatusError:
-        await query.message.reply(_('❌ Something went wrong, try again later'))
+
+
+async def handle_lot_query(query: CallbackQuery, processor, endpoint: EndpointSchema = None):
+    vin_or_id, auction_name = parse_callback_data(query.data)
+    items = await fetch_lot(vin_or_id, auction_name, endpoint=endpoint)
+    if items is None:
+        await query.message.reply(_("❌ Something went wrong, try again later"))
         await query.answer()
         return
+    await processor(query.message, items)
+    await query.answer()
 
-    if isinstance(response, list):
-        for item in response:
-            if item.form_get_type == 'history':
-                print('history')
-                text = serialize_history(item)
-                await query.message.reply(text)
-                await query.answer()
-    else:
-        if response.form_get_type == 'history':
-            text = serialize_history(response)
-            await query.message.reply(text)
-            await query.answer()
+async def about_car_processor(message: Message, items):
+    for item in items:
+        await message.reply(serialize_about_car(item))
 
-@lot_additional_data_router.callback_query(F.data.startswith('more_photos_'))
-async def more_photos(query: CallbackQuery):
-    data = query.data.split('_')
-    auction_name = data[-1]
-    lot_id = data[-2]
-    api = get_api_client()
+async def history_processor(message: Message, items):
+    for item in items:
+        await message.reply(serialize_history(item))
 
-    try:
-        response = await api.request_with_schema(
-            AuctionApiClient.GET_LOT_BY_VIN_OR_ID,
-            VINorLotIDIn(vin_or_lot=lot_id, site=auction_name)
-        )
-    except HTTPStatusError:
-        await query.message.reply(_('❌ Something went wrong, try again later'))
-        await query.answer()
-        return
 
-    items = response if isinstance(response, list) else [response]
-
+async def photos_processor(message: Message, items):
     for item in items:
         images = get_some_num_of_images(item, 11)[1:]
         if not images:
-            await query.message.answer(_('🔍 No more images available.'))
+            await message.answer(_("🔍 No more images available."))
             continue
-
         media_group = [InputMediaPhoto(media=url) for url in images]
-        await query.message.answer_media_group(media=media_group)
+        await message.answer_media_group(media_group)
 
-    await query.answer()
+@lot_additional_data_router.callback_query(F.data.startswith("sales_statistics_"))
+async def sales_statistics(query: CallbackQuery):
+    await handle_lot_query(query, history_processor, AuctionApiClient.GET_SALE_HISTORY_BY_ID)
 
+@lot_additional_data_router.callback_query(F.data.startswith("more_photos_"))
+async def more_photos(query: CallbackQuery):
+    await handle_lot_query(query, photos_processor)
 
-
-
-
-
+@lot_additional_data_router.callback_query(F.data.startswith("about_car_"))
+async def about_car(query: CallbackQuery):
+    await handle_lot_query(query, about_car_processor)
