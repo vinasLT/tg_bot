@@ -104,5 +104,6 @@ class VINorLotIDIn(BaseModel):
     vin_or_lot: str
     site: Optional[Union[int, str]] = Field(default=None)
 
+
 class ChooseLot(LotByIDIn):
     site: Union[int, str]

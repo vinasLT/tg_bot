@@ -1,5 +1,3 @@
-import asyncio
-
 from aiogram import Router, F
 from aiogram.types import CallbackQuery
 from aiogram.utils.i18n import gettext as _
@@ -23,7 +21,7 @@ async def choose_language_callback(query: CallbackQuery):
 
     i18n.ctx_locale.set(language)
 
-    await query.message.edit_reply_markup(reply_markup=choose_language(language))
+    await query.message.edit_text(text=_('🌎 Choose language'), reply_markup=choose_language(language))
     await query.answer()
     await query.message.answer(_('✅ Language successfully changed'), reply_markup=start_keyboard())
 

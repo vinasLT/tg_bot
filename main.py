@@ -17,7 +17,6 @@ from telegram_bot.middelwares import MyI18nMiddleware, i18n
 bot = Bot(token=API_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
 
-
 async def main():
     storage = MemoryStorage()
     dp = Dispatcher(storage=storage)

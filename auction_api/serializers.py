@@ -13,16 +13,16 @@ def serialize_lot(data: Union[BasicLot, BasicHistoryLot]) -> str:
                    f"{data.series.upper() if data.series else 'N/A'}"
 
     lines = [
-        _("<b>☑ {vehicle_name}</b>").format(vehicle_name=vehicle_name),
-        _("<b>☑ Lot ID:</b> <code>{lot_id}</code>").format(lot_id=data.lot_id),
-        _("<b>☑ VIN:</b> <code>{vin}</code>").format(vin=data.vin),
-        _("<b>☑ Auction:</b> {auction_name}").format(
+        _("<b>☑️ {vehicle_name}</b>").format(vehicle_name=vehicle_name),
+        _("<b>☑️ Lot ID:</b> <code>{lot_id}</code>").format(lot_id=data.lot_id),
+        _("<b>☑️ VIN:</b> <code>{vin}</code>").format(vin=data.vin),
+        _("<b>☑️ Auction:</b> {auction_name}").format(
             auction_name=get_serialized_auction(data.base_site)
         ),
-        _("<b>☑ Insurance:</b> {insurance}").format(
+        _("<b>☑️ Insurance:</b> {insurance}").format(
             insurance='Yes' if data.seller_type == 'insurance' else 'No'
         ),
-        _("<b>☑ Title:</b> {title}").format(title=data.document or 'N/A'),
+        _("<b>☑️ Title:</b> {title}").format(title=data.document or 'N/A'),
         "",
         _("<b>🔥 Current bid:</b> <b>${current_bid}</b>").format(
             current_bid=data.current_bid if data.current_bid is not None else 'N/A'
@@ -53,15 +53,13 @@ def serialize_preview_lot(data: Union[BasicLot, BasicHistoryLot]) -> str:
                    f"{data.model.upper() if data.model else 'N/A'}"
 
     return "\n".join([
-        _("<b>☑ {vehicle_name}</b>").format(vehicle_name=vehicle_name),
-        _("<b>☑ Lot ID:</b> <code>{lot_id}</code>").format(lot_id=data.lot_id),
-        _("<b>☑ VIN:</b> <code>{vin}</code>").format(vin=data.vin),
-        _("<b>☑ Auction:</b> {auction_name}").format(
+        _("<b>☑️ {vehicle_name}</b>").format(vehicle_name=vehicle_name),
+        _("<b>☑️ Lot ID:</b> <code>{lot_id}</code>").format(lot_id=data.lot_id),
+        _("<b>☑️ VIN:</b> <code>{vin}</code>").format(vin=data.vin),
+        _("<b>☑️ Auction:</b> {auction_name}").format(
             auction_name=get_serialized_auction(data.base_site)
         ),
     ])
-
-
 
 def serialize_history(data: BasicLot) -> str:
     history = data.sale_history
@@ -69,14 +67,14 @@ def serialize_history(data: BasicLot) -> str:
     if not history and not data.form_get_type == "history":
 
         return _('<b>❌ No history available</b>')
-    for num, i in enumerate(reversed(history)):
+    for num, i in enumerate(history):
         text += _(
             "<b>🔹 History #{num}</b>\n"
-            "☑ <b>Lot ID:</b> <code>{lot_id}</code>\n"
-            "☑ <b>Auction:</b> {auction}\n"
-            "☑ <b>Date:</b> {date}\n"
-            "☑ <b>Price:</b> ${price}\n"
-            "☑ <b>Status:</b> <b>{status}</b>\n"
+            "☑️ <b>Lot ID:</b> <code>{lot_id}</code>\n"
+            "☑️ <b>Auction:</b> {auction}\n"
+            "☑️ <b>Date:</b> {date}\n"
+            "☑️ <b>Price:</b> ${price}\n"
+            "☑️ <b>Status:</b> <b>{status}</b>\n"
         ).format(
             num=num + 1,
             lot_id=i.lot_id,
@@ -87,7 +85,7 @@ def serialize_history(data: BasicLot) -> str:
         )
 
         if num < len(history) - 1:
-            text += "────────────────────────────\n"
+            text += "─────────────────\n"
 
 
     return text
