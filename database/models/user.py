@@ -14,3 +14,4 @@ class User(Base):
     is_admin = Column(Boolean, default=False, nullable=False)
 
     search_history = relationship("UserSearchHistory", back_populates="user")
+    find_for_me = relationship("FindForMe", back_populates="user")
