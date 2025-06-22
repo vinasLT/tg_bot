@@ -6,6 +6,7 @@ from aiogram.utils.i18n import gettext as _
 
 async def get_lot_errors(event: ErrorEvent) -> bool:
     exc = event.exception
+    print(exc)
     if isinstance(exc, (ValidationError, httpx.TransportError, httpx.HTTPStatusError, TelegramBadRequest)):
         message = getattr(event.update, "message", None)
         print(message)

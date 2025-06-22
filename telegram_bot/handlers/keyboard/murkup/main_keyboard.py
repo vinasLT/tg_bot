@@ -9,13 +9,13 @@ from database.crud.user import UserService
 from database.crud.user_search_history import UserSearchHistoryService
 from telegram_bot.handlers.errors.get_lot import get_lot_errors
 from telegram_bot.keyboards.inline.additional_lot_data import lot_inline_keyboard
+from telegram_bot.keyboards.inline.calculator_link import calculator_link
 from telegram_bot.keyboards.inline.cancel import cancel_keyboard
 from telegram_bot.keyboards.inline.choose_language import choose_language
 from telegram_bot.keyboards.inline.choose_one_lot import choose_one_lot
 from telegram_bot.states.start_keyboard import StartKeyboardStates
 from aiogram.utils.i18n import lazy_gettext as __
 from aiogram.utils.i18n import gettext as _
-
 
 start_keyboard_handler = Router()
 
@@ -66,7 +66,16 @@ async def process_language(message: Message):
         await message.answer(_('🌎 Choose language'), reply_markup=choose_language(user.language))
 
 
+@start_keyboard_handler.message(F.text == __('TRANSPORT COST CALC. 💸'))
+async def transport_calculator(message: Message):
+    await message.answer(_('💸 Click on the button below to open the calculator'), reply_markup=calculator_link())
 
+@start_keyboard_handler.message(F.text == __('HELP ✋'))
+async def transport_calculator(message: Message):
+    await message.answer(_('<b>ℹ Help:</b>\n'
+                           '✉ My email: <b>hvjlogistic@gmail.com</b>\n'
+                           '📞 My WhatsApp/Viber/Telegram/Signal: <b>+37062964425</b>\n'
+                           ))
 
 
 

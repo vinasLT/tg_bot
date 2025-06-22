@@ -43,6 +43,9 @@ def serialize_lot(data: Union[BasicLot, BasicHistoryLot]) -> str:
         _("<b>🔥 Auction Date:</b> <i>{auction_date}</i>").format(
             auction_date=data.auction_date.strftime('%m/%d/%Y %H:%M') if data.auction_date is not None else 'N/A'
         ),
+        _("<b>🔥 Auction Location:</b> <i>{auction_location}</i>").format(
+            auction_location=data.location if data.location is not None else 'N/A'
+        ),
     ])
 
     return "\n".join(lines)
@@ -105,7 +108,10 @@ def serialize_about_car(data: Union[BasicLot, BasicHistoryLot]) -> str:
         seller_type=data.seller_type.upper() if data.seller_type else 'N/A',
         cylinders=data.cylinders or 'N/A',
         keys=data.keys or 'N/A',
-        odometer=f"{data.odometer:,}" if data.odometer is not None else 'N/A',
+        odometer=(
+            f"{data.odometer:,} mi ({data.odometer * 1.60934:,.0f} km)"
+            if data.odometer is not None else "N/A"
+        ),
         engine=data.engine or 'N/A',
         engine_size=f"{data.engine_size:.1f}" if data.engine_size is not None else 'N/A',
         fuel=data.fuel or 'N/A',

@@ -1,5 +1,5 @@
 import logging
-from typing import Optional
+from typing import Optional, List
 
 from sqlalchemy import select
 
@@ -24,3 +24,10 @@ class UserService(BaseService[User, UserCreate, UserUpdate]):
             select(User).where(User.telegram_id == telegram_id)
         )
         return result.scalars().first()
+
+    async def get_admins(self)-> List[User]:
+        result = await self.session.execute(
+            select(User).where(User.is_admin == True)
+        )
+        return result.scalars().all()
+
