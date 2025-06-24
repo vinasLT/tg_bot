@@ -1,8 +1,8 @@
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, InputMediaPhoto
 
-from auction_api.serializers import serialize_lot
-from auction_api.types import BasicLot
+from external_apis.auction_api import serialize_lot
+from external_apis.auction_api import BasicLot
 from telegram_bot.keyboards.inline.find_for_me import confirm_keyboard
 from telegram_bot.states.find_for_me import FindForMeStates
 from aiogram.utils.i18n import gettext as _

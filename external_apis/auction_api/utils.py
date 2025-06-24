@@ -1,6 +1,6 @@
 from typing import Union
 
-from auction_api.types import BasicLot, BasicHistoryLot
+from external_apis.auction_api.types import BasicLot, BasicHistoryLot
 
 
 def get_some_num_of_images(data: Union[BasicLot, BasicHistoryLot], num:int)-> list:

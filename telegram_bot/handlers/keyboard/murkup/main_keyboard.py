@@ -2,15 +2,16 @@ from aiogram import Router, F
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, InputMediaPhoto
 
-from auction_api.auction_api import AuctionAPI
-from auction_api.serializers import serialize_lot, serialize_preview_lot
-from auction_api.types import VINorLotIDIn
+from external_apis.auction_api import AuctionAPI
+from external_apis.auction_api import serialize_lot, serialize_preview_lot
+from external_apis.auction_api import VINorLotIDIn
 from database.crud.user import UserService
 from database.crud.user_search_history import UserSearchHistoryService
 from telegram_bot.handlers.errors.get_lot import get_lot_errors
 from telegram_bot.keyboards.inline.additional_lot_data import lot_inline_keyboard
 from telegram_bot.keyboards.inline.calculator_link import calculator_link
 from telegram_bot.keyboards.inline.cancel import cancel_keyboard
+from telegram_bot.keyboards.inline.carfax import carfax
 from telegram_bot.keyboards.inline.choose_language import choose_language
 from telegram_bot.keyboards.inline.choose_one_lot import choose_one_lot
 from telegram_bot.states.start_keyboard import StartKeyboardStates
@@ -76,6 +77,10 @@ async def transport_calculator(message: Message):
                            '✉ My email: <b>hvjlogistic@gmail.com</b>\n'
                            '📞 My WhatsApp/Viber/Telegram/Signal: <b>+37062964425</b>\n'
                            ))
+
+@start_keyboard_handler.message(F.text == __('GET REPORT 🦊'))
+async def get_carfax(message: Message, state: FSMContext):
+    await message.answer(_('You can buy a detailed report about the car (🦊 Carfax)'), reply_markup=carfax())
 
 
 

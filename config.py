@@ -7,7 +7,9 @@ load_dotenv()
 API_SERVICE_URL=os.getenv('API_SERVICE_URL')
 API_BOT_TOKEN=os.getenv('API_BOT_TOKEN')
 SECRET_ADMIN_KEY=os.getenv('SECRET_ADMIN_KEY')
+CARFAX_SERVICE_URL=os.getenv('CARFAX_SERVICE_URL')
 
+SOURCE = 'telegram_bot'
 
 DB_HOST = os.getenv("BOT_DB_HOST")
 DB_PORT = os.getenv("BOT_DB_PORT")

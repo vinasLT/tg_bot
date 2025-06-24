@@ -1,7 +1,7 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.i18n import gettext as _
 
-from auction_api.utils import generate_link_to_auction
+from external_apis.auction_api.utils import generate_link_to_auction
 
 
 def lot_inline_keyboard(lot_id:int, auction_name:str):

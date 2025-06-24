@@ -2,7 +2,7 @@ from typing import List
 
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-from auction_api.types import BasicLot
+from external_apis.auction_api import BasicLot
 
 def choose_one_lot(lots: List[BasicLot]) -> InlineKeyboardMarkup:
     buttons: List[InlineKeyboardButton] = []

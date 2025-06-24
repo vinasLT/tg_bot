@@ -1,19 +1,12 @@
 import asyncio
 import logging
+import re
 from dataclasses import dataclass
-from typing import Any, Generic, List, Optional, Sequence, Type, TypeVar
+from typing import Type, Optional, Generic, Any, Sequence, List, TypeVar
 
 import httpx
 from pydantic import BaseModel, ValidationError
 
-from auction_api.types import (
-    BasicLot,
-    BasicHistoryLot,
-    VINorLotIDIn,
-    LotByVINIn,
-    LotByIDIn,
-    CurrentBidOut,
-)
 from config import API_SERVICE_URL
 
 R = TypeVar("R", bound=BaseModel)
@@ -67,11 +60,17 @@ class BaseAPIClient:
         params: Optional[dict[str, Any]] = None,
         json: Optional[dict[str, Any]] = None,
     ) -> httpx.Response:
+        print(params)
+        print(json)
+        print(path)
         assert self._client is not None
         attempt = 0
         while True:
             try:
                 response = await self._client.request(method, path, params=params, json=json)
+                print(response.url)
+                print(response.text)
+
                 response.raise_for_status()
                 return response
             except (httpx.TransportError, httpx.HTTPStatusError) as exc:
@@ -87,13 +86,24 @@ class BaseAPIClient:
     def _is_history(item: dict[str, Any]) -> bool:
         return item.get("form_get_type") == "history"
 
+    @staticmethod
+    def _format_path(path: str, data: dict[str, Any]) -> str:
+        def replace(match: re.Match) -> str:
+            key = match.group(1)
+            if key not in data:
+                raise ValueError(f"Missing path parameter: {key}")
+            return str(data.pop(key))
+        return re.sub(r"{(\w+)}", replace, path)
+
     async def request(self, endpoint: Endpoint[R], payload: BaseModel) -> List[R] | R:
         data = payload.model_dump(exclude_none=True)
 
+        path = self._format_path(endpoint.path, data)
+
         if endpoint.method.upper() == "GET":
-            response = await self._send("GET", endpoint.path, params=data)
+            response = await self._send("GET", path, params=data)
         elif endpoint.method.upper() == "POST":
-            response = await self._send("POST", endpoint.path, json=data)
+            response = await self._send("POST", path, json=data)
         else:
             raise ValueError(f"Unsupported HTTP method: {endpoint.method}")
 
@@ -125,48 +135,3 @@ class BaseAPIClient:
         except ValidationError as err:
             logger.error("Validation failed for %s %s: %s", endpoint.method, endpoint.path, err)
             raise
-
-class AuctionAPI(BaseAPIClient):
-    _GET_LOT_BY_VIN_OR_ID: Endpoint[BasicLot] = Endpoint(
-        path="/cars/",
-        method="GET",
-        request_model=VINorLotIDIn,
-        response_model=BasicLot,
-        response_model_history=BasicHistoryLot,
-        is_list=True,
-    )
-
-    _GET_CURRENT_BID: Endpoint[CurrentBidOut] = Endpoint(
-        path="/cars/current-bid/",
-        method="GET",
-        request_model=LotByIDIn,
-        response_model=CurrentBidOut,
-    )
-
-    _GET_SALE_HISTORY_BY_VIN: Endpoint[BasicHistoryLot] = Endpoint(
-        path="/cars/history/vin/",
-        method="GET",
-        request_model=LotByVINIn,
-        response_model=BasicHistoryLot,
-        is_list=True,
-    )
-
-    _GET_SALE_HISTORY_BY_ID: Endpoint[BasicHistoryLot] = Endpoint(
-        path="/cars/history/lot-id/",
-        method="GET",
-        request_model=LotByIDIn,
-        response_model=BasicHistoryLot,
-        is_list=True,
-    )
-
-    async def get_lot_by_vin_or_id(self, params: VINorLotIDIn) -> List[BasicLot]:
-        return await self.request(self._GET_LOT_BY_VIN_OR_ID, params)
-
-    async def get_current_bid(self, params: LotByIDIn) -> CurrentBidOut:
-        return await self.request(self._GET_CURRENT_BID, params)
-
-    async def get_sale_history_by_vin(self, params: LotByVINIn) -> List[BasicHistoryLot]:
-        return await self.request(self._GET_SALE_HISTORY_BY_VIN, params)
-
-    async def get_sale_history_by_id(self, params: LotByIDIn) -> List[BasicHistoryLot]:
-        return await self.request(self._GET_SALE_HISTORY_BY_ID, params)

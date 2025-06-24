@@ -5,8 +5,8 @@ from aiogram.types import Message
 from aiogram.utils.i18n import lazy_gettext as __
 from aiogram.utils.i18n import gettext as _
 
-from auction_api.auction_api import AuctionAPI
-from auction_api.types import VINorLotIDIn
+from external_apis.auction_api import AuctionAPI
+from external_apis.auction_api import VINorLotIDIn
 from database.crud.find_for_me import FindForMeService
 from database.crud.user import UserService
 from telegram_bot.handlers.keyboard.inline.find_for_me import ask_confirmation

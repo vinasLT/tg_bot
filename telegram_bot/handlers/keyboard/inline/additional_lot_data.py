@@ -1,11 +1,11 @@
 from aiogram import Router, F
 from aiogram.types import CallbackQuery, InputMediaPhoto
 
-from auction_api.auction_api import AuctionAPI
-from auction_api.serializers import serialize_about_car, serialize_history
-from auction_api.types import LotByIDIn, VINorLotIDIn
+from external_apis.auction_api.auction_api import AuctionAPI
+from external_apis.auction_api.serializers import serialize_about_car, serialize_history
+from external_apis.auction_api.types import LotByIDIn, VINorLotIDIn
 
-from auction_api.utils import get_some_num_of_images
+from external_apis.auction_api.utils import get_some_num_of_images
 from aiogram.utils.i18n import gettext as _
 
 from telegram_bot.utils.callback_query import parse_callback_data

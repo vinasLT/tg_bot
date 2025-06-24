@@ -1,6 +1,6 @@
 from typing import Union
 
-from auction_api.types import BasicLot, BasicHistoryLot
+from external_apis.auction_api.types import BasicLot, BasicHistoryLot
 from aiogram.utils.i18n import gettext as _
 
 def get_serialized_auction(base_site:str) -> str:
