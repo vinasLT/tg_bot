@@ -21,4 +21,6 @@ RUN poetry install --no-root
 
 COPY . /app
 
+RUN chmod +x /app/entrypoint.sh
+
 CMD ["python", "main.py"]
