@@ -18,7 +18,7 @@ start = Router()
 async def start_handler(message: Message, command: CommandObject):
     telegram_id = message.from_user.id
     args = command.args
-    if args.startswith('success_carfax_payment_'):
+    if args and args.startswith('success_carfax_payment_'):
         vin = args.split('_')[-1]
         async with CarfaxAPI() as api:
             carfax = await api.get_carfax_by_vin(RequestCarfaxVin(user_external_id=str(telegram_id), vin=vin))
