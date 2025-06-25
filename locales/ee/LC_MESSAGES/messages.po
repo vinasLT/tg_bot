@@ -7,67 +7,99 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-18 18:32+0200\n"
-"PO-Revision-Date: 2025-06-18 18:31+0200\n"
+"POT-Creation-Date: 2025-06-25 17:53+0200\n"
+"PO-Revision-Date: 2025-06-25 18:00+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ee\n"
-"Language-Team: ee <LL@li.org>\n"
+"Language: et\n"
+"Language-Team: Estonian <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-#: auction_api/serializers.py:16 auction_api/serializers.py:56
+#: external_apis/auction_api/serializers.py:16
+#: external_apis/auction_api/serializers.py:59
 #, python-brace-format
-msgid "<b>☑ {vehicle_name}</b>"
-msgstr "<b>☑ {vehicle_name}</b>"
+msgid "<b>☑️ {vehicle_name}</b>"
+msgstr "<b>☑️ {vehicle_name}</b>"
 
-msgid "<b>☑ Lot ID:</b> <code>{lot_id}</code>"
-msgstr "<b>☑ Partii ID:</b> <code>{lot_id}</code>"
+#: external_apis/auction_api/serializers.py:17
+#: external_apis/auction_api/serializers.py:60
+#, python-brace-format
+msgid "<b>☑️ Lot ID:</b> <code>{lot_id}</code>"
+msgstr "<b>☑️ Oksjoninumber:</b> <code>{lot_id}</code>"
 
-msgid "<b>☑ VIN:</b> <code>{vin}</code>"
-msgstr "<b>☑ VIN:</b> <code>{vin}</code>"
+#: external_apis/auction_api/serializers.py:18
+#: external_apis/auction_api/serializers.py:61
+#, python-brace-format
+msgid "<b>☑️ VIN:</b> <code>{vin}</code>"
+msgstr "<b>☑️ VIN:</b> <code>{vin}</code>"
 
-msgid "<b>☑ Auction:</b> {auction_name}"
-msgstr "<b>☑ Oksjon:</b> {auction_name}"
+#: external_apis/auction_api/serializers.py:19
+#: external_apis/auction_api/serializers.py:62
+#, python-brace-format
+msgid "<b>☑️ Auction:</b> {auction_name}"
+msgstr "<b>☑️ Oksjon:</b> {auction_name}"
 
-msgid "<b>☑ Insurance:</b> {insurance}"
-msgstr "<b>☑ Kindlustus:</b> {insurance}"
+#: external_apis/auction_api/serializers.py:22
+#, python-brace-format
+msgid "<b>☑️ Insurance:</b> {insurance}"
+msgstr "<b>☑️ Kindlustus:</b> {insurance}"
 
-msgid "<b>☑ Title:</b> {title}"
-msgstr "<b>☑ Tiitel:</b> {title}"
+#: external_apis/auction_api/serializers.py:25
+#, python-brace-format
+msgid "<b>☑️ Title:</b> {title}"
+msgstr "<b>☑️ Pealkiri:</b> {title}"
 
+#: external_apis/auction_api/serializers.py:27
+#, python-brace-format
 msgid "<b>🔥 Current bid:</b> <b>${current_bid}</b>"
-msgstr "<b>🔥 Praegune pakkumine:</b> <b>${current_bid}</b>"
+msgstr "<b>🔥 Hetke pakkumine:</b> <b>${current_bid}</b>"
 
+#: external_apis/auction_api/serializers.py:34
+#, python-brace-format
 msgid "<b>🔥 BuyNow price:</b> <b>${buy_now}</b>"
-msgstr "<b>🔥 OstaKohe hind:</b> <b>${buy_now}</b>"
+msgstr "<b>🔥 „Osta kohe“ hind:</b> <b>${buy_now}</b>"
 
+#: external_apis/auction_api/serializers.py:40
+#, python-brace-format
 msgid "<b>🔥 Auction Status:</b> <b>{status}</b>"
 msgstr "<b>🔥 Oksjoni staatus:</b> <b>{status}</b>"
 
+#: external_apis/auction_api/serializers.py:43
+#, python-brace-format
 msgid "<b>🔥 Auction Date:</b> <i>{auction_date}</i>"
 msgstr "<b>🔥 Oksjoni kuupäev:</b> <i>{auction_date}</i>"
 
+#: external_apis/auction_api/serializers.py:46
+#, python-brace-format
+msgid "<b>🔥 Auction Location:</b> <i>{auction_location}</i>"
+msgstr "<b>🔥 Oksjoni asukoht:</b> <i>{auction_location}</i>"
+
+#: external_apis/auction_api/serializers.py:72
 msgid "<b>❌ No history available</b>"
 msgstr "<b>❌ Ajalugu pole saadaval</b>"
 
+#: external_apis/auction_api/serializers.py:75
+#, python-brace-format
 msgid ""
 "<b>🔹 History #{num}</b>\n"
-"☑ <b>Lot ID:</b> <code>{lot_id}</code>\n"
-"☑ <b>Auction:</b> {auction}\n"
-"☑ <b>Date:</b> {date}\n"
-"☑ <b>Price:</b> ${price}\n"
-"☑ <b>Status:</b> <b>{status}</b>\n"
+"☑️ <b>Lot ID:</b> <code>{lot_id}</code>\n"
+"☑️ <b>Auction:</b> {auction}\n"
+"☑️ <b>Date:</b> {date}\n"
+"☑️ <b>Price:</b> ${price}\n"
+"☑️ <b>Status:</b> <b>{status}</b>\n"
 msgstr ""
 "<b>🔹 Ajalugu #{num}</b>\n"
-"☑ <b>Partii ID:</b> <code>{lot_id}</code>\n"
-"☑ <b>Oksjon:</b> {auction}\n"
-"☑ <b>Kuupäev:</b> {date}\n"
-"☑ <b>Hind:</b> ${price}\n"
-"☑ <b>Staatus:</b> <b>{status}</b>\n"
+"☑️ <b>Oksjoninumber:</b> <code>{lot_id}</code>\n"
+"☑️ <b>Oksjon:</b> {auction}\n"
+"☑️ <b>Kuupäev:</b> {date}\n"
+"☑️ <b>Hind:</b> ${price}\n"
+"☑️ <b>Staatus:</b> <b>{status}</b>\n"
 
+#: external_apis/auction_api/serializers.py:98
+#, python-brace-format
 msgid ""
 "🛒 Seller Type: {seller_type}\n"
 "🚗 Cylinders: {cylinders}\n"
@@ -82,13 +114,33 @@ msgstr ""
 "🛒 Müüja tüüp: {seller_type}\n"
 "🚗 Silindrid: {cylinders}\n"
 "🔑 Võtmed: {keys}\n"
-"📏 Odomeeter: {odometer}\n"
+"📏 Odometer: {odometer}\n"
 "⚙️ Mootor: {engine} {engine_size}L\n"
 "⛽ Kütus: {fuel}\n"
-"🚙 Vedav sild: {drive}\n"
+"🚙 Veoskeem: {drive}\n"
 "🔧 Käigukast: {transmission}\n"
 "🌍 Riik: {country}"
 
+#: external_apis/carfax_api/serializers.py:5
+#, python-brace-format
+msgid ""
+"🦊 CarFax:\n"
+"🚘 VIN: {vin}\n"
+"📊 Status: {status}\n"
+msgstr ""
+"🦊 CarFax:\n"
+"🚘 VIN: {vin}\n"
+"📊 Staatus: {status}\n"
+
+#: telegram_bot/handlers/commands/admin.py:17
+msgid "Use buttons below"
+msgstr "Kasuta allolevaid nuppe"
+
+#: telegram_bot/handlers/commands/admin.py:19
+msgid "Access denied"
+msgstr "Juurdepääs keelatud"
+
+#: telegram_bot/handlers/commands/start.py:33
 msgid ""
 "<b>👋 Hello!</b>\n"
 "\n"
@@ -104,96 +156,393 @@ msgid ""
 msgstr ""
 "<b>👋 Tere!</b>\n"
 "\n"
-"🚗 Aitame sul <b>säästa kuni 50%</b> Ameerikast auto ostmisel.\n"
-"🛡️ Kogu protsess on <b>turvaline, läbipaistev</b> ja ilma peidetud detailideta.\n"
+"🚗 Aitame sul <b>säästa kuni 50%</b> sõiduki ostmisel USA-st.\n"
+"🛡️ Kogu protsess on <b>turvaline, läbipaistev</b> ja ilma varjatud "
+"kuludeta.\n"
 "\n"
-"🔥 <b>Liitu meie kiiresti kasvava kogukonnaga</b> ja näe kuumimaid pakkumisi esimesena:\n"
-"<a href=\"https://www.facebook.com/groups/417661698833379/\" target=\"_blank\">👉 Kliki siia, et liituda</a>"
+"🔥 <b>Liitu meie kiiresti kasvava kogukonnaga</b>, et olla esimene, "
+"kellele kuumimad pakkumised nähtavale ilmuvad:\n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" "
+"target=\"_blank\">👉 Liitu grupiga</a>"
 
-msgid "Hi, you admin, you can access admin panel"
-msgstr "Tere, oled administraator, saad kasutada administraatori paneeli"
+#: telegram_bot/handlers/commands/start.py:43
+#: telegram_bot/handlers/commands/start.py:54
+msgid "Hi, you are now admin! Access admin panel using this command - /admin"
+msgstr "Tere, sa oled nüüd admin! Juurdepääs admin-paneelile käsuga – /admin"
 
-msgid "❌ Something went wrong, try again later"
-msgstr "❌ Midagi läks valesti, proovi hiljem uuesti"
+#: telegram_bot/handlers/commands/start.py:46
+msgid "Hi, you admin, you can access admin panel using this command - /admin"
+msgstr "Tere, admin, saad admin-paneelile ligi käsuga – /admin"
 
+#: telegram_bot/handlers/errors/get_lot.py:14
+msgid "❌ We cant find your lot, try again"
+msgstr "❌ Me ei leia sinu oksjoninumbrit, proovi uuesti"
+
+#: telegram_bot/handlers/keyboard/inline/additional_lot_data.py:35
 msgid "🔍 No more images available."
 msgstr "🔍 Rohkem pilte pole saadaval."
 
+#: telegram_bot/handlers/keyboard/inline/carfax.py:27
+msgid "🚘 Enter the VIN of the vehicle for which you want to purchase a report:"
+msgstr "🚘 Sisesta sõiduki VIN, mille kohta soovid raportit osta:"
+
+#: telegram_bot/handlers/keyboard/inline/carfax.py:37
+msgid "❌ You don't have any purchased CarFax"
+msgstr "❌ Sul pole ühtegi ostetud CarFax-raportit"
+
+#: telegram_bot/handlers/keyboard/inline/carfax.py:54
+msgid "🔄 Checking records..."
+msgstr "🔄 Kontrollin andmeid..."
+
+#: telegram_bot/handlers/keyboard/inline/carfax.py:65
+msgid "🔄 Retrieving checkout link..."
+msgstr "🔄 Saadan makselinki..."
+
+#: telegram_bot/handlers/keyboard/inline/carfax.py:77
+msgid "Pay & Check below:"
+msgstr "Maksa & kontrolli all:"
+
+#: telegram_bot/handlers/keyboard/inline/choose_language.py:24
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:67
+msgid "🌎 Choose language"
+msgstr "🌎 Vali keel"
+
+#: telegram_bot/handlers/keyboard/inline/choose_language.py:26
 msgid "✅ Language successfully changed"
 msgstr "✅ Keel edukalt muudetud"
 
-msgid "🚘 Enter lot ID or VIN:"
-msgstr "🚘 Sisesta partii ID või VIN:"
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:28
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:85
+msgid "✅ You already respond to this request!"
+msgstr "✅ Sa oled sellele päringule juba vastanud!"
 
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:33
+msgid "🚘 Enter lot ID"
+msgstr "🚘 Sisesta oksjoninumber"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:39
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:23
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:34
 msgid "⏳ Loading..."
-msgstr "⏳ Laadimine..."
+msgstr "⏳ Laadin..."
 
-msgid "❌ We cant find your lot, try again"
-msgstr "❌ Ei leia partiid, proovi uuesti"
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:72
+msgid ""
+"👋 <b>Hey, someone from our team answered your request, see what we have "
+"found for you!</b>"
+msgstr ""
+"👋 <b>Tere, meie meeskonna liige vastas su päringule, vaata, mida "
+"leidsime!</b>"
 
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:83
+msgid "✅ Successfully sent to user!"
+msgstr "✅ Edukalt kasutajale saadetud!"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:97
+msgid "🚘 Write the make:"
+msgstr "🚘 Sisesta mark:"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:111
+msgid "✅ Your request has been saved!"
+msgstr "✅ Sinu päring on salvestatud!"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:117
+msgid ""
+"\n"
+"<b>NEW FIND FOR ME REQUEST RECIEVED!</b>"
+msgstr ""
+"\n"
+"<b>UUS „Leia minu jaoks“ PÄRING SAADUD!</b>"
+
+#: telegram_bot/handlers/keyboard/murkup/admin.py:50
+#, python-brace-format
+msgid ""
+"Send this message to the user you want to promote:\n"
+"Become admin - <a href='{link}'>click here</a>"
+msgstr ""
+"Saa see sõnum kasutajale, keda soovid promoda:\n"
+"Saabu adminiks – <a href='{link}'>klõpsa siia</a>"
+
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:37
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:46
+msgid "❌ You entered an invalid VIN number, try again"
+msgstr "❌ Sisestasid vale VIN-koodi, proovi uuesti"
+
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:55
+#, python-brace-format
+msgid ""
+"Check again, is this the correct VIN code?\n"
+"VIN: <b>{vin}</b>"
+msgstr ""
+"Kontrolli uuesti, kas see on õige VIN-kood?\n"
+"VIN: <b>{vin}</b>"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:32
+msgid "We found two lots with same lot ID, choose auction:"
+msgstr "Leidsime kaks sama oksjoninumbriga partiid, vali oksjon:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:41
+msgid ""
+"You have already submitted a 'Find for me' request. Please wait for a "
+"response — once we reply, you'll be able to send a new request."
+msgstr ""
+"Oled juba saatnud „Leia minu jaoks“ päringu. Palun oota vastust — kui "
+"vastame, saad saata uue päringu."
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:46
+msgid ""
+"🔍 <b>How \"Find for Me\" works:</b>\n"
+"<b>1.</b> You fill out a short form with:\n"
+"– <b>Make</b>\n"
+"– <b>Model</b>\n"
+"– <b>Year</b>\n"
+"– <b>Budget</b>\n"
+"<b>2.</b> Our team searches for matching vehicles.\n"
+"<b>3.</b> If you like the suggestion, <b>we help you buy and ship it!</b>"
+msgstr ""
+"🔍 <b>Kuidas „Leia minu jaoks“ töötab:</b>\n"
+"<b>1.</b> Täidad lühikese vormi:\n"
+"– <b>Mark</b>\n"
+"– <b>Mudel</b>\n"
+"– <b>Aasta</b>\n"
+"– <b>Eelarve</b>\n"
+"<b>2.</b> Meie meeskond otsib sobivaid sõidukeid.\n"
+"<b>3.</b> Kui sulle soovitus meeldib, <b>aitame sul selle osta ja "
+"tarnida!</b>"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:61
+msgid "❌ Make must contain only letters. Try again:"
+msgstr "❌ Mark peab sisaldama ainult tähti. Proovi uuesti:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:64
+msgid "📦 Write the model:"
+msgstr "📦 Sisesta mudel:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:72
+msgid "❌ Model must contain letters or numbers. Try again:"
+msgstr "❌ Mudel peab sisaldama tähti või numbreid. Proovi uuesti:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:75
+msgid "📅 Year from (e.g. 2015):"
+msgstr "📅 Aasta alates (nt 2015):"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:82
+msgid "❌ Invalid year. Enter a number like 2015:"
+msgstr "❌ Vale aasta. Sisesta number nagu 2015:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:85
+msgid "📅 Year to (e.g. 2020):"
+msgstr "📅 Aasta kuni (nt 2020):"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:92
+msgid "❌ Invalid year. Enter a number like 2020:"
+msgstr "❌ Vale aasta. Sisesta number nagu 2020:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:95
+msgid "💰 Budget from (USD):"
+msgstr "💰 Eelarve alates (USD):"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:102
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:112
+msgid "❌ Budget must be a number. Try again:"
+msgstr "❌ Eelarve peab olema number. Proovi uuesti:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:105
+msgid "💰 Budget to (USD):"
+msgstr "💰 Eelarve kuni (USD):"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:116
+msgid ""
+"📝 Want to tell us anything specific?\n"
+"Describe it or press skip:"
+msgstr ""
+"📝 Kas soovid midagi täpsustada?\n"
+"Kirjeldage või vajutage „Jäta vahele\":"
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:27
+msgid "🚘 Enter lot ID or VIN:"
+msgstr "🚘 Sisesta oksjoninumber või VIN:"
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:40
 msgid ""
 "<b>We received 2 lots according to your data, choose below what you "
 "need</b>\n"
 "\n"
 msgstr ""
-"<b>Sinu andmete põhjal leidsime 2 partiid, vali allpool vajalik</b>\n"
-"\n"
+"<b>Leidsime sinu andmete alusel 2 partiid, vali allolevalt, mida "
+"vajad</b>\n"
 
-msgid "🌎 Choose language"
-msgstr "🌎 Vali keel"
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:72
+msgid "💸 Click on the button below to open the calculator"
+msgstr "💸 Klõpsa allolevale nupule, et avada kalkulaator"
 
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:76
+msgid ""
+"<b>ℹ Help:</b>\n"
+"✉ My email: <b>hvjlogistic@gmail.com</b>\n"
+"📞 My WhatsApp/Viber/Telegram/Signal: <b>+37062964425</b>\n"
+msgstr ""
+"<b>ℹ Abi:</b>\n"
+"✉ Minu e-post: <b>hvjlogistic@gmail.com</b>\n"
+"📞 Minu WhatsApp/Viber/Telegram/Signal: <b>+37062964425</b>\n"
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:83
+msgid "You can buy a detailed report about the car (🦊 Carfax)"
+msgstr "Saad osta detailse raporti sõiduki kohta (🦊 Carfax)"
+
+#: telegram_bot/keyboards/inline/additional_lot_data.py:11
 msgid "📊 Sales statistics"
-msgstr "📊 Müügistatistika"
+msgstr "📊 Müügi statistika"
 
+#: telegram_bot/keyboards/inline/additional_lot_data.py:14
 msgid "ℹ️ About the car"
-msgstr "ℹ️ Auto kohta"
+msgstr "ℹ️ Sõiduki kohta"
 
+#: telegram_bot/keyboards/inline/additional_lot_data.py:17
 msgid "🖼 More Photos"
 msgstr "🖼 Rohkem fotosid"
 
+#: telegram_bot/keyboards/inline/additional_lot_data.py:20
 msgid "🔗 Open auction"
 msgstr "🔗 Ava oksjon"
 
+#: telegram_bot/keyboards/inline/calculator_link.py:9
+msgid "💸 Open calculator"
+msgstr "💸 Ava kalkulaator"
+
+#: telegram_bot/keyboards/inline/cancel.py:5
 msgid "Cancel ❌"
 msgstr "Tühista ❌"
 
+#: telegram_bot/keyboards/inline/carfax.py:12
+msgid "🦊 See my CarFaxes"
+msgstr "🦊 Minu CarFax-raportid"
+
+#: telegram_bot/keyboards/inline/carfax.py:13
+msgid "💳 Buy CarFax (2€)"
+msgstr "💳 Osta CarFax (2€)"
+
+#: telegram_bot/keyboards/inline/carfax.py:20
+msgid "🔗 Open CarFax"
+msgstr "🔗 Ava CarFax"
+
+#: telegram_bot/keyboards/inline/carfax.py:22
+#: telegram_bot/keyboards/inline/carfax.py:33
+msgid "💳 Buy"
+msgstr "💳 Osta"
+
+#: telegram_bot/keyboards/inline/carfax.py:41
+msgid "💳 Pay (2€)"
+msgstr "💳 Maksa (2€)"
+
+#: telegram_bot/keyboards/inline/carfax.py:42
+msgid "☑️ Check"
+msgstr "☑️ Kontrolli"
+
+#: telegram_bot/keyboards/inline/choose_language.py:8
 msgid "English 🇺🇸"
 msgstr "Inglise 🇺🇸"
 
+#: telegram_bot/keyboards/inline/choose_language.py:9
 msgid "Lithuanian 🇱🇹"
 msgstr "Leedu 🇱🇹"
 
+#: telegram_bot/keyboards/inline/choose_language.py:10
 msgid "Estonian 🇪🇪"
 msgstr "Eesti 🇪🇪"
 
+#: telegram_bot/keyboards/inline/choose_language.py:11
 msgid "Polish 🇵🇱"
 msgstr "Poola 🇵🇱"
 
+#: telegram_bot/keyboards/inline/choose_language.py:12
 msgid "Latvian 🇱🇻"
 msgstr "Läti 🇱🇻"
 
+#: telegram_bot/keyboards/inline/choose_language.py:13
 msgid "Russian 🇷🇺"
 msgstr "Vene 🇷🇺"
 
+#: telegram_bot/keyboards/inline/find_for_me.py:10
+msgid "☑️ Start"
+msgstr "☑️ Alusta"
+
+#: telegram_bot/keyboards/inline/find_for_me.py:22
+msgid "✅ Send"
+msgstr "✅ Saada"
+
+#: telegram_bot/keyboards/inline/find_for_me.py:32
+msgid "⏭ Skip"
+msgstr "⏭ Jäta vahele"
+
+#: telegram_bot/keyboards/inline/find_for_me.py:41
+msgid "✍️ Respond"
+msgstr "✍️ Vasta"
+
+#: telegram_bot/keyboards/murkup/admin.py:8
+msgid "SEE ALL FIND FOR ME 🕵‍♂"
+msgstr "VAATA KÕIKI „Leia minu jaoks“ 🕵‍♂"
+
+#: telegram_bot/keyboards/murkup/admin.py:11
+msgid "ADD ADMIN ➕"
+msgstr "LISA ADMIN ➕"
+
+#: telegram_bot/keyboards/murkup/admin.py:15
+#: telegram_bot/keyboards/murkup/main_keyboard.py:21
+msgid "Select an action"
+msgstr "Vali tegevus"
+
+#: telegram_bot/keyboards/murkup/main_keyboard.py:8
 msgid "GET REPORT 🦊"
-msgstr "HANGI ARUANNE 🦊"
+msgstr "SAADA RAPORT 🦊"
 
+#: telegram_bot/keyboards/murkup/main_keyboard.py:9
 msgid "TRANSPORT COST CALC. 💸"
-msgstr "TRANSPORDI KULU KALK. 💸"
+msgstr "TRANSPORDIKULU KALK. 💸"
 
+#: telegram_bot/keyboards/murkup/main_keyboard.py:12
 msgid "CHECK LOT 🕵‍♂"
-msgstr "KONTROLLI PARTIID 🕵‍♂"
+msgstr "KONTROLLI OKSJONIT 🕵‍♂"
 
+#: telegram_bot/keyboards/murkup/main_keyboard.py:13
 msgid "FIND FOR ME 🕵‍♂"
-msgstr "LEIA MINULE 🕵‍♂"
+msgstr "LEIA MINU JAOKS 🕵‍♂"
 
+#: telegram_bot/keyboards/murkup/main_keyboard.py:16
 msgid "HELP ✋"
 msgstr "ABI ✋"
 
+#: telegram_bot/keyboards/murkup/main_keyboard.py:17
 msgid "LANGUAGE 🌍"
 msgstr "KEEL 🌍"
 
-msgid "Select an action"
-msgstr "Vali toiming"
+#: telegram_bot/utils/find_for_me.py:12
+#, python-brace-format
+msgid ""
+"<b>🚘 Make:</b> {make}\n"
+"<b>📦 Model:</b> {model}\n"
+"<b>📅 Year From:</b> {year_from}\n"
+"<b>📅 Year To:</b> {year_to}\n"
+"<b>💰 Budget From:</b> {budget_from}$\n"
+"<b>💰 Budget To:</b> {budget_to}$\n"
+msgstr ""
+"<b>🚘 Mark:</b> {make}\n"
+"<b>📦 Mudel:</b> {model}\n"
+"<b>📅 Aasta alates:</b> {year_from}\n"
+"<b>📅 Aasta kuni:</b> {year_to}\n"
+"<b>💰 Eelarve alates:</b> {budget_from}$\n"
+"<b>💰 Eelarve kuni:</b> {budget_to}$\n"
 
+#: telegram_bot/utils/find_for_me.py:22
+#, python-brace-format
+msgid "<b>📝 Note:</b> {specific_message}\n"
+msgstr "<b>📝 Märge:</b> {specific_message}\n"
+
+#: telegram_bot/utils/find_for_me.py:31
+msgid ""
+"\n"
+"✅ Do you want to send this request?"
+msgstr ""
+"\n"
+"✅ Kas soovid selle päringu saata?"
 

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-18 18:32+0200\n"
-"PO-Revision-Date: 2025-06-15 15:12+0200\n"
+"POT-Creation-Date: 2025-06-25 17:53+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
 "Language-Team: ru <LL@li.org>\n"
@@ -19,54 +19,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.17.0\n"
 
-msgid "<b>☑ {vehicle_name}</b>"
-msgstr "<b>☑ {vehicle_name}</b>"
+#: external_apis/auction_api/serializers.py:16
+#: external_apis/auction_api/serializers.py:59
+#, python-brace-format
+msgid "<b>☑️ {vehicle_name}</b>"
+msgstr "<b>☑️ {vehicle_name}</b>"
 
-msgid "<b>☑ Lot ID:</b> <code>{lot_id}</code>"
-msgstr "<b>☑ Лот ID:</b> <code>{lot_id}</code>"
+#: external_apis/auction_api/serializers.py:17
+#: external_apis/auction_api/serializers.py:60
+#, python-brace-format
+msgid "<b>☑️ Lot ID:</b> <code>{lot_id}</code>"
+msgstr "<b>☑️ Номер лота:</b> <code>{lot_id}</code>"
 
-msgid "<b>☑ VIN:</b> <code>{vin}</code>"
-msgstr "<b>☑ VIN:</b> <code>{vin}</code>"
+#: external_apis/auction_api/serializers.py:18
+#: external_apis/auction_api/serializers.py:61
+#, python-brace-format
+msgid "<b>☑️ VIN:</b> <code>{vin}</code>"
+msgstr "<b>☑️ VIN:</b> <code>{vin}</code>"
 
-msgid "<b>☑ Auction:</b> {auction_name}"
-msgstr "<b>☑ Аукцион:</b> {auction_name}"
+#: external_apis/auction_api/serializers.py:19
+#: external_apis/auction_api/serializers.py:62
+#, python-brace-format
+msgid "<b>☑️ Auction:</b> {auction_name}"
+msgstr "<b>☑️ Аукцион:</b> {auction_name}"
 
-msgid "<b>☑ Insurance:</b> {insurance}"
-msgstr "<b>☑ Страховка:</b> {insurance}"
+#: external_apis/auction_api/serializers.py:22
+#, python-brace-format
+msgid "<b>☑️ Insurance:</b> {insurance}"
+msgstr "<b>☑️ Страховка:</b> {insurance}"
 
-msgid "<b>☑ Title:</b> {title}"
-msgstr "<b>☑ Тайтл:</b> {title}"
+#: external_apis/auction_api/serializers.py:25
+#, python-brace-format
+msgid "<b>☑️ Title:</b> {title}"
+msgstr "<b>☑️ Название:</b> {title}"
 
+#: external_apis/auction_api/serializers.py:27
+#, python-brace-format
 msgid "<b>🔥 Current bid:</b> <b>${current_bid}</b>"
 msgstr "<b>🔥 Текущая ставка:</b> <b>${current_bid}</b>"
 
+#: external_apis/auction_api/serializers.py:34
+#, python-brace-format
 msgid "<b>🔥 BuyNow price:</b> <b>${buy_now}</b>"
 msgstr "<b>🔥 Цена «Купить сейчас»:</b> <b>${buy_now}</b>"
 
+#: external_apis/auction_api/serializers.py:40
+#, python-brace-format
 msgid "<b>🔥 Auction Status:</b> <b>{status}</b>"
 msgstr "<b>🔥 Статус аукциона:</b> <b>{status}</b>"
 
+#: external_apis/auction_api/serializers.py:43
+#, python-brace-format
 msgid "<b>🔥 Auction Date:</b> <i>{auction_date}</i>"
 msgstr "<b>🔥 Дата аукциона:</b> <i>{auction_date}</i>"
 
-msgid "<b>❌ No history available</b>"
-msgstr "<b>❌ История отсутствует</b>"
+#: external_apis/auction_api/serializers.py:46
+#, python-brace-format
+msgid "<b>🔥 Auction Location:</b> <i>{auction_location}</i>"
+msgstr "<b>🔥 Место проведения аукциона:</b> <i>{auction_location}</i>"
 
+#: external_apis/auction_api/serializers.py:72
+msgid "<b>❌ No history available</b>"
+msgstr "<b>❌ История недоступна</b>"
+
+#: external_apis/auction_api/serializers.py:75
+#, python-brace-format
 msgid ""
 "<b>🔹 History #{num}</b>\n"
-"☑ <b>Lot ID:</b> <code>{lot_id}</code>\n"
-"☑ <b>Auction:</b> {auction}\n"
-"☑ <b>Date:</b> {date}\n"
-"☑ <b>Price:</b> ${price}\n"
-"☑ <b>Status:</b> <b>{status}</b>\n"
+"☑️ <b>Lot ID:</b> <code>{lot_id}</code>\n"
+"☑️ <b>Auction:</b> {auction}\n"
+"☑️ <b>Date:</b> {date}\n"
+"☑️ <b>Price:</b> ${price}\n"
+"☑️ <b>Status:</b> <b>{status}</b>\n"
 msgstr ""
-"<b>🔹 История #{num}</b>\n"
-"☑ <b>Лот ID:</b> <code>{lot_id}</code>\n"
-"☑ <b>Аукцион:</b> {auction}\n"
-"☑ <b>Дата:</b> {date}\n"
-"☑ <b>Цена:</b> ${price}\n"
-"☑ <b>Статус:</b> <b>{status}</b>\n"
+"<b>🔹 История №{num}</b>\n"
+"☑️ <b>Номер лота:</b> <code>{lot_id}</code>\n"
+"☑️ <b>Аукцион:</b> {auction}\n"
+"☑️ <b>Дата:</b> {date}\n"
+"☑️ <b>Цена:</b> ${price}\n"
+"☑️ <b>Статус:</b> <b>{status}</b>\n"
 
+#: external_apis/auction_api/serializers.py:98
+#, python-brace-format
 msgid ""
 "🛒 Seller Type: {seller_type}\n"
 "🚗 Cylinders: {cylinders}\n"
@@ -88,102 +122,424 @@ msgstr ""
 "🔧 Коробка передач: {transmission}\n"
 "🌍 Страна: {country}"
 
+#: external_apis/carfax_api/serializers.py:5
+#, python-brace-format
+msgid ""
+"🦊 CarFax:\n"
+"🚘 VIN: {vin}\n"
+"📊 Status: {status}\n"
+msgstr ""
+"🦊 CarFax:\n"
+"🚘 VIN: {vin}\n"
+"📊 Статус: {status}\n"
+
+#: telegram_bot/handlers/commands/admin.py:17
+msgid "Use buttons below"
+msgstr "Используйте кнопки ниже"
+
+#: telegram_bot/handlers/commands/admin.py:19
+msgid "Access denied"
+msgstr "Доступ запрещен"
+
+#: telegram_bot/handlers/commands/start.py:33
 msgid ""
 "<b>👋 Hello!</b>\n"
 "\n"
-"🚗 We help you <b>save up to 50%</b> when purchasing a vehicle from the USA.\n"
-"🛡️ The entire process is <b>safe, transparent</b> and free from hidden details.\n"
+"🚗 We help you <b>save up to 50%</b> when purchasing a vehicle from the "
+"USA.\n"
+"🛡️ The entire process is <b>safe, transparent</b> and free from hidden "
+"details.\n"
 "\n"
-"🔥 <b>Join our fast-growing community</b> to be the first to see the hottest offers:\n"
-"<a href=\"https://www.facebook.com/groups/417661698833379/\" target=\"_blank\">👉 Click here to join the group</a>"
+"🔥 <b>Join our fast-growing community</b> to be the first to see the "
+"hottest offers:\n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" "
+"target=\"_blank\">👉 Click here to join the group</a>"
 msgstr ""
 "<b>👋 Привет!</b>\n"
 "\n"
-"🚗 Мы помогаем <b>сэкономить до 50%</b> при покупке автомобиля из США.\n"
-"🛡️ Весь процесс <b>безопасный, прозрачный</b> и без скрытых условий.\n"
+"🚗 Мы помогаем вам <b>сэкономить до 50%</b> при покупке автомобиля из "
+"США.\n"
+"🛡️ Весь процесс <b>безопасен и прозрачен</b>, без скрытых деталей.\n"
 "\n"
-"🔥 <b>Присоединяйся к нашему быстрорастущему сообществу</b>, чтобы первым узнавать о самых горячих предложениях:\n"
-"<a href=\"https://www.facebook.com/groups/417661698833379/\" target=\"_blank\">👉 Нажми сюда, чтобы вступить в группу</a>"
+"🔥 <b>Присоединяйтесь к нашему быстрорастущему сообществу</b>, чтобы "
+"первыми видеть самые горячие предложения:\n"
+"<a href=\"https://www.facebook.com/groups/417661698833379/\" "
+"target=\"_blank\">👉 Нажмите здесь, чтобы вступить в группу</a>"
 
-msgid "Hi, you admin, you can access admin panel"
-msgstr "Привет, ты администратор, у тебя есть доступ к панели администратора"
+#: telegram_bot/handlers/commands/start.py:43
+#: telegram_bot/handlers/commands/start.py:54
+msgid "Hi, you are now admin! Access admin panel using this command - /admin"
+msgstr "Привет, вы теперь администратор! Доступ к панели админа: команда /admin"
 
-msgid "❌ Something went wrong, try again later"
-msgstr "❌ Что-то пошло не так, попробуй позже"
+#: telegram_bot/handlers/commands/start.py:46
+msgid "Hi, you admin, you can access admin panel using this command - /admin"
+msgstr "Привет, админ, вы можете получить доступ к панели админа этой командой - /admin"
 
-msgid "🔍 No more images available."
-msgstr "🔍 Больше изображений нет"
-
-msgid "✅ Language successfully changed"
-msgstr "✅ Язык успешно изменён"
-
-msgid "🚘 Enter lot ID or VIN:"
-msgstr "🚘 Введите номер лота или VIN:"
-
-msgid "⏳ Loading..."
-msgstr "⏳ Загрузка..."
-
+#: telegram_bot/handlers/errors/get_lot.py:14
 msgid "❌ We cant find your lot, try again"
-msgstr "❌ Не удалось найти ваш лот, попробуйте ещё раз"
+msgstr "❌ Лот не найден, попробуйте снова"
 
-msgid "<b>We received 2 lots according to your data, choose below what you need</b>\n\n"
-msgstr "<b>Мы нашли 2 лота по вашему запросу, выберите нужный ниже</b>\n\n"
+#: telegram_bot/handlers/keyboard/inline/additional_lot_data.py:35
+msgid "🔍 No more images available."
+msgstr "🔍 Больше изображений нет."
 
+#: telegram_bot/handlers/keyboard/inline/carfax.py:27
+msgid "🚘 Enter the VIN of the vehicle for which you want to purchase a report:"
+msgstr "🚘 Введите VIN автомобиля, по которому хотите получить отчет:"
+
+#: telegram_bot/handlers/keyboard/inline/carfax.py:37
+msgid "❌ You don't have any purchased CarFax"
+msgstr "❌ У вас нет купленных отчетов CarFax"
+
+#: telegram_bot/handlers/keyboard/inline/carfax.py:54
+msgid "🔄 Checking records..."
+msgstr "🔄 Проверка записей..."
+
+#: telegram_bot/handlers/keyboard/inline/carfax.py:65
+msgid "🔄 Retrieving checkout link..."
+msgstr "🔄 Получение ссылки для оплаты..."
+
+#: telegram_bot/handlers/keyboard/inline/carfax.py:77
+msgid "Pay & Check below:"
+msgstr "Оплатить и проверить ниже:"
+
+#: telegram_bot/handlers/keyboard/inline/choose_language.py:24
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:67
 msgid "🌎 Choose language"
 msgstr "🌎 Выберите язык"
 
+#: telegram_bot/handlers/keyboard/inline/choose_language.py:26
+msgid "✅ Language successfully changed"
+msgstr "✅ Язык успешно изменен"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:28
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:85
+msgid "✅ You already respond to this request!"
+msgstr "✅ Вы уже откликнулись на этот запрос!"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:33
+msgid "🚘 Enter lot ID"
+msgstr "🚘 Введите номер лота"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:39
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:23
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:34
+msgid "⏳ Loading..."
+msgstr "⏳ Загрузка..."
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:72
+msgid ""
+"👋 <b>Hey, someone from our team answered your request, see what we have "
+"found for you!</b>"
+msgstr ""
+"👋 <b>Привет, кто-то из нашей команды ответил на ваш запрос, "
+"посмотрите, что мы нашли для вас!</b>"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:83
+msgid "✅ Successfully sent to user!"
+msgstr "✅ Успешно отправлено пользователю!"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:97
+msgid "🚘 Write the make:"
+msgstr "🚘 Укажите марку:"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:111
+msgid "✅ Your request has been saved!"
+msgstr "✅ Ваш запрос сохранен!"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:117
+msgid ""
+"\n"
+"<b>NEW FIND FOR ME REQUEST RECIEVED!</b>"
+msgstr ""
+"\n"
+"<b>ПОЛУЧЕН НОВЫЙ ЗАПРОС «Найди для меня»!</b>"
+
+#: telegram_bot/handlers/keyboard/murkup/admin.py:50
+#, python-brace-format
+msgid ""
+"Send this message to the user you want to promote:\n"
+"Become admin - <a href='{link}'>click here</a>"
+msgstr ""
+"Отправьте это сообщение пользователю, которого хотите повысить:\n"
+"Становись администратором - <a href='{link}'>нажмите здесь</a>"
+
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:37
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:46
+msgid "❌ You entered an invalid VIN number, try again"
+msgstr "❌ Вы ввели неверный VIN, попробуйте снова"
+
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:55
+#, python-brace-format
+msgid ""
+"Check again, is this the correct VIN code?\n"
+"VIN: <b>{vin}</b>"
+msgstr ""
+"Проверьте еще раз, верный ли это VIN-код?\n"
+"VIN: <b>{vin}</b>"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:32
+msgid "We found two lots with same lot ID, choose auction:"
+msgstr "Найдено два лота с одним и тем же номером, выберите аукцион:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:41
+msgid ""
+"You have already submitted a 'Find for me' request. Please wait for a "
+"response — once we reply, you'll be able to send a new request."
+msgstr ""
+"Вы уже отправили запрос «Найди для меня». Пожалуйста, дождитесь ответа — "
+"после нашего ответа вы сможете отправить новый запрос."
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:46
+msgid ""
+"🔍 <b>How \"Find for Me\" works:</b>\n"
+"<b>1.</b> You fill out a short form with:\n"
+"– <b>Make</b>\n"
+"– <b>Model</b>\n"
+"– <b>Year</b>\n"
+"– <b>Budget</b>\n"
+"<b>2.</b> Our team searches for matching vehicles.\n"
+"<b>3.</b> If you like the suggestion, <b>we help you buy and ship it!</b>"
+msgstr ""
+"🔍 <b>Как работает «Найди для меня»:</b>\n"
+"<b>1.</b> Вы заполняете короткую форму, в которой указываете:\n"
+"– <b>Марка</b>\n"
+"– <b>Модель</b>\n"
+"– <b>Год</b>\n"
+"– <b>Бюджет</b>\n"
+"<b>2.</b> Наша команда ищет подходящие автомобили.\n"
+"<b>3.</b> Если вам понравится предложение, <b>мы поможем вам купить и доставить его!</b>"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:61
+msgid "❌ Make must contain only letters. Try again:"
+msgstr "❌ Марка должна содержать только буквы. Попробуйте еще раз:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:64
+msgid "📦 Write the model:"
+msgstr "📦 Укажите модель:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:72
+msgid "❌ Model must contain letters or numbers. Try again:"
+msgstr "❌ Модель должна содержать буквы или цифры. Попробуйте еще раз:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:75
+msgid "📅 Year from (e.g. 2015):"
+msgstr "📅 Год от (например, 2015):"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:82
+msgid "❌ Invalid year. Enter a number like 2015:"
+msgstr "❌ Неверный год. Введите число, например 2015:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:85
+msgid "📅 Year to (e.g. 2020):"
+msgstr "📅 Год до (например, 2020):"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:92
+msgid "❌ Invalid year. Enter a number like 2020:"
+msgstr "❌ Неверный год. Введите число, например 2020:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:95
+msgid "💰 Budget from (USD):"
+msgstr "💰 Бюджет от (USD):"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:102
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:112
+msgid "❌ Budget must be a number. Try again:"
+msgstr "❌ Бюджет должен быть числом. Попробуйте еще раз:"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:105
+msgid "💰 Budget to (USD):"
+msgstr "💰 Бюджет до (USD):"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:116
+msgid ""
+"📝 Want to tell us anything specific?\n"
+"Describe it or press skip:"
+msgstr ""
+"📝 Хотите что-то уточнить?\n"
+"Опишите или нажмите «пропустить»:"
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:27
+msgid "🚘 Enter lot ID or VIN:"
+msgstr "🚘 Введите номер лота или VIN:"
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:40
+msgid ""
+"<b>We received 2 lots according to your data, choose below what you "
+"need</b>\n"
+msgstr ""
+"<b>Мы получили 2 лота по вашим данным, выберите ниже то, что вам нужно</b>\n"
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:72
+msgid "💸 Click on the button below to open the calculator"
+msgstr "💸 Нажмите кнопку ниже, чтобы открыть калькулятор"
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:76
+msgid ""
+"<b>ℹ Help:</b>\n"
+"✉ My email: <b>hvjlogistic@gmail.com</b>\n"
+"📞 My WhatsApp/Viber/Telegram/Signal: <b>+37062964425</b>\n"
+msgstr ""
+"<b>ℹ Помощь:</b>\n"
+"✉ Мой email: <b>hvjlogistic@gmail.com</b>\n"
+"📞 Мой WhatsApp/Viber/Telegram/Signal: <b>+37062964425</b>\n"
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:83
+msgid "You can buy a detailed report about the car (🦊 Carfax)"
+msgstr "Вы можете купить подробный отчет об автомобиле (🦊 Carfax)"
+
+#: telegram_bot/keyboards/inline/additional_lot_data.py:11
 msgid "📊 Sales statistics"
 msgstr "📊 Статистика продаж"
 
+#: telegram_bot/keyboards/inline/additional_lot_data.py:14
 msgid "ℹ️ About the car"
-msgstr "ℹ️ Об автомобиле"
+msgstr "ℹ️ О машине"
 
+#: telegram_bot/keyboards/inline/additional_lot_data.py:17
 msgid "🖼 More Photos"
-msgstr "🖼 Больше фото"
+msgstr "🖼 Еще фото"
 
+#: telegram_bot/keyboards/inline/additional_lot_data.py:20
 msgid "🔗 Open auction"
 msgstr "🔗 Открыть аукцион"
 
+#: telegram_bot/keyboards/inline/calculator_link.py:9
+msgid "💸 Open calculator"
+msgstr "💸 Открыть калькулятор"
+
+#: telegram_bot/keyboards/inline/cancel.py:5
 msgid "Cancel ❌"
 msgstr "Отмена ❌"
 
+#: telegram_bot/keyboards/inline/carfax.py:12
+msgid "🦊 See my CarFaxes"
+msgstr "🦊 Мои CarFax"
+
+#: telegram_bot/keyboards/inline/carfax.py:13
+msgid "💳 Buy CarFax (2€)"
+msgstr "💳 Купить CarFax (2€)"
+
+#: telegram_bot/keyboards/inline/carfax.py:20
+msgid "🔗 Open CarFax"
+msgstr "🔗 Открыть CarFax"
+
+#: telegram_bot/keyboards/inline/carfax.py:22
+#: telegram_bot/keyboards/inline/carfax.py:33
+msgid "💳 Buy"
+msgstr "💳 Купить"
+
+#: telegram_bot/keyboards/inline/carfax.py:41
+msgid "💳 Pay (2€)"
+msgstr "💳 Оплатить (2€)"
+
+#: telegram_bot/keyboards/inline/carfax.py:42
+msgid "☑️ Check"
+msgstr "☑️ Проверить"
+
+#: telegram_bot/keyboards/inline/choose_language.py:8
 msgid "English 🇺🇸"
 msgstr "Английский 🇺🇸"
 
+#: telegram_bot/keyboards/inline/choose_language.py:9
 msgid "Lithuanian 🇱🇹"
 msgstr "Литовский 🇱🇹"
 
+#: telegram_bot/keyboards/inline/choose_language.py:10
 msgid "Estonian 🇪🇪"
 msgstr "Эстонский 🇪🇪"
 
+#: telegram_bot/keyboards/inline/choose_language.py:11
 msgid "Polish 🇵🇱"
 msgstr "Польский 🇵🇱"
 
+#: telegram_bot/keyboards/inline/choose_language.py:12
 msgid "Latvian 🇱🇻"
 msgstr "Латышский 🇱🇻"
 
+#: telegram_bot/keyboards/inline/choose_language.py:13
 msgid "Russian 🇷🇺"
 msgstr "Русский 🇷🇺"
 
-msgid "GET REPORT 🦊"
-msgstr "ПОЛУЧИТЬ ОТЧЁТ 🦊"
+#: telegram_bot/keyboards/inline/find_for_me.py:10
+msgid "☑️ Start"
+msgstr "☑️ Начать"
 
-msgid "TRANSPORT COST CALC. 💸"
-msgstr "РАСЧЁТ ДОСТАВКИ 💸"
+#: telegram_bot/keyboards/inline/find_for_me.py:22
+msgid "✅ Send"
+msgstr "✅ Отправить"
 
-msgid "CHECK LOT 🕵‍♂"
-msgstr "ПРОВЕРИТЬ ЛОТ 🕵‍♂"
+#: telegram_bot/keyboards/inline/find_for_me.py:32
+msgid "⏭ Skip"
+msgstr "⏭ Пропустить"
 
-msgid "FIND FOR ME 🕵‍♂"
-msgstr "НАЙТИ ДЛЯ МЕНЯ 🕵‍♂"
+#: telegram_bot/keyboards/inline/find_for_me.py:41
+msgid "✍️ Respond"
+msgstr "✍️ Ответить"
 
-msgid "HELP ✋"
-msgstr "ПОМОЩЬ ✋"
+#: telegram_bot/keyboards/murkup/admin.py:8
+msgid "SEE ALL FIND FOR ME 🕵‍♂"
+msgstr "ПОКАЗАТЬ ВСЕ ЗАПРОСЫ «Найди для меня» 🕵‍♂"
 
-msgid "LANGUAGE 🌍"
-msgstr "ЯЗЫК 🌍"
+#: telegram_bot/keyboards/murkup/admin.py:11
+msgid "ADD ADMIN ➕"
+msgstr "ДОБАВИТЬ АДМИНА ➕"
 
+#: telegram_bot/keyboards/murkup/admin.py:15
+#: telegram_bot/keyboards/murkup/main_keyboard.py:21
 msgid "Select an action"
 msgstr "Выберите действие"
 
+#: telegram_bot/keyboards/murkup/main_keyboard.py:8
+msgid "GET REPORT 🦊"
+msgstr "ПОЛУЧИТЬ ОТЧЕТ 🦊"
 
+#: telegram_bot/keyboards/murkup/main_keyboard.py:9
+msgid "TRANSPORT COST CALC. 💸"
+msgstr "РАСЧЕТ СТОИМОСТИ ДОСТАВКИ 💸"
+
+#: telegram_bot/keyboards/murkup/main_keyboard.py:12
+msgid "CHECK LOT 🕵‍♂"
+msgstr "ПРОВЕРИТЬ ЛОТ 🕵‍♂"
+
+#: telegram_bot/keyboards/murkup/main_keyboard.py:13
+msgid "FIND FOR ME 🕵‍♂"
+msgstr "НАЙДИ ДЛЯ МЕНЯ 🕵‍♂"
+
+#: telegram_bot/keyboards/murkup/main_keyboard.py:16
+msgid "HELP ✋"
+msgstr "ПОМОЩЬ ✋"
+
+#: telegram_bot/keyboards/murkup/main_keyboard.py:17
+msgid "LANGUAGE 🌍"
+msgstr "ЯЗЫК 🌍"
+
+#: telegram_bot/utils/find_for_me.py:12
+#, python-brace-format
+msgid ""
+"<b>🚘 Make:</b> {make}\n"
+"<b>📦 Model:</b> {model}\n"
+"<b>📅 Year From:</b> {year_from}\n"
+"<b>📅 Year To:</b> {year_to}\n"
+"<b>💰 Budget From:</b> {budget_from}$\n"
+"<b>💰 Budget To:</b> {budget_to}$\n"
+msgstr ""
+"<b>🚘 Марка:</b> {make}\n"
+"<b>📦 Модель:</b> {model}\n"
+"<b>📅 Год от:</b> {year_from}\n"
+"<b>📅 Год до:</b> {year_to}\n"
+"<b>💰 Бюджет от:</b> {budget_from}$\n"
+"<b>💰 Бюджет до:</b> {budget_to}$\n"
+
+#: telegram_bot/utils/find_for_me.py:22
+#, python-brace-format
+msgid "<b>📝 Note:</b> {specific_message}\n"
+msgstr "<b>📝 Примечание:</b> {specific_message}\n"
+
+#: telegram_bot/utils/find_for_me.py:31
+msgid ""
+"\n"
+"✅ Do you want to send this request?"
+msgstr ""
+"\n"
+"✅ Хотите отправить этот запрос?"

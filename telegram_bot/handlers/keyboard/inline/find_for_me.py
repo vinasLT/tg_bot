@@ -3,9 +3,9 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery
 from aiogram.utils.i18n import gettext as _
 
-from external_apis.auction_api import AuctionAPI
-from external_apis.auction_api import serialize_lot
-from external_apis.auction_api import VINorLotIDIn
+from external_apis.auction_api.auction_api import AuctionAPI
+from external_apis.auction_api.serializers import serialize_lot
+from external_apis.auction_api.types import VINorLotIDIn
 from database.crud.find_for_me import FindForMeService
 from database.crud.user import UserService
 from database.schemas.find_for_me import FindForMeCreate, FindForMeUpdate

@@ -3,9 +3,9 @@ import asyncio
 from aiogram import Router, F
 from aiogram.types import CallbackQuery, InputMediaPhoto, Message
 
-from external_apis.auction_api import AuctionAPI
-from external_apis.auction_api import serialize_lot
-from external_apis.auction_api import LotByIDIn, VINorLotIDIn
+from external_apis.auction_api.auction_api import AuctionAPI
+from external_apis.auction_api.serializers import serialize_lot
+from external_apis.auction_api.types import LotByIDIn, VINorLotIDIn
 from database.crud.user_search_history import UserSearchHistoryService
 from telegram_bot.handlers.errors.get_lot import get_lot_errors
 from telegram_bot.keyboards.inline.additional_lot_data import lot_inline_keyboard

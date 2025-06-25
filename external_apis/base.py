@@ -74,6 +74,8 @@ class BaseAPIClient:
                 response.raise_for_status()
                 return response
             except (httpx.TransportError, httpx.HTTPStatusError) as exc:
+                if exc.response is not None and exc.response.status_code == 404:
+                    raise
                 attempt += 1
                 if attempt > self._max_retries:
                     logger.error("%s %s failed after %s attempts: %s", method, path, attempt, exc)
