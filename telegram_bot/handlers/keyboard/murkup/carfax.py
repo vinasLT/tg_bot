@@ -1,27 +1,17 @@
 import re
-from multiprocessing.reduction import steal_handle
 
 import httpx
-from aiogram import Router, F
+from aiogram import Router
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
-
-from aiogram.utils.i18n import lazy_gettext as __
 from aiogram.utils.i18n import gettext as _
-
 from external_apis.auction_api.auction_api import AuctionAPI
 from external_apis.auction_api.types import VINorLotIDIn
-from database.crud.find_for_me import FindForMeService
-from database.crud.user import UserService
 from external_apis.carfax_api.carfax_api import CarfaxAPI
 from external_apis.carfax_api.serializers import serialize_carfax
 from external_apis.carfax_api.types import RequestCarfaxVin
-from telegram_bot.handlers.keyboard.inline.find_for_me import ask_confirmation
 from telegram_bot.keyboards.inline.carfax import buy_or_cancel, buy_or_see
-from telegram_bot.keyboards.inline.find_for_me import find_for_me_start_cancel, skip_keyboard, choose_auction
 from telegram_bot.states.carfax import CarfaxStates
-from telegram_bot.states.find_for_me import FindForMeStates
-from telegram_bot.utils.find_for_me import send_lot
 
 carfax_markup_router = Router()
 
