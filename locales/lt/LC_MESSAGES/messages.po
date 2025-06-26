@@ -507,7 +507,7 @@ msgstr "TRANSPORTO SĄNAUDŲ SKAIČIUOKLĖ 💸"
 
 #: telegram_bot/keyboards/murkup/main_keyboard.py:12
 msgid "CHECK LOT 🕵‍♂"
-msgstr "PATIKRINTI PARTIJĄ 🕵‍♂"
+msgstr "INFO APIE AUTO 🕵‍♂"
 
 #: telegram_bot/keyboards/murkup/main_keyboard.py:13
 msgid "FIND FOR ME 🕵‍♂"
