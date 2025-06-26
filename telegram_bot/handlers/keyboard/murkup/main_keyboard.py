@@ -27,6 +27,31 @@ async def find_lot_handler(message: Message, state: FSMContext):
     await message.answer(_('🚘 Enter lot ID or VIN:'), reply_markup=cancel_keyboard())
     await state.set_state(StartKeyboardStates.wait_for_vin_or_lot)
 
+
+
+@start_keyboard_handler.message(F.text == __('LANGUAGE 🌍'))
+async def process_language(message: Message):
+    async with UserService() as user_service:
+        user = await user_service.get_by_telegram_id(message.from_user.id)
+        await message.answer(_('🌎 Choose language'), reply_markup=choose_language(user.language))
+
+
+@start_keyboard_handler.message(F.text == __('TRANSPORT COST CALC. 💸'))
+async def transport_calculator(message: Message):
+    await message.answer(_('💸 Click on the button below to open the calculator'), reply_markup=calculator_link())
+
+@start_keyboard_handler.message(F.text == __('HELP ✋'))
+async def transport_calculator(message: Message):
+    await message.answer(_('<b>ℹ Help:</b>\n'
+                           '✉ My email: <b>hvjlogistic@gmail.com</b>\n'
+                           '📞 My WhatsApp/Viber/Telegram/Signal: <b>+37062964425</b>\n'
+                           ))
+
+@start_keyboard_handler.message(F.text == __('GET REPORT 🦊'))
+async def get_carfax(message: Message, state: FSMContext):
+    await message.answer(_('You can buy a detailed report about the car (🦊 Carfax)'), reply_markup=carfax())
+
+
 @start_keyboard_handler.message(StartKeyboardStates.wait_for_vin_or_lot)
 async def process_vin_or_lot_id(message: Message, state: FSMContext):
     vin_or_lot_id = message.text
@@ -59,31 +84,6 @@ async def process_vin_or_lot_id(message: Message, state: FSMContext):
             media = InputMediaPhoto(media=str(images[0]), caption=text)
             await loading_message.edit_media(media=media, text=text, reply_markup=keyboard)
         await state.clear()
-
-@start_keyboard_handler.message(F.text == __('LANGUAGE 🌍'))
-async def process_language(message: Message):
-    async with UserService() as user_service:
-        user = await user_service.get_by_telegram_id(message.from_user.id)
-        await message.answer(_('🌎 Choose language'), reply_markup=choose_language(user.language))
-
-
-@start_keyboard_handler.message(F.text == __('TRANSPORT COST CALC. 💸'))
-async def transport_calculator(message: Message):
-    await message.answer(_('💸 Click on the button below to open the calculator'), reply_markup=calculator_link())
-
-@start_keyboard_handler.message(F.text == __('HELP ✋'))
-async def transport_calculator(message: Message):
-    await message.answer(_('<b>ℹ Help:</b>\n'
-                           '✉ My email: <b>hvjlogistic@gmail.com</b>\n'
-                           '📞 My WhatsApp/Viber/Telegram/Signal: <b>+37062964425</b>\n'
-                           ))
-
-@start_keyboard_handler.message(F.text == __('GET REPORT 🦊'))
-async def get_carfax(message: Message, state: FSMContext):
-    await message.answer(_('You can buy a detailed report about the car (🦊 Carfax)'), reply_markup=carfax())
-
-
-
 
 
 

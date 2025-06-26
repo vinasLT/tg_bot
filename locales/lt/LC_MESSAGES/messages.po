@@ -257,7 +257,7 @@ msgid ""
 "<b>NEW FIND FOR ME REQUEST RECIEVED!</b>"
 msgstr ""
 "\n"
-"<b>GAUTAS NAUJAS „Rask man“ UŽKLAUSA!</b>"
+"<b>GAUTAS NAUJAS „Surask man“ UŽKLAUSA!</b>"
 
 #: telegram_bot/handlers/keyboard/murkup/admin.py:50
 #, python-brace-format
@@ -291,7 +291,7 @@ msgid ""
 "You have already submitted a 'Find for me' request. Please wait for a "
 "response — once we reply, you'll be able to send a new request."
 msgstr ""
-"Jūs jau pateikėte „Rask man“ užklausą. Palaukite atsakymo — kai "
+"Jūs jau pateikėte „Surask man“ užklausą. Palaukite atsakymo — kai "
 "atsakysime, galėsite pateikti naują užklausą."
 
 #: telegram_bot/handlers/keyboard/murkup/find_for_me.py:46
@@ -305,7 +305,7 @@ msgid ""
 "<b>2.</b> Our team searches for matching vehicles.\n"
 "<b>3.</b> If you like the suggestion, <b>we help you buy and ship it!</b>"
 msgstr ""
-"🔍 <b>Kaip veikia „Rask man“:</b>\n"
+"🔍 <b>Kaip veikia „Surask man“:</b>\n"
 "<b>1.</b> Užpildote trumpą formą:\n"
 "– <b>Markė</b>\n"
 "– <b>Modelis</b>\n"
@@ -401,7 +401,7 @@ msgstr "📊 Pardavimų statistika"
 
 #: telegram_bot/keyboards/inline/additional_lot_data.py:14
 msgid "ℹ️ About the car"
-msgstr "ℹ️ Apie automobilį"
+msgstr "ℹ️ Info apie auto"
 
 #: telegram_bot/keyboards/inline/additional_lot_data.py:17
 msgid "🖼 More Photos"
@@ -486,7 +486,7 @@ msgstr "✍️ Atsakyti"
 
 #: telegram_bot/keyboards/murkup/admin.py:8
 msgid "SEE ALL FIND FOR ME 🕵‍♂"
-msgstr "PERŽIŪRĖTI VISAS „Rask man“ 🕵‍♂"
+msgstr "PERŽIŪRĖTI VISAS „Surask man“ 🕵‍♂"
 
 #: telegram_bot/keyboards/murkup/admin.py:11
 msgid "ADD ADMIN ➕"
@@ -511,7 +511,7 @@ msgstr "PATIKRINTI PARTIJĄ 🕵‍♂"
 
 #: telegram_bot/keyboards/murkup/main_keyboard.py:13
 msgid "FIND FOR ME 🕵‍♂"
-msgstr "RASK MANE 🕵‍♂"
+msgstr "SURASK MAN 🕵‍♂"
 
 #: telegram_bot/keyboards/murkup/main_keyboard.py:16
 msgid "HELP ✋"

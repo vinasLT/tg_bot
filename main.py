@@ -30,7 +30,7 @@ async def main():
 
     dp.include_router(start)
     dp.include_router(cancel_router)
-    dp.include_router(start_keyboard_handler)
+
     dp.include_router(lot_additional_data_router)
     dp.include_router(choose_one_lot_router)
     dp.include_router(choose_language_router)
@@ -41,6 +41,8 @@ async def main():
 
     dp.include_router(carfax_inline_router)
     dp.include_router(carfax_markup_router)
+
+    dp.include_router(start_keyboard_handler)
 
     await dp.start_polling(bot)
 
