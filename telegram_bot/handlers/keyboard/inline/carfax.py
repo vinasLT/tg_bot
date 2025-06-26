@@ -3,6 +3,7 @@ from aiogram import Router, F
 from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery
 from aiogram.utils.i18n import gettext as _
+from httpx import HTTPStatusError
 
 from external_apis.carfax_api.carfax_api import CarfaxAPI
 from external_apis.carfax_api.serializers import serialize_carfax
@@ -25,7 +26,11 @@ async def buy_new_carfax(query: CallbackQuery, state: FSMContext):
 async def see_all_carfaxes(query: CallbackQuery):
     user_id = query.from_user.id
     async with CarfaxAPI() as api:
-        get_all_carfaxes = await api.get_all_carfaxes(ExternalUserIDSourceIn(user_external_id=str(user_id)))
+        try:
+            get_all_carfaxes = await api.get_all_carfaxes(ExternalUserIDSourceIn(user_external_id=str(user_id)))
+        except HTTPStatusError:
+            get_all_carfaxes = []
+
         if len(get_all_carfaxes) <= 0:
             await query.message.edit_text(_("❌ You don't have any purchased CarFax"))
             await query.answer()

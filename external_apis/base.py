@@ -60,16 +60,11 @@ class BaseAPIClient:
         params: Optional[dict[str, Any]] = None,
         json: Optional[dict[str, Any]] = None,
     ) -> httpx.Response:
-        print(params)
-        print(json)
-        print(path)
         assert self._client is not None
         attempt = 0
         while True:
             try:
                 response = await self._client.request(method, path, params=params, json=json)
-                print(response.url)
-                print(response.text)
 
                 response.raise_for_status()
                 return response
