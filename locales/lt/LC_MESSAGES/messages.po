@@ -29,7 +29,7 @@ msgstr "<b>☑️ {vehicle_name}</b>"
 #: external_apis/auction_api/serializers.py:60
 #, python-brace-format
 msgid "<b>☑️ Lot ID:</b> <code>{lot_id}</code>"
-msgstr "<b>☑️ Partijos ID:</b> <code>{lot_id}</code>"
+msgstr "<b>☑️ Lot ID:</b> <code>{lot_id}</code>"
 
 #: external_apis/auction_api/serializers.py:18
 #: external_apis/auction_api/serializers.py:61
@@ -93,7 +93,7 @@ msgid ""
 "☑️ <b>Status:</b> <b>{status}</b>\n"
 msgstr ""
 "<b>🔹 Istorija #{num}</b>\n"
-"☑️ <b>Partijos ID:</b> <code>{lot_id}</code>\n"
+"☑️ <b>Lot ID:</b> <code>{lot_id}</code>\n"
 "☑️ <b>Aukcionas:</b> {auction}\n"
 "☑️ <b>Data:</b> {date}\n"
 "☑️ <b>Kaina:</b> ${price}\n"
@@ -223,7 +223,7 @@ msgstr "✅ Jūs jau atsakėte į šį užklausą!"
 
 #: telegram_bot/handlers/keyboard/inline/find_for_me.py:33
 msgid "🚘 Enter lot ID"
-msgstr "🚘 Įveskite partijos ID"
+msgstr "🚘 Įveskite Lot ID"
 
 #: telegram_bot/handlers/keyboard/inline/find_for_me.py:39
 #: telegram_bot/handlers/keyboard/murkup/find_for_me.py:23
@@ -366,7 +366,7 @@ msgstr ""
 
 #: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:27
 msgid "🚘 Enter lot ID or VIN:"
-msgstr "🚘 Įveskite partijos ID arba VIN:"
+msgstr "🚘 Įveskite Lot ID arba VIN:"
 
 #: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:40
 msgid ""
