@@ -1,6 +1,7 @@
 from typing import List
 
 from sqlalchemy import select
+from sqlalchemy.orm import selectinload
 
 from database.crud.base import BaseService
 from database.models.find_for_me import FindForMe
@@ -26,9 +27,9 @@ class FindForMeService(BaseService[FindForMe, FindForMeCreate, FindForMeUpdate])
 
     async def get_all_active_requests(self) -> List[FindForMe]:
         result = await self.session.execute(
-            select(FindForMe).where(
-                FindForMe.is_responded.is_(False)
-            )
+            select(FindForMe)
+            .options(selectinload(FindForMe.user))
+            .where(FindForMe.is_responded.is_(False))
         )
         return result.scalars().all()
 

@@ -18,6 +18,7 @@ from telegram_bot.handlers.keyboard.murkup.admin import admin_markup_router
 from telegram_bot.handlers.keyboard.murkup.carfax import carfax_markup_router
 from telegram_bot.handlers.keyboard.murkup.find_for_me import find_for_me_markup_router
 from telegram_bot.handlers.keyboard.murkup.main_keyboard import start_keyboard_handler
+from telegram_bot.handlers.keyboard.murkup.request_phone_number import request_phone_number_markup_router
 from telegram_bot.middelwares import MyI18nMiddleware, i18n
 
 bot = Bot(token=API_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
@@ -41,6 +42,7 @@ async def main():
 
     dp.include_router(carfax_inline_router)
     dp.include_router(carfax_markup_router)
+    dp.include_router(request_phone_number_markup_router)
 
     dp.include_router(start_keyboard_handler)
 

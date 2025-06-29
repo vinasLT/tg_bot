@@ -17,6 +17,7 @@ start = Router()
 @start.message(CommandStart())
 async def start_handler(message: Message, command: CommandObject):
     telegram_id = message.from_user.id
+    username = message.from_user.username
     args = command.args
     if args and args.startswith('success_carfax_payment_'):
         vin = args.split('_')[-1]
@@ -48,7 +49,7 @@ async def start_handler(message: Message, command: CommandObject):
                 )
         else:
             is_admin = args == SECRET_ADMIN_KEY
-            await db.create(UserCreate(telegram_id=telegram_id, language='en', is_admin=is_admin))
+            await db.create(UserCreate(telegram_id=telegram_id, language='en', is_admin=is_admin, username=username))
 
             if is_admin:
                 await message.answer(_('Hi, you are now admin! Access admin panel using this command - /admin'), reply_markup=start_keyboard())

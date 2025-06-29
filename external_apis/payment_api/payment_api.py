@@ -29,5 +29,4 @@ if __name__ == '__main__':
                                                                       purpose_external_id=1,
                                                                       success_link='https://google.com/',
                                                                       cancel_link='https://google.com/'))
-            print(response)
     asyncio.run(main())

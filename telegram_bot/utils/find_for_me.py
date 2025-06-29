@@ -7,7 +7,7 @@ from telegram_bot.keyboards.inline.find_for_me import confirm_keyboard
 from telegram_bot.states.find_for_me import FindForMeStates
 from aiogram.utils.i18n import gettext as _
 
-def get_summary_text(data: dict)->str:
+def get_summary_text(data: dict, username:str = None, phone_number: str = None)->str:
     summary = _(
         "<b>🚘 Make:</b> {make}\n"
         "<b>📦 Model:</b> {model}\n"
@@ -21,8 +21,10 @@ def get_summary_text(data: dict)->str:
     if data.get("specific_message"):
         summary += _("<b>📝 Note:</b> {specific_message}\n").format(specific_message=data.get("specific_message"))
 
-    if data.get('username'):
-        summary += _('<b> 👤Username:</b> @{username}\n').format(username=data.get('username'))
+    if username:
+        summary += _('<b>👤 Username:</b> @{username}\n').format(username=username)
+    if phone_number:
+        summary += _('<b>📱 Phone Number:</b> {phone_number}\n').format(phone_number=phone_number)
 
 
     return summary

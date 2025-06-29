@@ -30,10 +30,12 @@ async def respond_wait_for_lot_id(message: Message):
                     return
 
                 for active_request in all_active_requests:
+
                     pydantic_data = FindForMeRead.model_validate(active_request).model_dump()
-                    text = get_summary_text(pydantic_data)
+                    text = get_summary_text(pydantic_data, active_request.user.username, active_request.user.phone_number)
                     reply_markup = new_find_for_me_request_received(active_request.id)
                     await message.answer(text, reply_markup=reply_markup)
+
 
 
 @admin_markup_router.message(F.text == __('ADD ADMIN ➕'))

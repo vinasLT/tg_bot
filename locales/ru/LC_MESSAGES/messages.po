@@ -7,17 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-29 11:38+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language: ru\n"
+"POT-Creation-Date: 2025-06-29 14:26+0200\n"
+"PO-Revision-Date: 2025-06-29 14:34+0200\n"
+"Last-Translator: \n"
 "Language-Team: ru <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "Generated-By: Babel 2.17.0\n"
+"X-Generator: Poedit 3.6\n"
 
 #: external_apis/auction_api/serializers.py:16
 #: external_apis/auction_api/serializers.py:59
@@ -141,41 +142,39 @@ msgstr "Используйте кнопки ниже"
 msgid "Access denied"
 msgstr "Доступ запрещен"
 
-#: telegram_bot/handlers/commands/start.py:33
+#: telegram_bot/handlers/commands/start.py:34
 msgid ""
 "<b>👋 Hello!</b>\n"
 "\n"
-"🚗 We help you <b>save up to 50%</b> when purchasing a vehicle from the "
-"USA.\n"
+"🚗 We help you <b>save up to 50%</b> when purchasing a vehicle from the USA.\n"
 "🛡️ The entire process is <b>safe, transparent</b> and free from hidden "
 "details.\n"
 "\n"
-"🔥 <b>Join our fast-growing community</b> to be the first to see the "
-"hottest offers:\n"
+"🔥 <b>Join our fast-growing community</b> to be the first to see the hottest "
+"offers:\n"
 "<a href=\"https://www.facebook.com/groups/417661698833379/\" "
 "target=\"_blank\">👉 Click here to join the group</a>"
 msgstr ""
 "<b>👋 Привет!</b>\n"
 "\n"
-"🚗 Мы помогаем вам <b>сэкономить до 50%</b> при покупке автомобиля из США."
-"\n"
+"🚗 Мы помогаем вам <b>сэкономить до 50%</b> при покупке автомобиля из США.\n"
 "🛡️ Весь процесс <b>безопасен и прозрачен</b>, без скрытых деталей.\n"
 "\n"
-"🔥 <b>Присоединяйтесь к нашему быстрорастущему сообществу</b>, чтобы "
-"первыми видеть самые горячие предложения:\n"
+"🔥 <b>Присоединяйтесь к нашему быстрорастущему сообществу</b>, чтобы первыми "
+"видеть самые горячие предложения:\n"
 "<a href=\"https://www.facebook.com/groups/417661698833379/\" "
 "target=\"_blank\">👉 Нажмите здесь, чтобы вступить в группу</a>"
 
-#: telegram_bot/handlers/commands/start.py:43
-#: telegram_bot/handlers/commands/start.py:54
+#: telegram_bot/handlers/commands/start.py:44
+#: telegram_bot/handlers/commands/start.py:55
 msgid "Hi, you are now admin! Access admin panel using this command - /admin"
 msgstr "Привет, вы теперь администратор! Доступ к панели админа: команда /admin"
 
-#: telegram_bot/handlers/commands/start.py:46
+#: telegram_bot/handlers/commands/start.py:47
 msgid "Hi, you admin, you can access admin panel using this command - /admin"
 msgstr ""
-"Привет, админ, вы можете получить доступ к панели админа этой командой - "
-"/admin"
+"Привет, админ, вы можете получить доступ к панели админа этой командой - /"
+"admin"
 
 #: telegram_bot/handlers/errors/get_lot.py:14
 msgid "❌ We cant find your lot, try again"
@@ -214,42 +213,47 @@ msgstr "🌎 Выберите язык"
 msgid "✅ Language successfully changed"
 msgstr "✅ Язык успешно изменен"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:28
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:85
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:30
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:87
 msgid "✅ You already respond to this request!"
 msgstr "✅ Вы уже откликнулись на этот запрос!"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:33
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:35
 msgid "🚘 Enter lot ID"
 msgstr "🚘 Введите номер лота"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:39
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:41
 #: telegram_bot/handlers/keyboard/murkup/find_for_me.py:25
 #: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:59
 msgid "⏳ Loading..."
 msgstr "⏳ Загрузка..."
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:72
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:74
 msgid ""
 "👋 <b>Hey, someone from our team answered your request, see what we have "
 "found for you!</b>"
 msgstr ""
-"👋 <b>Привет, кто-то из нашей команды ответил на ваш запрос, посмотрите, "
-"что мы нашли для вас!</b>"
+"👋 <b>Привет, кто-то из нашей команды ответил на ваш запрос, посмотрите, что "
+"мы нашли для вас!</b>"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:83
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:85
 msgid "✅ Successfully sent to user!"
 msgstr "✅ Успешно отправлено пользователю!"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:97
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:100
+msgid "📱 To use this feature you must provide a phone number:"
+msgstr ""
+"📱 Чтобы воспользоваться этой функцией, необходимо указать номер телефона:"
+
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:104
 msgid "🚘 Write the make:"
 msgstr "🚘 Укажите марку:"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:114
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:123
 msgid "✅ Your request has been saved!"
 msgstr "✅ Ваш запрос сохранен!"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:120
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:132
 msgid ""
 "\n"
 "<b>NEW FIND FOR ME REQUEST RECIEVED!</b>"
@@ -257,7 +261,7 @@ msgstr ""
 "\n"
 "<b>ПОЛУЧЕН НОВЫЙ ЗАПРОС «Найди для меня»!</b>"
 
-#: telegram_bot/handlers/keyboard/murkup/admin.py:50
+#: telegram_bot/handlers/keyboard/murkup/admin.py:52
 #, python-brace-format
 msgid ""
 "Send this message to the user you want to promote:\n"
@@ -281,7 +285,6 @@ msgstr ""
 "VIN: <b>{vin}</b>"
 
 #: telegram_bot/handlers/keyboard/murkup/find_for_me.py:24
-#, fuzzy
 msgid "❌ Lot id must be a number, try again"
 msgstr "❌ Lot ID должен быть числом, попробуйте еще раз"
 
@@ -390,14 +393,15 @@ msgid "You can buy a detailed report about the car (🦊 Carfax)"
 msgstr "Вы можете купить подробный отчет об автомобиле (🦊 Carfax)"
 
 #: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:65
-#, fuzzy
 msgid ""
-"<b>We received 2 lots according to your data, choose below what you "
-"need</b>\n"
+"<b>We received 2 lots according to your data, choose below what you need</b>\n"
 "\n"
 msgstr ""
-"<b>Мы получили 2 лота по вашим данным, выберите ниже то, что вам "
-"нужно</b>\n"
+"<b>Мы получили 2 лота по вашим данным, выберите ниже то, что вам нужно</b>\n"
+
+#: telegram_bot/handlers/keyboard/murkup/request_phone_number.py:26
+msgid "📱 Phone number saved successfully!"
+msgstr "📱 Номер телефона успешно сохранён!"
 
 #: telegram_bot/keyboards/inline/additional_lot_data.py:11
 msgid "📊 Sales statistics"
@@ -525,6 +529,10 @@ msgstr "ПОМОЩЬ ✋"
 msgid "LANGUAGE 🌍"
 msgstr "ЯЗЫК 🌍"
 
+#: telegram_bot/keyboards/murkup/request_phone_number.py:8
+msgid "📱 Give phone number"
+msgstr "📱 Укажите номер телефона"
+
 #: telegram_bot/utils/find_for_me.py:12
 #, python-brace-format
 msgid ""
@@ -548,15 +556,19 @@ msgid "<b>📝 Note:</b> {specific_message}\n"
 msgstr "<b>📝 Примечание:</b> {specific_message}\n"
 
 #: telegram_bot/utils/find_for_me.py:25
-#, fuzzy, python-brace-format
-msgid "<b> 👤Username:</b> @{username}\n"
+#, python-brace-format
+msgid "<b>👤 Username:</b> @{username}\n"
 msgstr "<b> 👤Имя пользователя:</b> @{username}\n"
 
-#: telegram_bot/utils/find_for_me.py:35
+#: telegram_bot/utils/find_for_me.py:27
+#, python-brace-format
+msgid "<b>📱 Phone Number:</b> {phone_number}\n"
+msgstr "<b>📱 Номер телефона:</b> {phone_number}\n"
+
+#: telegram_bot/utils/find_for_me.py:37
 msgid ""
 "\n"
 "✅ Do you want to send this request?"
 msgstr ""
 "\n"
 "✅ Хотите отправить этот запрос?"
-

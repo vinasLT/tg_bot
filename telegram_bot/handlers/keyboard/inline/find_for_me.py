@@ -3,6 +3,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import CallbackQuery
 from aiogram.utils.i18n import gettext as _
 
+from database.schemas.user import UserUpdate
 from external_apis.auction_api.auction_api import AuctionAPI
 from external_apis.auction_api.serializers import serialize_lot
 from external_apis.auction_api.types import VINorLotIDIn
@@ -11,6 +12,7 @@ from database.crud.user import UserService
 from database.schemas.find_for_me import FindForMeCreate, FindForMeUpdate
 from telegram_bot.keyboards.inline.additional_lot_data import lot_inline_keyboard
 from telegram_bot.keyboards.inline.find_for_me import new_find_for_me_request_received
+from telegram_bot.keyboards.murkup.request_phone_number import request_phone_number
 from telegram_bot.states.find_for_me import FindForMeStates
 from telegram_bot.utils.callback_query import parse_callback_data
 from telegram_bot.utils.find_for_me import get_summary_text, ask_confirmation, send_lot
@@ -88,12 +90,17 @@ async def confirm_respond_find_for_me(query: CallbackQuery, state: FSMContext):
         await state.clear()
 
 
-
-
 #USER
 @find_for_me_inline_router.callback_query(F.data == 'start_find_for_me')
 async def start_find_for_me(query: CallbackQuery, state: FSMContext):
     await state.clear()
+    async with UserService() as user_service:
+        user = await user_service.get_by_telegram_id(query.from_user.id)
+        if not user.phone_number:
+            await query.message.answer(_('📱 To use this feature you must provide a phone number:'), reply_markup=request_phone_number())
+            await query.answer()
+            return
+
     await query.message.edit_text(_('🚘 Write the make:'), reply_markup=None)
     await state.set_state(FindForMeStates.wait_for_make)
     await query.answer()
@@ -105,23 +112,24 @@ async def confirm_send(query: CallbackQuery, state: FSMContext):
     username = query.from_user.username
     async with UserService() as user_service:
         user = await user_service.get_by_telegram_id(query.from_user.id)
+        if not user.username:
+            user = await user_service.update(user.id, UserUpdate(username=username))
         async with FindForMeService() as service:
             request = await service.create(FindForMeCreate(year_to=data.get('year_to'), make=data.get('make'), year_from=data.get('year_from'),
                                                     model=data.get('model'), budget_from=data.get('budget_from'), budget_to=data.get('budget_to'),
                                                     specific_message=data.get('specific_message'), user_id=user.id,
-                                                    username=username))
+                                                    ))
 
         await query.message.edit_text(_('✅ Your request has been saved!'))
         await query.answer()
 
-        text = get_summary_text(data)
         await state.clear()
 
-        text += _("\n<b>NEW FIND FOR ME REQUEST RECIEVED!</b>")
-        admins = await user_service.get_admins()
 
-        data['username'] = username
-        text_with_username = get_summary_text(data)
+        admins = await user_service.get_admins()
+        text_with_username = get_summary_text(data, user.username, user.phone_number)
+
+        text_with_username += _("\n<b>NEW FIND FOR ME REQUEST RECIEVED!</b>")
         for admin in admins:
             await bot.send_message(chat_id=admin.telegram_id, text=text_with_username,
                                    reply_markup=new_find_for_me_request_received(request.id))

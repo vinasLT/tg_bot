@@ -6,6 +6,7 @@ from pydantic import BaseModel
 class UserBase(BaseModel):
     telegram_id: int
     username: Optional[str] = None
+    phone_number: Optional[str] = None
     language: Optional[str] = 'en'
     is_admin: bool = False
 
@@ -16,6 +17,7 @@ class UserCreate(UserBase):
 
 class UserUpdate(BaseModel):
     username: Optional[str] = None
+    phone_number: Optional[str] = None
     language: Optional[str] = None
     is_admin: Optional[bool] = False
 
