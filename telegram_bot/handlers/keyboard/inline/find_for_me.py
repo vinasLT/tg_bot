@@ -102,11 +102,14 @@ async def start_find_for_me(query: CallbackQuery, state: FSMContext):
 async def confirm_send(query: CallbackQuery, state: FSMContext):
     from main import bot
     data = await state.get_data()
+    username = query.from_user.username
     async with UserService() as user_service:
         user = await user_service.get_by_telegram_id(query.from_user.id)
         async with FindForMeService() as service:
             request = await service.create(FindForMeCreate(year_to=data.get('year_to'), make=data.get('make'), year_from=data.get('year_from'),
-                                                 model=data.get('model'), budget_from=data.get('budget_from'), budget_to=data.get('budget_to'), specific_message=data.get('specific_message'), user_id=user.id))
+                                                    model=data.get('model'), budget_from=data.get('budget_from'), budget_to=data.get('budget_to'),
+                                                    specific_message=data.get('specific_message'), user_id=user.id,
+                                                    username=username))
 
         await query.message.edit_text(_('✅ Your request has been saved!'))
         await query.answer()
@@ -117,8 +120,10 @@ async def confirm_send(query: CallbackQuery, state: FSMContext):
         text += _("\n<b>NEW FIND FOR ME REQUEST RECIEVED!</b>")
         admins = await user_service.get_admins()
 
+        data['username'] = username
+        text_with_username = get_summary_text(data)
         for admin in admins:
-            await bot.send_message(chat_id=admin.telegram_id, text=text,
+            await bot.send_message(chat_id=admin.telegram_id, text=text_with_username,
                                    reply_markup=new_find_for_me_request_received(request.id))
 
 @find_for_me_inline_router.callback_query(F.data == "skip_specific_message")

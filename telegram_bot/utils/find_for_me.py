@@ -19,7 +19,11 @@ def get_summary_text(data: dict)->str:
              model=data.get('model'), budget_from=data.get('budget_from'), budget_to=data.get('budget_to'))
 
     if data.get("specific_message"):
-        summary += _("<b>📝 Note:</b> {specific_message}\n").format(specific_message=data["specific_message"])
+        summary += _("<b>📝 Note:</b> {specific_message}\n").format(specific_message=data.get("specific_message"))
+
+    if data.get('username'):
+        summary += _('<b> 👤Username:</b> @{username}\n').format(username=data.get('username'))
+
 
     return summary
 

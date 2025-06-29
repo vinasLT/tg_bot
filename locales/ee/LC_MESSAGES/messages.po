@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-25 17:53+0200\n"
+"POT-Creation-Date: 2025-06-29 11:38+0200\n"
 "PO-Revision-Date: 2025-06-25 18:00+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: et\n"
@@ -182,28 +182,28 @@ msgstr "❌ Me ei leia sinu oksjoninumbrit, proovi uuesti"
 msgid "🔍 No more images available."
 msgstr "🔍 Rohkem pilte pole saadaval."
 
-#: telegram_bot/handlers/keyboard/inline/carfax.py:27
+#: telegram_bot/handlers/keyboard/inline/carfax.py:21
 msgid "🚘 Enter the VIN of the vehicle for which you want to purchase a report:"
 msgstr "🚘 Sisesta sõiduki VIN, mille kohta soovid raportit osta:"
 
-#: telegram_bot/handlers/keyboard/inline/carfax.py:37
+#: telegram_bot/handlers/keyboard/inline/carfax.py:35
 msgid "❌ You don't have any purchased CarFax"
 msgstr "❌ Sul pole ühtegi ostetud CarFax-raportit"
 
-#: telegram_bot/handlers/keyboard/inline/carfax.py:54
+#: telegram_bot/handlers/keyboard/inline/carfax.py:52
 msgid "🔄 Checking records..."
 msgstr "🔄 Kontrollin andmeid..."
 
-#: telegram_bot/handlers/keyboard/inline/carfax.py:65
+#: telegram_bot/handlers/keyboard/inline/carfax.py:63
 msgid "🔄 Retrieving checkout link..."
 msgstr "🔄 Saadan makselinki..."
 
-#: telegram_bot/handlers/keyboard/inline/carfax.py:77
+#: telegram_bot/handlers/keyboard/inline/carfax.py:75
 msgid "Pay & Check below:"
 msgstr "Maksa & kontrolli all:"
 
 #: telegram_bot/handlers/keyboard/inline/choose_language.py:24
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:67
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:36
 msgid "🌎 Choose language"
 msgstr "🌎 Vali keel"
 
@@ -221,8 +221,8 @@ msgid "🚘 Enter lot ID"
 msgstr "🚘 Sisesta oksjoninumber"
 
 #: telegram_bot/handlers/keyboard/inline/find_for_me.py:39
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:23
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:34
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:25
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:59
 msgid "⏳ Loading..."
 msgstr "⏳ Laadin..."
 
@@ -242,11 +242,11 @@ msgstr "✅ Edukalt kasutajale saadetud!"
 msgid "🚘 Write the make:"
 msgstr "🚘 Sisesta mark:"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:111
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:114
 msgid "✅ Your request has been saved!"
 msgstr "✅ Sinu päring on salvestatud!"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:117
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:120
 msgid ""
 "\n"
 "<b>NEW FIND FOR ME REQUEST RECIEVED!</b>"
@@ -263,12 +263,12 @@ msgstr ""
 "Saa see sõnum kasutajale, keda soovid promoda:\n"
 "Saabu adminiks – <a href='{link}'>klõpsa siia</a>"
 
-#: telegram_bot/handlers/keyboard/murkup/carfax.py:37
-#: telegram_bot/handlers/keyboard/murkup/carfax.py:46
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:27
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:36
 msgid "❌ You entered an invalid VIN number, try again"
 msgstr "❌ Sisestasid vale VIN-koodi, proovi uuesti"
 
-#: telegram_bot/handlers/keyboard/murkup/carfax.py:55
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:45
 #, python-brace-format
 msgid ""
 "Check again, is this the correct VIN code?\n"
@@ -277,11 +277,15 @@ msgstr ""
 "Kontrolli uuesti, kas see on õige VIN-kood?\n"
 "VIN: <b>{vin}</b>"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:32
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:24
+msgid "❌ Lot id must be a number, try again"
+msgstr "❌ Partiide ID peab olema number, proovi uuesti"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:34
 msgid "We found two lots with same lot ID, choose auction:"
 msgstr "Leidsime kaks sama oksjoninumbriga partiid, vali oksjon:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:41
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:43
 msgid ""
 "You have already submitted a 'Find for me' request. Please wait for a "
 "response — once we reply, you'll be able to send a new request."
@@ -289,7 +293,7 @@ msgstr ""
 "Oled juba saatnud „Leia minu jaoks“ päringu. Palun oota vastust — kui "
 "vastame, saad saata uue päringu."
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:46
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:48
 msgid ""
 "🔍 <b>How \"Find for Me\" works:</b>\n"
 "<b>1.</b> You fill out a short form with:\n"
@@ -310,48 +314,48 @@ msgstr ""
 "<b>3.</b> Kui sulle soovitus meeldib, <b>aitame sul selle osta ja "
 "tarnida!</b>"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:61
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:63
 msgid "❌ Make must contain only letters. Try again:"
 msgstr "❌ Mark peab sisaldama ainult tähti. Proovi uuesti:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:64
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:66
 msgid "📦 Write the model:"
 msgstr "📦 Sisesta mudel:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:72
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:74
 msgid "❌ Model must contain letters or numbers. Try again:"
 msgstr "❌ Mudel peab sisaldama tähti või numbreid. Proovi uuesti:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:75
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:77
 msgid "📅 Year from (e.g. 2015):"
 msgstr "📅 Aasta alates (nt 2015):"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:82
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:84
 msgid "❌ Invalid year. Enter a number like 2015:"
 msgstr "❌ Vale aasta. Sisesta number nagu 2015:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:85
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:87
 msgid "📅 Year to (e.g. 2020):"
 msgstr "📅 Aasta kuni (nt 2020):"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:92
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:94
 msgid "❌ Invalid year. Enter a number like 2020:"
 msgstr "❌ Vale aasta. Sisesta number nagu 2020:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:95
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:97
 msgid "💰 Budget from (USD):"
 msgstr "💰 Eelarve alates (USD):"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:102
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:112
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:104
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:114
 msgid "❌ Budget must be a number. Try again:"
 msgstr "❌ Eelarve peab olema number. Proovi uuesti:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:105
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:107
 msgid "💰 Budget to (USD):"
 msgstr "💰 Eelarve kuni (USD):"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:116
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:118
 msgid ""
 "📝 Want to tell us anything specific?\n"
 "Describe it or press skip:"
@@ -363,20 +367,11 @@ msgstr ""
 msgid "🚘 Enter lot ID or VIN:"
 msgstr "🚘 Sisesta oksjoninumber või VIN:"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:40
-msgid ""
-"<b>We received 2 lots according to your data, choose below what you "
-"need</b>\n"
-"\n"
-msgstr ""
-"<b>Leidsime sinu andmete alusel 2 partiid, vali allolevalt, mida "
-"vajad</b>\n"
-
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:72
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:41
 msgid "💸 Click on the button below to open the calculator"
 msgstr "💸 Klõpsa allolevale nupule, et avada kalkulaator"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:76
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:45
 msgid ""
 "<b>ℹ Help:</b>\n"
 "✉ My email: <b>hvjlogistic@gmail.com</b>\n"
@@ -386,9 +381,18 @@ msgstr ""
 "✉ Minu e-post: <b>hvjlogistic@gmail.com</b>\n"
 "📞 Minu WhatsApp/Viber/Telegram/Signal: <b>+37062964425</b>\n"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:83
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:52
 msgid "You can buy a detailed report about the car (🦊 Carfax)"
 msgstr "Saad osta detailse raporti sõiduki kohta (🦊 Carfax)"
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:65
+msgid ""
+"<b>We received 2 lots according to your data, choose below what you "
+"need</b>\n"
+"\n"
+msgstr ""
+"<b>Leidsime sinu andmete alusel 2 partiid, vali allolevalt, mida "
+"vajad</b>\n"
 
 #: telegram_bot/keyboards/inline/additional_lot_data.py:11
 msgid "📊 Sales statistics"
@@ -538,7 +542,12 @@ msgstr ""
 msgid "<b>📝 Note:</b> {specific_message}\n"
 msgstr "<b>📝 Märge:</b> {specific_message}\n"
 
-#: telegram_bot/utils/find_for_me.py:31
+#: telegram_bot/utils/find_for_me.py:25
+#, fuzzy, python-brace-format
+msgid "<b> 👤Username:</b> @{username}\n"
+msgstr "<b> 👤Kasutajanimi:</b> @{username}\n"
+
+#: telegram_bot/utils/find_for_me.py:35
 msgid ""
 "\n"
 "✅ Do you want to send this request?"

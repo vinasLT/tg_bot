@@ -13,6 +13,7 @@ class FindForMeBase(BaseModel):
     budget_to: str
     specific_message: Optional[str] = None
     user_id: int
+    username: Optional[str] = None
     response_auction: Optional[str] = None
     response_lot_id: Optional[int] = None
     is_responded: Optional[bool] = None
@@ -35,6 +36,7 @@ class FindForMeUpdate(BaseModel):
     response_auction: Optional[str] = None
     response_lot_id: Optional[int] = None
     is_responded: Optional[bool] = False
+    username: Optional[str] = None
     created_at: Optional[datetime] = None
 
 

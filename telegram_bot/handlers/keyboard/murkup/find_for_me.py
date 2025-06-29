@@ -20,6 +20,8 @@ find_for_me_markup_router = Router()
 @find_for_me_markup_router.message(FindForMeStates.wait_for_lot_id)
 async def respond_wait_for_lot_id(message: Message):
     vin_or_lot_id = message.text
+    if not vin_or_lot_id.isdigit():
+        await message.answer(_('❌ Lot id must be a number, try again'))
     loading_message = await message.answer(_('⏳ Loading...'))
 
     async with AuctionAPI() as api:

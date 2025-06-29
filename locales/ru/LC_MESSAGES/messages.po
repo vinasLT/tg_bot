@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-06-25 17:53+0200\n"
+"POT-Creation-Date: 2025-06-29 11:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ru\n"
@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "<b>👋 Привет!</b>\n"
 "\n"
-"🚗 Мы помогаем вам <b>сэкономить до 50%</b> при покупке автомобиля из "
-"США.\n"
+"🚗 Мы помогаем вам <b>сэкономить до 50%</b> при покупке автомобиля из США."
+"\n"
 "🛡️ Весь процесс <b>безопасен и прозрачен</b>, без скрытых деталей.\n"
 "\n"
 "🔥 <b>Присоединяйтесь к нашему быстрорастущему сообществу</b>, чтобы "
@@ -173,7 +173,9 @@ msgstr "Привет, вы теперь администратор! Доступ
 
 #: telegram_bot/handlers/commands/start.py:46
 msgid "Hi, you admin, you can access admin panel using this command - /admin"
-msgstr "Привет, админ, вы можете получить доступ к панели админа этой командой - /admin"
+msgstr ""
+"Привет, админ, вы можете получить доступ к панели админа этой командой - "
+"/admin"
 
 #: telegram_bot/handlers/errors/get_lot.py:14
 msgid "❌ We cant find your lot, try again"
@@ -183,28 +185,28 @@ msgstr "❌ Лот не найден, попробуйте снова"
 msgid "🔍 No more images available."
 msgstr "🔍 Больше изображений нет."
 
-#: telegram_bot/handlers/keyboard/inline/carfax.py:27
+#: telegram_bot/handlers/keyboard/inline/carfax.py:21
 msgid "🚘 Enter the VIN of the vehicle for which you want to purchase a report:"
 msgstr "🚘 Введите VIN автомобиля, по которому хотите получить отчет:"
 
-#: telegram_bot/handlers/keyboard/inline/carfax.py:37
+#: telegram_bot/handlers/keyboard/inline/carfax.py:35
 msgid "❌ You don't have any purchased CarFax"
 msgstr "❌ У вас нет купленных отчетов CarFax"
 
-#: telegram_bot/handlers/keyboard/inline/carfax.py:54
+#: telegram_bot/handlers/keyboard/inline/carfax.py:52
 msgid "🔄 Checking records..."
 msgstr "🔄 Проверка записей..."
 
-#: telegram_bot/handlers/keyboard/inline/carfax.py:65
+#: telegram_bot/handlers/keyboard/inline/carfax.py:63
 msgid "🔄 Retrieving checkout link..."
 msgstr "🔄 Получение ссылки для оплаты..."
 
-#: telegram_bot/handlers/keyboard/inline/carfax.py:77
+#: telegram_bot/handlers/keyboard/inline/carfax.py:75
 msgid "Pay & Check below:"
 msgstr "Оплатить и проверить ниже:"
 
 #: telegram_bot/handlers/keyboard/inline/choose_language.py:24
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:67
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:36
 msgid "🌎 Choose language"
 msgstr "🌎 Выберите язык"
 
@@ -222,8 +224,8 @@ msgid "🚘 Enter lot ID"
 msgstr "🚘 Введите номер лота"
 
 #: telegram_bot/handlers/keyboard/inline/find_for_me.py:39
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:23
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:34
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:25
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:59
 msgid "⏳ Loading..."
 msgstr "⏳ Загрузка..."
 
@@ -232,8 +234,8 @@ msgid ""
 "👋 <b>Hey, someone from our team answered your request, see what we have "
 "found for you!</b>"
 msgstr ""
-"👋 <b>Привет, кто-то из нашей команды ответил на ваш запрос, "
-"посмотрите, что мы нашли для вас!</b>"
+"👋 <b>Привет, кто-то из нашей команды ответил на ваш запрос, посмотрите, "
+"что мы нашли для вас!</b>"
 
 #: telegram_bot/handlers/keyboard/inline/find_for_me.py:83
 msgid "✅ Successfully sent to user!"
@@ -243,11 +245,11 @@ msgstr "✅ Успешно отправлено пользователю!"
 msgid "🚘 Write the make:"
 msgstr "🚘 Укажите марку:"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:111
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:114
 msgid "✅ Your request has been saved!"
 msgstr "✅ Ваш запрос сохранен!"
 
-#: telegram_bot/handlers/keyboard/inline/find_for_me.py:117
+#: telegram_bot/handlers/keyboard/inline/find_for_me.py:120
 msgid ""
 "\n"
 "<b>NEW FIND FOR ME REQUEST RECIEVED!</b>"
@@ -264,12 +266,12 @@ msgstr ""
 "Отправьте это сообщение пользователю, которого хотите повысить:\n"
 "Становись администратором - <a href='{link}'>нажмите здесь</a>"
 
-#: telegram_bot/handlers/keyboard/murkup/carfax.py:37
-#: telegram_bot/handlers/keyboard/murkup/carfax.py:46
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:27
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:36
 msgid "❌ You entered an invalid VIN number, try again"
 msgstr "❌ Вы ввели неверный VIN, попробуйте снова"
 
-#: telegram_bot/handlers/keyboard/murkup/carfax.py:55
+#: telegram_bot/handlers/keyboard/murkup/carfax.py:45
 #, python-brace-format
 msgid ""
 "Check again, is this the correct VIN code?\n"
@@ -278,11 +280,16 @@ msgstr ""
 "Проверьте еще раз, верный ли это VIN-код?\n"
 "VIN: <b>{vin}</b>"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:32
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:24
+#, fuzzy
+msgid "❌ Lot id must be a number, try again"
+msgstr "❌ Lot ID должен быть числом, попробуйте еще раз"
+
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:34
 msgid "We found two lots with same lot ID, choose auction:"
 msgstr "Найдено два лота с одним и тем же номером, выберите аукцион:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:41
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:43
 msgid ""
 "You have already submitted a 'Find for me' request. Please wait for a "
 "response — once we reply, you'll be able to send a new request."
@@ -290,7 +297,7 @@ msgstr ""
 "Вы уже отправили запрос «Найди для меня». Пожалуйста, дождитесь ответа — "
 "после нашего ответа вы сможете отправить новый запрос."
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:46
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:48
 msgid ""
 "🔍 <b>How \"Find for Me\" works:</b>\n"
 "<b>1.</b> You fill out a short form with:\n"
@@ -308,50 +315,51 @@ msgstr ""
 "– <b>Год</b>\n"
 "– <b>Бюджет</b>\n"
 "<b>2.</b> Наша команда ищет подходящие автомобили.\n"
-"<b>3.</b> Если вам понравится предложение, <b>мы поможем вам купить и доставить его!</b>"
+"<b>3.</b> Если вам понравится предложение, <b>мы поможем вам купить и "
+"доставить его!</b>"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:61
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:63
 msgid "❌ Make must contain only letters. Try again:"
 msgstr "❌ Марка должна содержать только буквы. Попробуйте еще раз:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:64
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:66
 msgid "📦 Write the model:"
 msgstr "📦 Укажите модель:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:72
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:74
 msgid "❌ Model must contain letters or numbers. Try again:"
 msgstr "❌ Модель должна содержать буквы или цифры. Попробуйте еще раз:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:75
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:77
 msgid "📅 Year from (e.g. 2015):"
 msgstr "📅 Год от (например, 2015):"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:82
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:84
 msgid "❌ Invalid year. Enter a number like 2015:"
 msgstr "❌ Неверный год. Введите число, например 2015:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:85
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:87
 msgid "📅 Year to (e.g. 2020):"
 msgstr "📅 Год до (например, 2020):"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:92
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:94
 msgid "❌ Invalid year. Enter a number like 2020:"
 msgstr "❌ Неверный год. Введите число, например 2020:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:95
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:97
 msgid "💰 Budget from (USD):"
 msgstr "💰 Бюджет от (USD):"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:102
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:112
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:104
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:114
 msgid "❌ Budget must be a number. Try again:"
 msgstr "❌ Бюджет должен быть числом. Попробуйте еще раз:"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:105
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:107
 msgid "💰 Budget to (USD):"
 msgstr "💰 Бюджет до (USD):"
 
-#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:116
+#: telegram_bot/handlers/keyboard/murkup/find_for_me.py:118
 msgid ""
 "📝 Want to tell us anything specific?\n"
 "Describe it or press skip:"
@@ -363,18 +371,11 @@ msgstr ""
 msgid "🚘 Enter lot ID or VIN:"
 msgstr "🚘 Введите номер лота или VIN:"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:40
-msgid ""
-"<b>We received 2 lots according to your data, choose below what you "
-"need</b>\n"
-msgstr ""
-"<b>Мы получили 2 лота по вашим данным, выберите ниже то, что вам нужно</b>\n"
-
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:72
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:41
 msgid "💸 Click on the button below to open the calculator"
 msgstr "💸 Нажмите кнопку ниже, чтобы открыть калькулятор"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:76
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:45
 msgid ""
 "<b>ℹ Help:</b>\n"
 "✉ My email: <b>hvjlogistic@gmail.com</b>\n"
@@ -384,9 +385,19 @@ msgstr ""
 "✉ Мой email: <b>hvjlogistic@gmail.com</b>\n"
 "📞 Мой WhatsApp/Viber/Telegram/Signal: <b>+37062964425</b>\n"
 
-#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:83
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:52
 msgid "You can buy a detailed report about the car (🦊 Carfax)"
 msgstr "Вы можете купить подробный отчет об автомобиле (🦊 Carfax)"
+
+#: telegram_bot/handlers/keyboard/murkup/main_keyboard.py:65
+#, fuzzy
+msgid ""
+"<b>We received 2 lots according to your data, choose below what you "
+"need</b>\n"
+"\n"
+msgstr ""
+"<b>Мы получили 2 лота по вашим данным, выберите ниже то, что вам "
+"нужно</b>\n"
 
 #: telegram_bot/keyboards/inline/additional_lot_data.py:11
 msgid "📊 Sales statistics"
@@ -536,10 +547,16 @@ msgstr ""
 msgid "<b>📝 Note:</b> {specific_message}\n"
 msgstr "<b>📝 Примечание:</b> {specific_message}\n"
 
-#: telegram_bot/utils/find_for_me.py:31
+#: telegram_bot/utils/find_for_me.py:25
+#, fuzzy, python-brace-format
+msgid "<b> 👤Username:</b> @{username}\n"
+msgstr "<b> 👤Имя пользователя:</b> @{username}\n"
+
+#: telegram_bot/utils/find_for_me.py:35
 msgid ""
 "\n"
 "✅ Do you want to send this request?"
 msgstr ""
 "\n"
 "✅ Хотите отправить этот запрос?"
+

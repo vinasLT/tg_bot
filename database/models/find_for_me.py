@@ -22,6 +22,7 @@ class FindForMe(Base):
     response_lot_id = Column(Integer, nullable=True, default=None)
     is_responded = Column(Boolean, default=False)
 
+    username = Column(String, nullable=True, default=None)
     user_id = Column(Integer, ForeignKey("user.id", ondelete="CASCADE"))
     user = relationship("User", back_populates="find_for_me")
 
