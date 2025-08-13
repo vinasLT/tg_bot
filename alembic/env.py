@@ -4,7 +4,7 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from config import DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME, DEBUG
+from config import DB_USER, DB_PASS, DB_HOST, DB_PORT, DB_NAME, DEBUG
 from database.models import Base
 
 # this is the Alembic Config object, which provides
@@ -14,7 +14,7 @@ config = context.config
 if DEBUG:
     SQLALCHEMY_DATABASE_URL = 'sqlite:///db.sqlite'
 else:
-    SQLALCHEMY_DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
+    SQLALCHEMY_DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 db_url = SQLALCHEMY_DATABASE_URL
 if not db_url:
     raise RuntimeError("DATABASE_URL is not set.")

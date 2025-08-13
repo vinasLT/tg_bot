@@ -20,7 +20,7 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock* /app/
 
 # Установка зависимостей проекта
-RUN poetry install --no-root
+RUN poetry install --only main --no-root
 
 # Копирование исходного кода
 COPY . /app
@@ -30,6 +30,8 @@ RUN chmod +x /app/entrypoint.sh
 
 # Открытие порта
 EXPOSE 8000
+
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 # Запуск FastAPI
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
