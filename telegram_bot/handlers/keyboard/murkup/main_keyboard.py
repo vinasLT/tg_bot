@@ -53,6 +53,7 @@ async def get_carfax(message: Message, state: FSMContext):
 
 
 @start_keyboard_handler.message(StartKeyboardStates.wait_for_vin_or_lot)
+@start_keyboard_handler.message(StartKeyboardStates.wait_for_vin_or_lot)
 async def process_vin_or_lot_id(message: Message, state: FSMContext):
     vin_or_lot_id = message.text
 
@@ -61,7 +62,10 @@ async def process_vin_or_lot_id(message: Message, state: FSMContext):
     async with AuctionAPI() as api:
         response = await api.get_lot_by_vin_or_id(VINorLotIDIn(vin_or_lot=vin_or_lot_id))
 
+    await state.clear()
+
     if len(response) >= 2:
+        # Если пришло два лота
         two_lots = _('<b>We received 2 lots according to your data, choose below what you need</b>\n\n')
         for num, item in enumerate(response):
             two_lots += f'<b>#{num + 1}</b>\n'
@@ -69,21 +73,30 @@ async def process_vin_or_lot_id(message: Message, state: FSMContext):
             two_lots += '\n\n'
 
         await loading_message.edit_text(two_lots, reply_markup=choose_one_lot(response))
-        await state.clear()
         return
+
+    # Если пришёл только один лот
+    item = response[0]
+    images = item.link_img_hd
+    text = serialize_lot(item)
+    keyboard = lot_inline_keyboard(item.lot_id, item.base_site)
+
+    # Сохраняем в историю
+    async with UserSearchHistoryService() as user_history_service:
+        await user_history_service.save_user_search(message.from_user.id, item.lot_id, item.base_site)
+
+    if images:
+        # Удаляем сообщение "⏳ Loading..." и отправляем фото с подписью и клавиатурой
+        await loading_message.delete()
+        await message.answer_photo(
+            photo=str(images[0]),
+            caption=text,
+            reply_markup=keyboard,
+        )
     else:
-        item = response[0]
-        images = item.link_img_hd
-        text = serialize_lot(item)
+        # Если изображений нет, редактируем сообщение и добавляем клавиатуру
+        await loading_message.edit_text(text, reply_markup=keyboard)
 
-        async with UserSearchHistoryService() as user_history_service:
-            await user_history_service.save_user_search(message.from_user.id, item.lot_id, item.base_site)
-        keyboard = lot_inline_keyboard(item.lot_id, item.base_site)
-
-        if images:
-            media = InputMediaPhoto(media=str(images[0]), caption=text)
-            await loading_message.edit_media(media=media, text=text, reply_markup=keyboard)
-        await state.clear()
 
 
 
