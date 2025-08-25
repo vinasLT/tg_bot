@@ -3,10 +3,9 @@ import asyncio
 from aiogram import Router, F
 from aiogram.types import CallbackQuery, InputMediaPhoto, Message
 
-from external_apis.auction_api.auction_api import AuctionAPI
 from external_apis.auction_api.serializers import serialize_lot
-from external_apis.auction_api.types import LotByIDIn, VINorLotIDIn
 from database.crud.user_search_history import UserSearchHistoryService
+from rpc_client.api_client import ApiRpcClient
 from telegram_bot.handlers.errors.get_lot import get_lot_errors
 from telegram_bot.keyboards.inline.additional_lot_data import lot_inline_keyboard
 from telegram_bot.utils.callback_query import parse_callback_data
@@ -21,10 +20,12 @@ choose_one_lot_router.error.register(get_lot_errors)
 async def open_lot(query: CallbackQuery):
     lot_id, auction = parse_callback_data(query.data)
 
-    async with AuctionAPI() as api:
-        lots = await api.get_lot_by_vin_or_id(
-            VINorLotIDIn(vin_or_lot=lot_id, site=auction)
+    async with ApiRpcClient() as rpc_client:
+        response = await rpc_client.get_lot_by_vin_or_lot_id(
+            vin_or_lot_id=lot_id, site=auction
         )
+
+        lots = response.lot
 
         messages: list[Message] = []
         for lot in lots:
@@ -54,8 +55,8 @@ async def open_lot(query: CallbackQuery):
         if active_pairs:
             bids = await asyncio.gather(
                 *(
-                    api.get_current_bid(
-                        LotByIDIn(lot_id=lot.lot_id, site=auction)
+                    rpc_client.get_current_bid(
+                        lot_id=lot.lot_id, site=auction
                     )
                     for lot, _ in active_pairs
                 )

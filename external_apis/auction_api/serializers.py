@@ -1,12 +1,13 @@
-from typing import Union
-
-from external_apis.auction_api.types import BasicLot, BasicHistoryLot
+from datetime import datetime
 from aiogram.utils.i18n import gettext as _
+
+from rpc_client.gen.python.auction.v1 import lot_pb2
+
 
 def get_serialized_auction(base_site:str) -> str:
     return '🔴 IAAI' if base_site.lower() == 'iaai' else '🔵 COPART'
 
-def serialize_lot(data: Union[BasicLot, BasicHistoryLot]) -> str:
+def serialize_lot(data: lot_pb2.Lot) -> str:
     vehicle_name = f"{data.year if data.year else 'XXXX'} " \
                    f"{data.make.upper() if data.make else 'N/A'} " \
                    f"{data.model.upper() if data.model else 'N/A'} " \
@@ -36,12 +37,17 @@ def serialize_lot(data: Union[BasicLot, BasicHistoryLot]) -> str:
             )
         )
 
+    auction_date = None
+    if data.auction_date:
+        auction_date = datetime.fromisoformat(data.auction_date.replace('Z', '+00:00'))
+
+
     lines.extend([
         _("<b>🔥 Auction Status:</b> <b>{status}</b>").format(
             status=data.form_get_type.upper() if data.form_get_type else 'N/A'
         ),
         _("<b>🔥 Auction Date:</b> <i>{auction_date}</i>").format(
-            auction_date=data.auction_date.strftime('%m/%d/%Y %H:%M') if data.auction_date is not None else 'N/A'
+            auction_date=auction_date.strftime('%m/%d/%Y %H:%M') if auction_date is not None else 'N/A'
         ),
         _("<b>🔥 Auction Location:</b> <i>{auction_location}</i>").format(
             auction_location=data.location if data.location is not None else 'N/A'
@@ -50,7 +56,7 @@ def serialize_lot(data: Union[BasicLot, BasicHistoryLot]) -> str:
 
     return "\n".join(lines)
 
-def serialize_preview_lot(data: Union[BasicLot, BasicHistoryLot]) -> str:
+def serialize_preview_lot(data: lot_pb2.Lot) -> str:
     vehicle_name = f"{data.year if data.year else 'XXXX'} " \
                    f"{data.make.upper() if data.make else 'N/A'} " \
                    f"{data.model.upper() if data.model else 'N/A'}"
@@ -64,13 +70,16 @@ def serialize_preview_lot(data: Union[BasicLot, BasicHistoryLot]) -> str:
         ),
     ])
 
-def serialize_history(data: BasicLot) -> str:
+def serialize_history(data: lot_pb2.Lot) -> str:
     history = data.sale_history
     text = ''
-    if not history and not data.form_get_type == "history":
-
+    if len(history) == 0:
         return _('<b>❌ No history available</b>')
     for num, i in enumerate(history):
+        sale_date = None
+        if i.sale_date:
+            sale_date = datetime.fromisoformat(i.sale_date.replace('Z', '+00:00'))
+
         text += _(
             "<b>🔹 History #{num}</b>\n"
             "☑️ <b>Lot ID:</b> <code>{lot_id}</code>\n"
@@ -82,7 +91,7 @@ def serialize_history(data: BasicLot) -> str:
             num=num + 1,
             lot_id=i.lot_id,
             auction=get_serialized_auction(i.base_site),
-            date=i.sale_date.strftime("%Y-%m-%d"),
+            date=sale_date.strftime("%Y-%m-%d") if sale_date else 'N/A',
             price=i.purchase_price if i.purchase_price is not None else 'N/A',
             status=i.sale_status.upper()
         )
@@ -93,7 +102,7 @@ def serialize_history(data: BasicLot) -> str:
 
     return text
 
-def serialize_about_car(data: Union[BasicLot, BasicHistoryLot]) -> str:
+def serialize_about_car(data: lot_pb2.Lot) -> str:
     return _(
         "🛒 Seller Type: {seller_type}\n"
         "🚗 Cylinders: {cylinders}\n"

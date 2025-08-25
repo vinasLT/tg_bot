@@ -5,7 +5,7 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 from aiogram.fsm.storage.memory import MemoryStorage
 
-from config import API_BOT_TOKEN
+from config import settings
 from telegram_bot.handlers.commands.admin import admin
 from telegram_bot.handlers.commands.start import start
 from telegram_bot.handlers.keyboard.inline.additional_lot_data import lot_additional_data_router
@@ -21,7 +21,7 @@ from telegram_bot.handlers.keyboard.murkup.main_keyboard import start_keyboard_h
 from telegram_bot.handlers.keyboard.murkup.request_phone_number import request_phone_number_markup_router
 from telegram_bot.middelwares import MyI18nMiddleware, i18n
 
-bot = Bot(token=API_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+bot = Bot(token=settings.API_BOT_TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 
 
 async def main():

@@ -1,10 +1,10 @@
-from typing import Union
+from google._upb._message import RepeatedScalarContainer
 
-from external_apis.auction_api.types import BasicLot, BasicHistoryLot
+from rpc_client.gen.python.auction.v1 import lot_pb2
 
 
-def get_some_num_of_images(data: Union[BasicLot, BasicHistoryLot], num:int)-> list:
-    if isinstance(data.link_img_hd, list):
+def get_some_num_of_images(data: lot_pb2.Lot, num:int)-> list:
+    if isinstance(data.link_img_hd, RepeatedScalarContainer):
         images = []
         for image in data.link_img_hd[:num]:
             images.append(str(image))

@@ -2,7 +2,7 @@ from aiogram.fsm.context import FSMContext
 from aiogram.types import Message, InputMediaPhoto
 
 from external_apis.auction_api.serializers import serialize_lot
-from external_apis.auction_api.types import BasicLot
+from rpc_client.gen.python.auction.v1 import lot_pb2
 from telegram_bot.keyboards.inline.find_for_me import confirm_keyboard
 from telegram_bot.states.find_for_me import FindForMeStates
 from aiogram.utils.i18n import gettext as _
@@ -39,7 +39,7 @@ async def ask_confirmation(message: Message, state: FSMContext):
     await message.answer(summary, reply_markup=confirm_keyboard())
     await state.set_state(FindForMeStates.wait_for_confirmation)
 
-async def send_lot(editable_message: Message, item: BasicLot):
+async def send_lot(editable_message: Message, item: lot_pb2.Lot):
     images = item.link_img_hd
     text = serialize_lot(item)
 

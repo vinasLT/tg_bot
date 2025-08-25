@@ -6,7 +6,7 @@ from aiogram.types import Message
 from aiogram.utils.i18n import lazy_gettext as __
 from aiogram.utils.i18n import gettext as _
 
-from config import SECRET_ADMIN_KEY
+from config import settings
 from database.crud.find_for_me import FindForMeService
 from database.crud.user import UserService
 from database.schemas.find_for_me import FindForMeRead
@@ -46,7 +46,7 @@ async def add_admin(message: Message):
         if user and user.is_admin:
             bot_info = await bot.get_me()
             bot_username = bot_info.username
-            link = f"https://t.me/{bot_username}?start={SECRET_ADMIN_KEY}"
+            link = f"https://t.me/{bot_username}?start={settings.SECRET_ADMIN_KEY}"
 
             await message.answer(
                 _("Send this message to the user you want to promote:\n"

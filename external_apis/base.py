@@ -7,7 +7,7 @@ from typing import Type, Optional, Generic, Any, Sequence, List, TypeVar
 import httpx
 from pydantic import BaseModel, ValidationError
 
-from config import API_SERVICE_URL
+from config import settings
 
 R = TypeVar("R", bound=BaseModel)
 
@@ -26,7 +26,7 @@ class Endpoint(Generic[R]):
 class BaseAPIClient:
     def __init__(
         self,
-        base_url: str = API_SERVICE_URL,
+        base_url: str = settings.API_SERVICE_URL,
         *,
         timeout: float = 10.0,
         max_retries: int = 3,

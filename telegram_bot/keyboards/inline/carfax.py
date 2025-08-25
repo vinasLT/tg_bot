@@ -1,7 +1,7 @@
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from aiogram.utils.i18n import gettext as _
 
-from external_apis.carfax_api.types import Carfax
+from rpc_client.gen.python.carfax.v1 import carfax_pb2
 from telegram_bot.keyboards.inline.cancel import cancel_button
 
 
@@ -15,7 +15,7 @@ def carfax()-> InlineKeyboardMarkup:
             ]
 )
 
-def buy_or_see(carfax_obj: Carfax)-> InlineKeyboardMarkup:
+def buy_or_see(carfax_obj: carfax_pb2.Carfax)-> InlineKeyboardMarkup:
     if carfax_obj.is_paid:
         button = InlineKeyboardButton(text=_('🔗 Open CarFax'), url=str(carfax_obj.link))
     else:

@@ -2,12 +2,11 @@ from aiogram.filters import CommandStart, CommandObject
 from aiogram import Router
 from aiogram.types import Message
 
-from config import SECRET_ADMIN_KEY
+from config import settings
 from database.crud.user import UserService
 from database.schemas.user import UserUpdate, UserCreate
-from external_apis.carfax_api.carfax_api import CarfaxAPI
 from external_apis.carfax_api.serializers import serialize_carfax
-from external_apis.carfax_api.types import RequestCarfaxVin
+from rpc_client.carfax_client import CarfaxRcpClient
 from telegram_bot.keyboards.inline.carfax import buy_or_see
 from telegram_bot.keyboards.murkup.main_keyboard import start_keyboard
 
@@ -21,10 +20,10 @@ async def start_handler(message: Message, command: CommandObject):
     args = command.args
     if args and args.startswith('success_carfax_payment_'):
         vin = args.split('_')[-1]
-        async with CarfaxAPI() as api:
-            carfax = await api.get_carfax_by_vin(RequestCarfaxVin(user_external_id=str(telegram_id), vin=vin))
-            text = serialize_carfax(carfax)
-            await message.answer(text, reply_markup=buy_or_see(carfax))
+        async with CarfaxRcpClient() as rpc_client:
+            carfax = await rpc_client.get_carfax_by_vin(user_external_id=str(telegram_id), vin=vin, source=settings.SOURCE)
+            text = serialize_carfax(carfax.carfax)
+            await message.answer(text, reply_markup=buy_or_see(carfax.carfax))
         return
 
     async with UserService() as db:
@@ -39,7 +38,7 @@ async def start_handler(message: Message, command: CommandObject):
         )
 
         if user:
-            if args and args == SECRET_ADMIN_KEY and not user.is_admin:
+            if args and args == settings.SECRET_ADMIN_KEY and not user.is_admin:
                 await db.update(user.id, UserUpdate(is_admin=True))
                 await message.answer(_('Hi, you are now admin! Access admin panel using this command - /admin'), reply_markup=start_keyboard())
             else:
@@ -48,7 +47,7 @@ async def start_handler(message: Message, command: CommandObject):
                     reply_markup=start_keyboard()
                 )
         else:
-            is_admin = args == SECRET_ADMIN_KEY
+            is_admin = args == settings.SECRET_ADMIN_KEY
             await db.create(UserCreate(telegram_id=telegram_id, language='en', is_admin=is_admin, username=username))
 
             if is_admin:

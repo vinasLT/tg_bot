@@ -1,15 +1,14 @@
 import re
 
-import httpx
+import grpc
 from aiogram import Router
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 from aiogram.utils.i18n import gettext as _
-from external_apis.auction_api.auction_api import AuctionAPI
-from external_apis.auction_api.types import VINorLotIDIn
-from external_apis.carfax_api.carfax_api import CarfaxAPI
+
+from config import settings
 from external_apis.carfax_api.serializers import serialize_carfax
-from external_apis.carfax_api.types import RequestCarfaxVin
+from rpc_client.carfax_client import CarfaxRcpClient
 from telegram_bot.keyboards.inline.carfax import buy_or_cancel, buy_or_see
 from telegram_bot.states.carfax import CarfaxStates
 
@@ -26,22 +25,26 @@ async def respond_wait_for_lot_id(message: Message, state: FSMContext):
     if not vin_cleaned:
         await message.answer(_('❌ You entered an invalid VIN number, try again'))
         return
-    async with AuctionAPI() as api:
-        try:
-            response = await api.get_lot_by_vin_or_id(VINorLotIDIn(vin_or_lot=vin_cleaned))
-        except (httpx.TransportError, httpx.HTTPStatusError):
-            response = None
 
-    if not response:
-        await message.answer(_('❌ You entered an invalid VIN number, try again'))
-        return
-    async with CarfaxAPI() as api:
+
+    async with CarfaxRcpClient() as rpc_client:
         try:
-            carfax = await api.get_carfax_by_vin(RequestCarfaxVin(user_external_id=str(user_id), vin=vin_cleaned))
-            text = serialize_carfax(carfax)
-            await message.answer(text, reply_markup=buy_or_see(carfax))
-        except httpx.HTTPStatusError as e:
-            if e.response.status_code == 404:
+            is_vin_exists = await rpc_client.is_vin_exists(vin=vin_cleaned)
+        except grpc.aio.AioRpcError as e:
+            details = e.details()
+            await message.answer(_('❌ You entered an invalid VIN number, try again\n'
+                                   'Error: {details}').format(details=details))
+
+        if not is_vin_exists.is_exists:
+            await message.answer(_('❌ You entered an invalid VIN number, try again'))
+            return
+
+        try:
+            carfax = await rpc_client.get_carfax_by_vin(vin=vin_cleaned, user_external_id=str(user_id), source=settings.SOURCE)
+            text = serialize_carfax(carfax.carfax)
+            await message.answer(text, reply_markup=buy_or_see(carfax.carfax))
+        except grpc.aio.AioRpcError as e:
+            if e.code() == grpc.StatusCode.NOT_FOUND:
                 await message.answer(_('Check again, is this the correct VIN code?\n'
                                        'VIN: <b>{vin}</b>').format(vin=vin_cleaned), reply_markup=buy_or_cancel(vin_cleaned))
     await state.clear()
