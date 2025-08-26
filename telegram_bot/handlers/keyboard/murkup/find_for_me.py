@@ -5,10 +5,9 @@ from aiogram.types import Message
 from aiogram.utils.i18n import lazy_gettext as __
 from aiogram.utils.i18n import gettext as _
 
-from external_apis.auction_api.auction_api import AuctionAPI
-from external_apis.auction_api.types import VINorLotIDIn
 from database.crud.find_for_me import FindForMeService
 from database.crud.user import UserService
+from rpc_client.api_client import ApiRpcClient
 from telegram_bot.handlers.keyboard.inline.find_for_me import ask_confirmation
 from telegram_bot.keyboards.inline.find_for_me import find_for_me_start_cancel, skip_keyboard, choose_auction
 from telegram_bot.states.find_for_me import FindForMeStates
@@ -24,8 +23,8 @@ async def respond_wait_for_lot_id(message: Message):
         await message.answer(_('❌ Lot id must be a number, try again'))
     loading_message = await message.answer(_('⏳ Loading...'))
 
-    async with AuctionAPI() as api:
-        response = await api.get_lot_by_vin_or_id(VINorLotIDIn(vin_or_lot=vin_or_lot_id))
+    async with ApiRpcClient() as rpc_client:
+        response = await rpc_client.get_lot_by_vin_or_lot_id(vin_or_lot_id=vin_or_lot_id)
 
         if len(response) == 1:
             item = response[0]

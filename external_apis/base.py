@@ -7,7 +7,7 @@ from typing import Type, Optional, Generic, Any, Sequence, List, TypeVar
 import httpx
 from pydantic import BaseModel, ValidationError
 
-from config import API_SERVICE_URL
+from config import settings
 
 R = TypeVar("R", bound=BaseModel)
 
@@ -26,7 +26,7 @@ class Endpoint(Generic[R]):
 class BaseAPIClient:
     def __init__(
         self,
-        base_url: str = API_SERVICE_URL,
+        base_url: str = settings.API_SERVICE_URL,
         *,
         timeout: float = 10.0,
         max_retries: int = 3,
@@ -44,7 +44,8 @@ class BaseAPIClient:
             self._client = httpx.AsyncClient(
                 base_url=self._base_url,
                 timeout=self._timeout,
-                headers={"Accept": "application/json"},
+                headers = {"Accept": "application/json"},
+                follow_redirects = True
             )
         return self
 
@@ -65,11 +66,12 @@ class BaseAPIClient:
         while True:
             try:
                 response = await self._client.request(method, path, params=params, json=json)
-
+                logger.info('headers: %s', response.request.headers)
+                print('headers: ', response.request.headers)
                 response.raise_for_status()
                 return response
             except (httpx.TransportError, httpx.HTTPStatusError) as exc:
-                if exc.response is not None and exc.response.status_code == 404:
+                if exc.response is not None and exc.response.status_code in (404, 500):
                     raise
                 attempt += 1
                 if attempt > self._max_retries:

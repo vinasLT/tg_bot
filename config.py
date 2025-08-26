@@ -1,21 +1,27 @@
-import os
-
 from dotenv import load_dotenv
+from pydantic_settings import BaseSettings
 
 load_dotenv()
 
-API_SERVICE_URL=os.getenv('API_SERVICE_URL')
-API_BOT_TOKEN=os.getenv('API_BOT_TOKEN')
-SECRET_ADMIN_KEY=os.getenv('SECRET_ADMIN_KEY')
-CARFAX_SERVICE_URL=os.getenv('CARFAX_SERVICE_URL')
-PAYMENT_SERVICE_URL=os.getenv('PAYMENT_SERVICE_URL')
 
-SOURCE = 'telegram_bot'
+class Settings(BaseSettings):
+    API_BOT_TOKEN: str
+    SECRET_ADMIN_KEY: str
 
-DEBUG = os.getenv("DEBUG", "true").lower() == "true"
+    RPC_CARFAX_URL: str = "localhost:50052"
+    RPC_API_URL: str = "localhost:50051"
 
-DB_HOST = os.getenv("DB_HOST")
-DB_PORT = os.getenv("DB_PORT")
-DB_USER = os.getenv("DB_USER")
-DB_PASS = os.getenv("DB_PASS")
-DB_NAME = os.getenv("DB_NAME")
+    SOURCE: str = 'telegram_bot'
+
+    DEBUG: bool = True
+
+    DB_HOST: str = "localhost"
+    DB_PORT: str = "5432"
+    DB_NAME: str = "test_db"
+    DB_USER: str = "postgres"
+    DB_PASS: str = "testpass"
+
+    class Config:
+        env_file = ".env"
+
+settings = Settings()

@@ -4,12 +4,11 @@ from aiogram.types import CallbackQuery
 from aiogram.utils.i18n import gettext as _
 
 from database.schemas.user import UserUpdate
-from external_apis.auction_api.auction_api import AuctionAPI
 from external_apis.auction_api.serializers import serialize_lot
-from external_apis.auction_api.types import VINorLotIDIn
 from database.crud.find_for_me import FindForMeService
 from database.crud.user import UserService
 from database.schemas.find_for_me import FindForMeCreate, FindForMeUpdate
+from rpc_client.api_client import ApiRpcClient
 from telegram_bot.keyboards.inline.additional_lot_data import lot_inline_keyboard
 from telegram_bot.keyboards.inline.find_for_me import new_find_for_me_request_received
 from telegram_bot.keyboards.murkup.request_phone_number import request_phone_number
@@ -39,9 +38,9 @@ async def respond_find_request_(query: CallbackQuery, state: FSMContext):
 async def find_for_me_choose_auction(query: CallbackQuery):
     lot_id, auction_name = parse_callback_data(query.data)
     loading_message = await query.message.answer(_('⏳ Loading...'))
-    async with AuctionAPI() as api:
-        response = await api.get_lot_by_vin_or_id(VINorLotIDIn(vin_or_lot=lot_id, site=auction_name))
-        item = response[0]
+    async with ApiRpcClient() as rpc_client:
+        response = await rpc_client.get_lot_by_vin_or_lot_id(vin_or_lot_id=lot_id, site=auction_name)
+        item = response.lot[0]
         await send_lot(loading_message, item)
 
 @find_for_me_inline_router.callback_query(F.data.startswith("confirm_respond_find_for_me_"))
@@ -61,9 +60,9 @@ async def confirm_respond_find_for_me(query: CallbackQuery, state: FSMContext):
                 user = await user_service.get(user_id)
                 user_telegram_id = user.telegram_id
 
-            async with AuctionAPI() as api:
-                response = await api.get_lot_by_vin_or_id(VINorLotIDIn(vin_or_lot=lot_id, site=auction_name))
-                item = response[0]
+            async with ApiRpcClient() as rpc_client:
+                response = await rpc_client.get_lot_by_vin_or_lot_id(vin_or_lot_id=lot_id, site=auction_name)
+                item = response.lot[0]
                 images = item.link_img_hd
                 text = serialize_lot(item)
 
