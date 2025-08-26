@@ -48,39 +48,40 @@ async def carfax_buy(query: CallbackQuery):
 
     vin = query.data.split('_')[-1]
     user_id = query.from_user.id
-    await query.answer()
-    await query.message.edit_text(_('🔄 Checking records...'), reply_markup=None)
 
+    #
+    #
+    #
+    #     try:
+    #         response = await rcp_client.get_carfax_by_vin(user_external_id=str(user_id), vin=vin,
+    #                                                       source=settings.SOURCE)
+    #         carfax = response.carfax
+    #
+    #     except grpc.aio.AioRpcError as e:
+    #         if e.code() == grpc.StatusCode.NOT_FOUND:
+    #            response = None
+    #         else:
+    #             await query.message.edit_text(_('❌ Something went wrong, please try again later'))
+    #             return
+    #
+
+
+
+    bot_info = await bot.get_me()
+    bot_username = bot_info.username
+    success_payment = f"https://t.me/{bot_username}?start=success_carfax_payment_{vin}"
+    cancel_payment = f"https://t.me/{bot_username}"
+    await query.message.edit_text(_('🔄 Checking records...'), reply_markup=None)
     async with CarfaxRcpClient() as rcp_client:
         try:
-            response = await rcp_client.get_carfax_by_vin(user_external_id=str(user_id), vin=vin,
-                                                          source=settings.SOURCE)
-            carfax = response.carfax
-
-        except grpc.aio.AioRpcError as e:
-            if e.code() == grpc.StatusCode.NOT_FOUND:
-               response = None
-            else:
-                await query.message.edit_text(_('❌ Something went wrong, please try again later'))
-                return
-
-        if not response:
             response = await rcp_client.buy_carfax(user_external_id=str(user_id), vin=vin,
-                                                   source=settings.SOURCE)
-            carfax = response.carfax
-
-
-        # Now we know carfax is defined, so we can safely use it
-        bot_info = await bot.get_me()
-        bot_username = bot_info.username
-        success_payment = f"https://t.me/{bot_username}?start=success_carfax_payment_{carfax.vin}"
-        cancel_payment = f"https://t.me/{bot_username}"
-
-        try:
+                                               source=settings.SOURCE, cancel_url=cancel_payment,
+                                               success_url=success_payment)
             checkout_link = response.link
             await query.message.edit_text(_('Pay & Check below:'), reply_markup=payment_link(checkout_link, vin))
         except grpc.aio.AioRpcError as e:
             await query.message.edit_text(_('❌ Failed to create payment link, please try again later'))
+    await query.answer()
 
 @carfax_inline_router.callback_query(F.data.startswith('check_payment_'))
 async def check_payment(query: CallbackQuery):
