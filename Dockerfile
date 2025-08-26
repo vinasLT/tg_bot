@@ -16,6 +16,10 @@ ENV POETRY_VIRTUALENVS_CREATE=false \
 # Создание рабочей директории
 WORKDIR /app
 
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod 755 /usr/local/bin/entrypoint.sh \
+    && sed -i 's/\r$//' /usr/local/bin/entrypoint.sh
+
 # Копирование файлов Poetry
 COPY pyproject.toml poetry.lock* /app/
 
@@ -25,13 +29,12 @@ RUN poetry install --only main --no-root
 # Копирование исходного кода
 COPY . /app
 
-# Даем права на скрипт
-RUN chmod +x /app/entrypoint.sh
+
 
 # Открытие порта
 EXPOSE 8000
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
-# Запуск FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Запуск FastAI
+CMD ["python", "main.py"]
