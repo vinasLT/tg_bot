@@ -1,8 +1,13 @@
+import os
+import sys
+
 import grpc
 
 from config import settings
 from rpc_client.base_client import BaseRpcClient, T
-from rpc_client.gen.python.carfax.v1 import carfax_pb2, carfax_pb2_grpc
+sys.path.append(os.path.join(os.path.dirname(__file__), 'gen/python'))
+
+from carfax.v1 import carfax_pb2, carfax_pb2_grpc
 
 class CarfaxRcpClient(BaseRpcClient[carfax_pb2_grpc.CarfaxServiceStub]):
     def __init__(self):

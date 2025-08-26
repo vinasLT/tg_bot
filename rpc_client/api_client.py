@@ -1,9 +1,14 @@
+import os
+import sys
+
 import grpc
 
 from config import settings
 from rpc_client.base_client import BaseRpcClient, T
-from rpc_client.gen.python.auction.v1 import lot_pb2_grpc, lot_pb2
 
+sys.path.append(os.path.join(os.path.dirname(__file__), 'gen/python'))
+
+from auction.v1 import lot_pb2_grpc, lot_pb2
 
 class ApiRpcClient(BaseRpcClient[lot_pb2_grpc.LotServiceStub]):
     def __init__(self):
