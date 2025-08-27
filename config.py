@@ -21,7 +21,5 @@ class Settings(BaseSettings):
     DB_USER: str = "postgres"
     DB_PASS: str = "testpass"
 
-    class Config:
-        env_file = ".env"
 
 settings = Settings()

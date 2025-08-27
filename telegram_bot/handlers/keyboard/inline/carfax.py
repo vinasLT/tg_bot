@@ -49,23 +49,6 @@ async def carfax_buy(query: CallbackQuery):
     vin = query.data.split('_')[-1]
     user_id = query.from_user.id
 
-    #
-    #
-    #
-    #     try:
-    #         response = await rcp_client.get_carfax_by_vin(user_external_id=str(user_id), vin=vin,
-    #                                                       source=settings.SOURCE)
-    #         carfax = response.carfax
-    #
-    #     except grpc.aio.AioRpcError as e:
-    #         if e.code() == grpc.StatusCode.NOT_FOUND:
-    #            response = None
-    #         else:
-    #             await query.message.edit_text(_('❌ Something went wrong, please try again later'))
-    #             return
-    #
-
-
 
     bot_info = await bot.get_me()
     bot_username = bot_info.username
@@ -79,7 +62,7 @@ async def carfax_buy(query: CallbackQuery):
                                                success_url=success_payment)
             checkout_link = response.link
             await query.message.edit_text(_('Pay & Check below:'), reply_markup=payment_link(checkout_link, vin))
-        except grpc.aio.AioRpcError as e:
+        except grpc.aio.AioRpcError:
             await query.message.edit_text(_('❌ Failed to create payment link, please try again later'))
     await query.answer()
 

@@ -20,6 +20,7 @@ dependencies = [
     "grpcio (>=1.74.0,<2.0.0)",
     "grpcio-tools (>=1.74.0,<2.0.0)",
     "protobuf (>=6.32.0,<7.0.0)",
+    "httpx (>=0.28.1,<0.29.0)",
 ]
 
 [tool.poetry]
@@ -28,6 +29,8 @@ packages = [{include = "vinas_tg", from = "src"}]
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4.1"
+aiosqlite = "^0.21.0"
+httpx = "^0.28.1"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
