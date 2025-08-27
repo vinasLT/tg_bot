@@ -25,8 +25,8 @@ async def see_all_carfaxes(query: CallbackQuery):
     user_id = query.from_user.id
     async with CarfaxRcpClient() as rcp_client:
         try:
-            get_all_carfaxes = await rcp_client.get_all_carfaxes_for_user(user_external_id=str(user_id), source=settings.SOURCE)
-            all_carfaxes = get_all_carfaxes.carfax
+            response = await rcp_client.get_all_carfaxes_for_user(user_external_id=str(user_id), source=settings.SOURCE)
+            all_carfaxes = response.carfaxes
         except grpc.aio.AioRpcError as e:
             print(e.code())
             print(e.details())
